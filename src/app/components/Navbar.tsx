@@ -53,7 +53,7 @@ export default function Navbar() {
 
                 {
 
-                    <div className={styles.coverNavbar + ' ' + (mobileMenuVisible ? 'h-screen top-0' : 'h-0 -top-20') + ' ' + ' sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
+                    <div className={styles.coverNavbar + ' ' + (mobileMenuVisible ? 'opacity-100 h-screen top-0' : 'opacity-0 h-0 -top-20') + ' ' + ' sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
                         <ul className="relative h-full flex flex-col justify-center">
                             {navItems.map(navItem => {
                                 return (
