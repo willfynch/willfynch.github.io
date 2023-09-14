@@ -5,7 +5,7 @@
 }
 
 .listItem, .listItemMobile{
-    transition: all ease .5s;
+    transition: all ease .3s;
 
 }
 .listItemMobile:hover {
@@ -24,4 +24,20 @@
 
 #first  {
     transform-origin: 0% 0%;
+}
+
+.brand, .chevronOpen, .chevronClose {
+    transition: all ease .3s;
+}
+
+.brand:hover > .chevronOpen {
+    transform: translateX(-3px);
+}
+
+.brand:hover > .chevronClose {
+    transform: translateX(3px);
+}
+
+.brand:hover {
+    font-weight: 800;
 }

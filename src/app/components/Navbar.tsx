@@ -36,8 +36,10 @@ export default function Navbar() {
     return (
         <div>
             <nav className="shadow-md px-4 h-16 items-center sticky grid grid-cols-2 gap-4 w-full">
-                <div className="align-middle brand">
+                <div className={styles.brand + " " + "align-middle brand flex flex-row"}>
+                    <div className={styles.chevronOpen}>&#60;</div>
                     <Link href={''}>William FINZY</Link>
+                    <span className={styles.chevronClose}>&#62;</span>
                 </div>
                 <div className="hidden sm:inline h-full">
                     <ul className="h-full flex flex-row justify-end">
