@@ -1,0 +1,51 @@
+.heroContainer {
+    animation-name: hero-container-appear;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.heroContainer:after {
+    content: '';
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    animation-name: hero-container-appear-skew;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+// ANIMATIONS
+
+@keyframes test-hero-container-appear {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 80%;
+    }
+    
+}
+
+@keyframes hero-container-appear {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 80%;
+    }
+    
+}
+
+@keyframes hero-container-appear-skew {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 100%;
+        transform:skew(50px);
+    }
+    
+}
