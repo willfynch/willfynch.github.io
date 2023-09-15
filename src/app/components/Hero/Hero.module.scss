@@ -4,15 +4,6 @@
     animation-fill-mode: forwards;
 }
 
-.heroContainer:after {
-    content: '';
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    animation-name: hero-container-appear-skew;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-}
 
 // ANIMATIONS
 

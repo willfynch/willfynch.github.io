@@ -44,9 +44,9 @@ export default function Layout({ children, ...customMeta }: {children: React.Rea
           <meta property="article:published_time" content={meta.date} />
         )*/}
       </Head>
-      <main className="w-full dark:bg-gray-800">
+      <main className=" sm:w-full dark:bg-gray-800">
         <Navbar></Navbar>
-        <div>{children}</div>
+        {children}
         <Footer></Footer>
       </main>
     </div>
