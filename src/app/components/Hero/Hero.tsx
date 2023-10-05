@@ -1,11 +1,20 @@
 import styles from './Hero.module.scss'
+import Image from 'next/image'
+import avatar from '../../../../public/photo.jpg'
 
 export default function Hero() {
     return (
-        
-        <div className={styles.heroContainer + ' ' + ' h-screen w-screen bg-blue-300'}>
-            blabla
-        </div>
-        
+
+        <section className={styles.heroSection + ' ' + 'flex justify-center'}>
+            
+            <div className={styles.heroContainer + ' ' + ' w-1000'}>
+                
+                <Image className={styles.circleImage} height={400} width={300} alt="avatar" src={avatar}></Image>
+
+            </div>
+
+
+        </section>
+
     )
 }

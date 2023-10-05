@@ -47,7 +47,7 @@ export default function Layout({ children, ...customMeta }: {children: React.Rea
       <main className=" sm:w-full dark:bg-gray-800">
         <Navbar></Navbar>
         {children}
-        <Footer></Footer>
+        
       </main>
     </div>
   );

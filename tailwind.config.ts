@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        '800': '800px',
+        '900': '900px',
+        '1000': '1000px',
+        '1100': '1100px',
+      },
+      height:  {
+        'fit-view' : 'calc(100vh - 64px)'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

@@ -1,42 +1,19 @@
+.heroSection {
+    
+    background-color: beige;
+}
+
 .heroContainer {
-    animation-name: hero-container-appear;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
+    background-color: red;
 }
 
+.circleImage {
+    object-fit: cover;
+   
+    width: auto;
+  }
 
-// ANIMATIONS
 
-@keyframes test-hero-container-appear {
-    from {
-        width: 0px;
-    }
 
-    to {
-        width: 80%;
-    }
-    
-}
 
-@keyframes hero-container-appear {
-    from {
-        width: 0px;
-    }
 
-    to {
-        width: 80%;
-    }
-    
-}
-
-@keyframes hero-container-appear-skew {
-    from {
-        width: 100%;
-    }
-
-    to {
-        width: 100%;
-        transform:skew(50px);
-    }
-    
-}
