@@ -17,6 +17,9 @@ const config: Config = {
       height:  {
         'fit-view' : 'calc(100vh - 64px)'
       },
+      maxHeight:  {
+        'fit-view' : 'calc(100vh - 64px)'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

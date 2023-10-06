@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Layout from './components/Layout'
 import Hero from './components/Hero/Hero'
-import styles from './page.module.scss'
 
 export default function Home() {
 
@@ -10,36 +9,36 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className={styles.container + ' ' + 'flex justify-center h-fit-view'}>
-        <div className={styles.gridContainer + ' ' + 'grid grid-cols-1 sm:grid-cols-2 w-1100'}>
+      <div className={'lg:flex lg:justify-between lg:gap-4'}>
+        <header className='max-h-fit-view bg-red-500 lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24'>
           <Hero></Hero>
-          <div className={styles.content + ' ' + 'sm:overflow-y-scroll'}>
+        </header>
+        <main className={'w-1/2 ' + ''}>
 
-            {varText}
+          {varText}
 
-            <div className='my-52'></div>
-            {varText}
+          <div className='my-52'></div>
+          {varText}
 
-            <div className='my-52'></div>
-            {varText}
+          <div className='my-52'></div>
+          {varText}
 
-            <div className='my-52'></div>
+          <div className='my-52'></div>
 
-            {varText}
+          {varText}
 
-            <div className='my-52'></div>
-            {varText}
+          <div className='my-52'></div>
+          {varText}
 
-            <div className='my-52'></div>
-            {varText}
+          <div className='my-52'></div>
+          {varText}
 
-            <div className='my-52'></div>
-            {varText}
+          <div className='my-52'></div>
+          {varText}
 
-            <div className='my-52'></div>
+          <div className='my-52'></div>
 
-          </div>
-        </div>
+        </main>
       </div>
 
     </Layout>
