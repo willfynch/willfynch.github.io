@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <div className={'lg:flex lg:justify-between lg:gap-4'}>
-        <header className='max-h-fit-view bg-red-500 lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24'>
+        <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24'>
           <Hero></Hero>
         </header>
         <main className={'w-1/2 ' + ''}>
