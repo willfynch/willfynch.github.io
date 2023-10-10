@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Layout from './components/Layout'
 import Hero from './components/Hero/Hero'
+import PostCard from './components/utilities/PostCard/PostCard'
 
 export default function Home() {
 
@@ -13,7 +14,11 @@ export default function Home() {
         <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24'>
           <Hero></Hero>
         </header>
-        <main className={'w-1/2 ' + ''}>
+        <main className={'lg:w-1/2 px-8' + ''}>
+
+          
+          <PostCard content={{}}></PostCard>
+
 
           {varText}
 

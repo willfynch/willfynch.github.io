@@ -4,7 +4,6 @@ import avatar from '../../../../public/photo.jpg'
 import { FaLinkedin, FaInstagram, FaGithubSquare } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import Link from 'next/link'
-import Button from '../utilities/Button/Button'
 export default function Hero() {
 
     return (
@@ -13,7 +12,7 @@ export default function Hero() {
 
             <div className={styles.heroContainer + ' ' + 'flex flex-row items-center gap-4' + ' '}>
 
-                <Image className={styles.circleImage} height={300} width={300} alt="avatar" src={avatar}></Image>
+                <Image className={styles.circleImage + ``} height={300} width={300} alt="avatar" src={avatar}></Image>
                 <div>
                     <Link href={''}><h1 className='text-3xl sm:text-4xl xl:text-6xl font-black'>William Finzy</h1></Link>
                     <h2 className='mt-2 text-lg sm:text-2xl xl:text-3xl font-semibold'>Web Developer at Capgemini</h2>
@@ -37,8 +36,8 @@ export default function Hero() {
             </ul>
 
 
-            <div className='mt-16 flex flex-col justify-center '>
-                <Button>Get in touch !</Button>
+            <div className='mt-16 block text-center'>
+                <button className={`${styles.btn} w-full md:w-1/2`}>Get in touch !</button>
             </div>
 
 

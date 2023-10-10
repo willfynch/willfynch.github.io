@@ -1,0 +1,14 @@
+// BUTTONS 
+
+.btn {
+    padding: 0.5rem 1rem;
+    background-color: rgb(30 41 59);
+    color: rgb(241 245 249);
+    transition: .2s all linear;
+    border-radius: 3px;
+
+}
+.btn:hover {
+    background-color: rgb(241 245 249);
+    color: rgb(30 41 59);
+}
