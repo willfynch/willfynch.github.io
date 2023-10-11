@@ -1,4 +1,4 @@
-import { experience } from '@/data/Experience'
+import { experience } from '../../../data/experience'
 import PostCard from '../utilities/PostCard/PostCard'
 import styles from './Experience.module.scss'
 import { PostCardContent } from '../utilities/PostCard/PostCardContent.model'
