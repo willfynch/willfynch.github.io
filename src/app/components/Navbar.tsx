@@ -48,7 +48,7 @@ export default function Navbar() {
         },
         {
             name: 'Experience',
-            path: '',
+            path: 'experience',
             id: 2
         },
         {

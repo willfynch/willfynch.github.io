@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Hero from './components/Hero/Hero'
 import PostCard from './components/utilities/PostCard/PostCard'
 import Bio from './components/Bio/Bio'
+import Experience from './components/Experience/Experience'
 
 
 export default function Home() {
@@ -13,18 +14,18 @@ export default function Home() {
   return (
     <Layout>
       <div className={'lg:flex lg:justify-between lg:gap-4'}>
-        <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24 lg:flex lg:flex-col lg:items-center lg:justify-center'>
+        <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:ml-32 lg:py-24 lg:flex lg:flex-col lg:items-center lg:justify-center'>
           <Hero></Hero>
         </header>
-        <main className={'lg:w-1/2 px-8' + ''}>
+        <main className={'lg:w-1/2 lg:mr-40' + ''}>
 
           <Bio></Bio>
+          <Experience></Experience>
 
           
-          <PostCard content={{}}></PostCard>
 
 
-          {varText}
+          
 
           <div className='my-52'></div>
           {varText}
