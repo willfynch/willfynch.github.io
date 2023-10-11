@@ -1,20 +1,50 @@
 import Link from 'next/link';
 import styles from './Navbar.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import {BsSunFill} from 'react-icons/bs'
 
 export default function Navbar() {
 
-    function navigateTo(id: string): void {
-        setMobileMenuVisible(false)
-    }
+    let [scrollY, setScrollY] = useState(0);
 
+    // TOGGLE MENU
+    function navigateTo(id: string): void {
+        setMobileMenuVisible(false);
+        scrollToSection(id);
+    }
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
+    //-------------------
+
+    // SCROLL TO SECTION
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
+    // CHANGE Y POSITION WHEN SCROLL 
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollY(position);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    //-----------------------
 
     const navItems = [
         {
-            name: 'Projects',
-            path: '',
-            id: 1
+            name: 'Bio',
+            path: 'about',
+            id: 1,
         },
         {
             name: 'Experience',
@@ -22,12 +52,12 @@ export default function Navbar() {
             id: 2
         },
         {
-            name: 'Contact',
+            name: 'Projects',
             path: '',
             id: 3
         },
         {
-            name: 'Bio',
+            name: 'Contact',
             path: '',
             id: 4
         }
@@ -41,11 +71,13 @@ export default function Navbar() {
                     <Link href={''}>William FINZY</Link>
                     <span className={styles.chevronClose}>&#62;</span>
                 </div>
+
+
                 <div className="hidden sm:inline h-full">
                     <ul className="h-full flex flex-row justify-end">
                         {navItems.map(navItem => {
                             return (
-                                <li className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
+                                <li onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
                                     {navItem.name}
                                 </li>
                             )
@@ -66,8 +98,9 @@ export default function Navbar() {
                         })}
                     </ul>
                 </div>
-
+  
                 <div className='  my-1/2 align-middle h-full sm:hidden flex flex-row justify-end'>
+                    
                     <div onClick={(e) => setMobileMenuVisible(!mobileMenuVisible)} className='mt-1/2 absolute m-auto top-4 cursor-pointer align-middle justify-center flex flex-col'>
                         <span className={(mobileMenuVisible ? styles.toggled + ' ' + 'translate-y-3 rotate-45 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id='first'></span>
                         <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' opacity-0 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id="second"></span>
