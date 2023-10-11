@@ -20,6 +20,9 @@ const config: Config = {
       maxHeight:  {
         'fit-view' : 'calc(100vh - 64px)'
       },
+      fontSize: {
+        x3xl: ['2.15rem', '2.3rem']
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
