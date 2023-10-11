@@ -1,7 +1,7 @@
 import { PostCardContent } from "@/app/components/utilities/PostCard/PostCardContent.model"
 import indarrascreen from '../../public/indarrascreen.png'
 
-export const experience: PostCardContent[] = [
+export const projects: PostCardContent[] = [
 
     {
         title: 'Société Générale',

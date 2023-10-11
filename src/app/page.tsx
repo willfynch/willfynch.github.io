@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import PostCard from './components/utilities/PostCard/PostCard'
 import Bio from './components/Bio/Bio'
 import Experience from './components/Experience/Experience'
+import Projects from './components/Projects/Projects'
 
 
 export default function Home() {
@@ -21,32 +22,8 @@ export default function Home() {
 
           <Bio></Bio>
           <Experience></Experience>
+          <Projects></Projects>
 
-          
-
-
-          
-
-          <div className='my-52'></div>
-          {varText}
-
-          <div className='my-52'></div>
-          {varText}
-
-          <div className='my-52'></div>
-
-          {varText}
-
-          <div className='my-52'></div>
-          {varText}
-
-          <div className='my-52'></div>
-          {varText}
-
-          <div className='my-52'></div>
-          {varText}
-
-          <div className='my-52'></div>
 
         </main>
       </div>

@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface PostCardContent {
     type?: string;
     title?: string;
@@ -6,5 +8,5 @@ export interface PostCardContent {
     description?: string;
     technos?: string[];
     links?: string[];
-    image?: string;
+    image?: string | StaticImageData;
 }
