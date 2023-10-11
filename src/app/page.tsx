@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Layout from './components/Layout'
 import Hero from './components/Hero/Hero'
 import PostCard from './components/utilities/PostCard/PostCard'
+import Bio from './components/Bio/Bio'
+
 
 export default function Home() {
 
@@ -11,10 +13,12 @@ export default function Home() {
   return (
     <Layout>
       <div className={'lg:flex lg:justify-between lg:gap-4'}>
-        <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24'>
+        <header className='max-h-fit-view lg:sticky lg:w-1/2 top-16 lg:px-24 lg:py-24 lg:flex lg:flex-col lg:items-center lg:justify-center'>
           <Hero></Hero>
         </header>
         <main className={'lg:w-1/2 px-8' + ''}>
+
+          <Bio></Bio>
 
           
           <PostCard content={{}}></PostCard>
