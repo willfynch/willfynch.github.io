@@ -9,7 +9,7 @@ export default function Bio() {
 
 
     return (
-        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-2`}>
+        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10`}>
             <h2 className='text-lg font-bold'>ABOUT</h2>
             <div className='mt-6'>
                 <p className='mb-4'>
@@ -36,7 +36,7 @@ export default function Bio() {
                 </h3>
                 <div className='flex flex-row justify-center '>
                     <ul className='flex flex-row'>
-                        <li className='mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-24 h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
+                        <li className='mr-6 ml-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-24 h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
                             <ImAccessibility className='text-3xl xl:text-4xl text-slate-700'></ImAccessibility>
                             <p className='text-sm  xl:text-xl text-slate-700'>Accessibility</p>
                         </li>

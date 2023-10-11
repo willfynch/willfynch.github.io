@@ -10,7 +10,7 @@ export default function Hero() {
 
         <section className={styles.heroSection + ' ' + 'max-h-screen flex justify-between flex-col px-4 py-12'}>
 
-            <div className={styles.heroContainer + ' ' + 'flex flex-row items-center gap-4' + ' '}>
+            <div className={styles.heroContainer + ' ' + 'flex flex-row items-center justify-center gap-4' + ' '}>
 
                 <Image className={styles.circleImage + ``} height={300} width={300} alt="avatar" src={avatar}></Image>
                 <div>
@@ -18,9 +18,9 @@ export default function Hero() {
                     <h2 className='mt-2 text-lg sm:text-1xl xl:text-3xl font-semibold'>Web Developer at Capgemini</h2>
                 </div>
             </div>
-            <p className='mt-4 w-8/12'>I design and build responsive and user-friendly websites and applications.</p>
+            <p className='text-center lg:text-left mt-4 w-full xl:w-8/12'>I design and build responsive and user-friendly websites and applications.</p>
 
-            <ul className='mt-8 flex flex-row justify-start'>
+            <ul className='mt-8 flex flex-row justify-center lg:justify-start'>
                 <li className={styles.socialItemLi}>
                     <FaLinkedin className='text-x3xl opacity-60 hover:opacity-100'></FaLinkedin>
                 </li>
