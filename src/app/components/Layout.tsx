@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LanguageWidget from "./utilities/LanguageWidget/LanguageWidget";
 
 export default function Layout({ children, ...customMeta }: {children: React.ReactNode}) {
   const router = useRouter();
@@ -45,6 +46,7 @@ export default function Layout({ children, ...customMeta }: {children: React.Rea
         )*/}
       </Head>
       <div className=" sm:w-full dark:bg-gray-800">
+        <LanguageWidget></LanguageWidget>
         <Navbar></Navbar>
         {children}
       </div>
