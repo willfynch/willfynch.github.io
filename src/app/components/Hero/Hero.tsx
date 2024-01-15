@@ -4,23 +4,26 @@ import avatar from '../../../../public/photo.jpg'
 import { FaLinkedin, FaInstagram, FaGithubSquare } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import Link from 'next/link'
+
+
 export default function Hero() {
 
     return (
 
-        <section className={styles.heroSection + ' ' + 'max-h-screen flex justify-between flex-col px-4 py-12'}>
+        <section className={' h-full flex flex-col justify-center items-center mt-10 px-10 md:px-20 py-12'}>
 
-            <div className={styles.heroContainer + ' ' + 'flex flex-row items-center justify-center gap-4' + ' '}>
-
-                <Image className={styles.circleImage + ``} height={300} width={300} alt="avatar" src={avatar}></Image>
+            <div className={'flex justify-center items-center gap-x-4 h-full'}>
+                <Image className={styles.circleImage + ` `} height={300} width={300} alt="avatar" src={avatar}></Image>
                 <div>
-                    <Link href={''}><h1 className='text-2xl sm:text-3xl xl:text-6xl font-black'>William Finzy</h1></Link>
-                    <h2 className='mt-2 text-lg sm:text-1xl xl:text-3xl font-semibold'>Web Developer at Capgemini</h2>
+                    <h1 id='HERO_TITLE' className=' text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black'>Hello, I am William</h1>
+                    <h2 id='HERO_SUBTITLE' className=' text-xl sm:text-2xl md:text-3xl lg:text-4xl'>A web developer</h2>
                 </div>
             </div>
-            <p className='text-center lg:text-left mt-4 w-full xl:w-8/12'>I design and build responsive and user-friendly websites and applications.</p>
 
-            <ul className='mt-8 flex flex-row justify-center lg:justify-start'>
+
+            <p>I design and build responsive and user-friendly websites and applications.</p>
+
+            <ul className='mt-8 flex flex-row justify-center'>
                 <li className={styles.socialItemLi}>
                     <FaLinkedin className='text-x3xl opacity-60 hover:opacity-100'></FaLinkedin>
                 </li>
@@ -36,10 +39,14 @@ export default function Hero() {
             </ul>
 
 
-            <div className='mt-16 block text-center'>
-                <button className={`${styles.btn} w-full md:w-1/2`}>Get in touch !</button>
+            <div className='mt-4 w-full md:w-1/2 text-center'>
+                <button className={`${styles.btn} w-full sm:w-1/2`}>Get in touch !</button>
             </div>
 
+
+            <div>
+                
+            </div>
 
 
         </section>

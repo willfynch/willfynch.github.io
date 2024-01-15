@@ -2,26 +2,37 @@
 
 
 .circleImage {
-    object-fit: cover;
-   width: 70px;
-   height: 70px;
-   border-radius: 50%;
-  }
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+
+@media (min-width: 1000px) { 
+  .circleImage {
+
+     width: 100px;
+     height: 100px;
+
+    }
+}
+
+
+.socialItemLi>* {
+  transition: .2s all linear;
+  cursor: pointer;
+  margin-right: .6rem;
+}
 
 
 
-  @media (min-width: 640px) { 
-    .circleImage {
-
-       width: 100px;
-       height: 100px;
-
-      }
-  }
-
- .socialItemLi > * {
-    transition: .2s all linear;
-    cursor: pointer;
-    margin-right: .6rem;
-  }
-
+#BUBBLE_TIP {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: red;
+}
