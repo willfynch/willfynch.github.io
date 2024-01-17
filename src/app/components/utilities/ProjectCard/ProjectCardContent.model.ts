@@ -9,4 +9,5 @@ export interface ProjectCardContent {
     links?: string[];
     image?: string | StaticImageData;
     id: number;
+    video?: string;
 }
