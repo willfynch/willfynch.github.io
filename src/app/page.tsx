@@ -5,6 +5,7 @@ import PostCard from './components/utilities/ProjectCard/ProjectCard'
 import Bio from './components/Bio/Bio'
 import Experience from './components/Experience/Experience'
 import Projects from './components/Projects/Projects'
+import Contact from './components/Contact/Contact'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
           <Hero></Hero>
           <Bio></Bio>
           <Projects></Projects>
+          <Contact></Contact>
 
 
         </main>
