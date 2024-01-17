@@ -1,15 +1,44 @@
-import { PostCardContent } from "./PostCardContent.model";
-import testScreen from '../../../../../public/indarrascreen.png'
+'use client'
+import { ProjectCardContent } from "./ProjectCardContent.model";
+import project_placeholder from '../../../../../public/project_placeholder.svg'
 import Image from 'next/image'
+import styles from './ProjectCard.module.scss';
+
+export default function PostCard({ content, openPopUp }: { content: ProjectCardContent, openPopUp: any }) {
 
 
-export default function PostCard({ content }: { content: PostCardContent }) {
-
-   const pills = [
-      'JavaScript', 'Angular', 'MongoDB'
-   ]
 
    return (
+      <>
+
+         <div className={`PROJECT_CONTAINER group relative h-[210px] w-[210px] rounded-md overflow-hidden`}>
+            <div className="PROJECT_BODY absolute z-10 grid grid-rows-2 w-full h-full bg-black/60 rounded-md text-white">
+               <div className="flex justify-center items-center flex-col mt-8">
+                  <h2 className="font-bold text-lg">{content.title}</h2>
+                  <h3 className="text-sm">{content.subtitle}</h3>
+                  <p className="text-sm">{content.year}</p>
+               </div>
+               <div className="flex justify-center items-center flex-col">
+                  <button onClick={(e) => openPopUp(content.id)} className={styles.VIEW_MORE_BUTTON}>View more</button>
+               </div>
+            </div>
+
+            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} src={content.image ?? project_placeholder} alt="" />
+         
+ 
+         
+         </div>
+
+
+      </>
+   )
+
+   {/*
+
+
+
+
+   
       <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 transition-all hover:shadow-[rgba(50,_50,_105,_0.65)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded w-full my-4 cursor-pointer`}>
          <div className=" p-6 `rounded-[calc(1.5rem-1px)]`">
             <div>
@@ -33,12 +62,9 @@ export default function PostCard({ content }: { content: PostCardContent }) {
             </div>
 
          </div>
-         {content.image &&
-            <div className="flex justify-center px-4 py-4">
-               <Image className="shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]   border-solid border-slate-600" src={content.image} alt={"screen shot"}></Image>
-            </div>}
 
-      </div>
-   )
+
+               </div>*/}
+
 }
 // bg-gradient-to-tl from-slate-300/50 to-slate-100/50 

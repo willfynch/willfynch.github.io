@@ -1,0 +1,17 @@
+.PROJECT_CONTAINER {
+    height: 300px;
+    width: 300px;
+}
+
+.VIEW_MORE_BUTTON {
+    padding: 8px;
+
+    border: solid white 2px;
+    transition: all linear .3s;
+}
+
+.VIEW_MORE_BUTTON:hover {
+    color: black;
+    background-color: white;
+}
+
