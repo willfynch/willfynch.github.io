@@ -9,7 +9,7 @@ export default function Bio() {
 
 
     return (
-        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10`}>
+        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10 sm:px-40 lg:px-72`}>
             <h2 className='text-lg font-bold'>ABOUT</h2>
             <div className='mt-6'>
                 <p className='mb-4'>
@@ -31,22 +31,22 @@ export default function Bio() {
                 <p className="mb-4">
                     Nowadays, I focus on designing and building user-friendly websites and applications, following those three pillars.
                 </p>
-                <h3 className='text-md font-bold text-center my-6'>
+                <h3 className='text-md font-bold text-center mt-10 mb-6'>
                     MY PILLARS
                 </h3>
                 <div className='flex flex-row justify-center '>
                     <ul className='flex flex-row'>
-                        <li className='mr-6 ml-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
-                            <ImAccessibility className='text-2xl md:text-3xl xl:text-4xl text-slate-700'></ImAccessibility>
-                            <p className='text-xs md:text-sm  xl:text-xl text-slate-700'>Accessibility</p>
+                        <li className='group mr-6 ml-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
+                            <ImAccessibility className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></ImAccessibility>
+                            <p className='duration-300 group-hover:scale-95 text-xs md:text-sm  xl:text-xl text-slate-700'>Accessibility</p>
                         </li>
-                        <li className='mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
-                            <IoIosColorPalette className='text-2xl md:text-3xl xl:text-4xl text-slate-700'></IoIosColorPalette>
-                            <p className='text-xs md:text-sm xl:text-xl text-slate-700'>Elegance</p>
+                        <li className='group mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
+                            <IoIosColorPalette className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></IoIosColorPalette>
+                            <p className='duration-300 group-hover:scale-95 text-xs md:text-sm xl:text-xl text-slate-700'>Elegance</p>
                         </li>
-                        <li className='mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
-                            <FaThumbsUp className='text-2xl md:text-3xl xl:text-4xl text-slate-700'></FaThumbsUp>
-                            <p className='text-xs md:text-sm xl:text-xl text-slate-700'>Simplicity</p>
+                        <li className='group mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
+                            <FaThumbsUp className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></FaThumbsUp>
+                            <p className='duration-300 group-hover:scale-95 text-xs md:text-sm xl:text-xl text-slate-700'>Simplicity</p>
                         </li>
 
                     </ul>

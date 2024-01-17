@@ -38,14 +38,8 @@ export default function Hero() {
                     </li>
                 </ul>
 
-
-                <div className='mt-4 w-full md:w-1/2 text-center'>
+                <div className='flex flex-row justify-center mt-4 w-full md:w-1/2 text-center'>
                     <button className={`${styles.btn} w-full sm:w-1/2`}>Get in touch !</button>
-                </div>
-
-
-                <div>
-
                 </div>
 
 
