@@ -47,19 +47,14 @@ export default function Navbar() {
             id: 1,
         },
         {
-            name: 'Experience',
-            path: 'experience',
+            name: 'Projects',
+            path: 'projects',
             id: 2
         },
         {
-            name: 'Projects',
-            path: 'projects',
-            id: 3
-        },
-        {
             name: 'Contact',
-            path: '',
-            id: 4
+            path: 'contact',
+            id: 3
         }
     ]
 
