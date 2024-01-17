@@ -2,26 +2,25 @@
 
 
 .circleImage {
-    object-fit: cover;
-   width: 70px;
-   height: 70px;
-   border-radius: 50%;
-  }
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
 
 
+@media (min-width: 1000px) { 
+  .circleImage {
 
-  @media (min-width: 640px) { 
-    .circleImage {
+     width: 100px;
+     height: 100px;
 
-       width: 100px;
-       height: 100px;
+    }
+}
 
-      }
-  }
 
- .socialItemLi > * {
-    transition: .2s all linear;
-    cursor: pointer;
-    margin-right: .6rem;
-  }
-
+.socialItemLi>* {
+  transition: .2s all linear;
+  cursor: pointer;
+  margin-right: .6rem;
+}
