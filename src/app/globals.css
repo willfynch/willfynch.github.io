@@ -19,3 +19,8 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+h2 {
+  font-size: large;
+  font-weight: bold;
+}
