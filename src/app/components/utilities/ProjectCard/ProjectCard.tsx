@@ -15,7 +15,7 @@ export default function PostCard({ content, openPopUp }: { content: ProjectCardC
    return (
       <>
 
-         <div className={`PROJECT_CONTAINER group relative w-full sm:w-2/5 h-[210px] rounded-md overflow-hidden`}>
+         <div className={`PROJECT_CONTAINER group relative w-full h-[210px] rounded-md overflow-hidden`}>
             <div className="PROJECT_BODY absolute z-10 grid grid-rows-2 w-full h-full bg-black/60 rounded-md text-white">
                <div className="flex justify-center items-center flex-col mt-8">
                   <h2 className="font-bold text-lg">{content.title}</h2>

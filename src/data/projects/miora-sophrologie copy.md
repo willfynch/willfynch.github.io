@@ -1,15 +1,16 @@
 ---
-title: "Miora Sophrologie"
+title: "Miora Sophrologie copie"
 subtitle: "Showcase website"
 year: "2023"
 technos: ['NextJS', 'TailwindCSS', 'Netlify']
 link: 'www.miorasphrologie.fr'
 image: './miorasophro.png'
+id: 3
 ---
 
 ## The client
 
-Miora is a french sophrologist who needed a website to showcase her activity and get more clients. She also needed a website tailored to her personality. This way, end-users kinda know her before taking booking a consultation.
+Miora COPIE
 
 ## The result
 
