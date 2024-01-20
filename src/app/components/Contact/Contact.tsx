@@ -6,7 +6,7 @@ export default function Contact() {
 
 
     return (
-        <section id='contact' className={` ` + `mt-20 lg:mt-32 px-10 sm:px-40 lg:px-72 mb-72`}>
+        <section id='contact' className={` ` + `mt-20 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-72`}>
             <h2 className='text-lg font-bold'>WORKING TOGETHER</h2>
 
             <div className={'flex justify-center items-center' + ' '}>

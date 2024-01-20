@@ -3,15 +3,19 @@ import { ProjectCardContent } from "./ProjectCardContent.model";
 import project_placeholder from '../../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import styles from './ProjectCard.module.scss';
+import { useEffect } from "react";
 
 export default function PostCard({ content, openPopUp }: { content: ProjectCardContent, openPopUp: any }) {
 
+   useEffect(()=> {
+      console.log('content', content)
+   }, [])
 
 
    return (
       <>
 
-         <div className={`PROJECT_CONTAINER group relative h-[210px] w-[210px] rounded-md overflow-hidden`}>
+         <div className={`PROJECT_CONTAINER group relative w-full h-[210px] rounded-md overflow-hidden`}>
             <div className="PROJECT_BODY absolute z-10 grid grid-rows-2 w-full h-full bg-black/60 rounded-md text-white">
                <div className="flex justify-center items-center flex-col mt-8">
                   <h2 className="font-bold text-lg">{content.title}</h2>
@@ -23,7 +27,7 @@ export default function PostCard({ content, openPopUp }: { content: ProjectCardC
                </div>
             </div>
 
-            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} src={content.image ?? project_placeholder} alt="" />
+            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} fill src={content.image ?? project_placeholder} alt="" />
          
  
          
