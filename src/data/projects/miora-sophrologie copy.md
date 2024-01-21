@@ -3,7 +3,7 @@ title: "Miora Sophrologie copie"
 subtitle: "Showcase website"
 year: "2023"
 technos: ['NextJS', 'TailwindCSS', 'Netlify']
-link: 'www.miorasphrologie.fr'
+link: 'https://miorasophrologie.fr'
 image: './miorasophro.png'
 id: 3
 ---
