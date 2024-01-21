@@ -3,7 +3,7 @@
 import PostCard from '../utilities/ProjectCard/ProjectCard'
 import styles from './Projects.module.scss'
 import { ProjectCardContent } from '../utilities/ProjectCard/ProjectCardContent.model'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import project_placeholder from '../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import { AiOutlineClose } from "react-icons/ai";
@@ -21,10 +21,18 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
     const { lockScroll, unlockScroll } = useScrollLock();
 
+    useEffect(()=>{
+        const id = localStorage.getItem('selectedProject')
+        if(id !== 'none' && id !== null){
+            openPopUp(~~id)
+        }
+    }, [])
+
     function openPopUp(id: number) {
         const project = allProjects.filter(project => project.id === id)[0]
         setSelectedProject(project);
         console.log('selected project ', project)
+        localStorage.setItem('selectedProject', id.toString())
         setPopupOpen(true);
         lockScroll();
     }
@@ -32,6 +40,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     function closePopUp() {
         setPopupOpen(false);
         unlockScroll();
+        localStorage.setItem('selectedProject', 'none')
     }
 
     function detectClickOutsideOfPopup(event: any) {
