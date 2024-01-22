@@ -1,56 +1,58 @@
 import logo_calendly from '../../../../public/calendly_logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
-import project_placeholder from '../../../../public/meeting.jpg'
+import placeholder from '../../../../public/meeting.jpg'
+import { steps } from '@/data/process-steps';
 
 export default function Contact() {
 
-
-    /**
-     * Etapes
-     * 
-     * 1/ Calendly pour estimer le besoin
-     * 2/ Devis en fonction d'une grille / barême à établir
-     * 3/ Maquettage basse résolution : dessins si présentiel, sinon ppt : pour un layout de base
-     * 4/ Maquettage haute résolution : figma + réunions live + avancement live : la personne est régulièrement tenue au courant de l'avancement
-     * 5/ Développement : idem, 
-     * /!\ Maquettage et développement peuvent être faits conjointement à mesure que la maquette convient ça part en dev
-     * 6/ Livraison : je vous donne tout ce dont vous avez besoin pour prendre votre site en main
-     * 7/ SAV : je suis dispo h24 (dans la mesure du raisonnable ;-) ) pour toute question ; les résolutions de bug sont gratuites
-     * 8/ Maintenance et mises-à-jour : c'est un service en plus, variable niveau coût en fonction du besoin et estimé dans le barême
-     * 
-     */
-
-
-
     return (
-        <section id='contact' className={styles.contactSection + `mt-20 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-72`}>
+        <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-72`}>
             <h2 className='text-lg font-bold'>WORKING TOGETHER</h2>
 
-            <div className={'flex flex-col justify-center items-center' + ' '}>
+            <div className={'mt-6 flex flex-col justify-center items-center gap-4' + ' '}>
 
-                <div id='STEP_COMPONENT' className='w-full flex h-[100px] overflow-hidden'>
-                    <div id='STEP_NUMBER' className={styles.number + ' ' + 'w-[100px] flex justify-center items-center'} >
-                        1
-                    </div>
-                    <div id='STEP_DESCRIPTION' className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
-                        <div className={styles.description + ' ' + 'h-[100px] absolute z-10 w-full h-full bg-black/60 text-white'}>
-                            <div className="flex justify-center items-center flex-col z-10">
-                                <h2 className="font-bold text-lg">Title</h2>
-                                <p className="text-sm">Description</p>
+                <p className='text-center'>
+                    <strong>Yes, together. </strong>
+                    Your opinion matters, at any part of the process.
+                    We'll have regular short meetings where I will show you the advancement
+                    to get your feedback and make sure <strong>we are always on the same page</strong>.
+                </p>
+
+                <p className='text-center mt-2'>Here's the process we'll follow together. ⬇️</p>
+
+                {
+                    steps.map(step => {
+                        return (
+                            <div id='STEP_COMPONENT' className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
+                                <div id='STEP_NUMBER' className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
+                                    {step.id}
+                                </div>
+                                <div id='STEP_DESCRIPTION' className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
+                                    <div className={styles.description + ' ' + 'backdrop-blur-[2px] h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
+                                        <div className="p-4 flex justify-center items-center flex-col z-10 ">
+                                            <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
+                                            <p className="text-sm w-full text-center">{step.description}</p>
+                                        </div>
+                                    </div>
+                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md h-[160px] md:h-[130px] w-full object-cover`} fill src={step.image ?? placeholder} alt="" />
+
+                                </div>
                             </div>
-                        </div>
-                        <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md h-[100px] w-full object-cover`} fill src={project_placeholder} alt="" />
+                        )
+                    })
+                }
 
-                    </div>
-                </div>
 
+                <p className='text-center text-md font-semibold -mb-2'>Book a call :</p>
                 <a href="https://calendly.com/fr">
+
                     <button className='rounded-md overflow-hidden flex flex-cols items-center justify-center w-[200px] h-[50px]'>
                         <Image className={styles.btn2} src={logo_calendly} width={300} height={300} alt="" />
 
                     </button>
                 </a>
+
 
             </div>
 
