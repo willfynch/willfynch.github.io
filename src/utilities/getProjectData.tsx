@@ -21,7 +21,8 @@ const getProjectsMetadata = (): ProjectModel[] => {
       link: matterResult.data.link,
       slug: fileName.replace(".md", ""),
       image: matterResult.data.image,
-      text: matterResult.content
+      text: matterResult.content,
+      language: matterResult.data.language
     };
   });
 

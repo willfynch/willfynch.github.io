@@ -6,6 +6,7 @@ technos: ['NextJS', 'TailwindCSS', 'Netlify']
 link: 'https://miorasophrologie.fr'
 image: './miorasophro.png'
 id: 4
+language: 'en'
 ---
 
 ## The client

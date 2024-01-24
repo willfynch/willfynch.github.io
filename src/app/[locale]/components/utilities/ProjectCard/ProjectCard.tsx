@@ -1,6 +1,6 @@
 'use client'
 import { ProjectCardContent } from "./ProjectCardContent.model";
-import project_placeholder from '../../../../../public/project_placeholder.svg'
+import project_placeholder from '../../../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import styles from './ProjectCard.module.scss';
 import { useEffect } from "react";

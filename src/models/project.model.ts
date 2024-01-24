@@ -11,4 +11,5 @@ export interface ProjectModel {
     id: number;
     video?: string;
     text?: string;
+    language?: string;
 }

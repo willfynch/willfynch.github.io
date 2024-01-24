@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './ContactWidget.module.scss'
-import logo_calendly from '../../../../../public/calendly_logo.svg'
+import logo_calendly from '../../../../../../public/calendly_logo.svg'
 
 export default function ContactWidget() {
 

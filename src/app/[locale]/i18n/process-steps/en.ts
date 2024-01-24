@@ -1,9 +1,9 @@
 import { Step } from "@/models/process-step.model";
-import meeting from '../../public/meeting.jpg'
-import maintenance from '../../public/maintenance.jpg'
-import delivery from '../../public/delivery.jpg'
-import code from '../../public/code.jpg'
-import mockup from '../../public/mockup.jpg'
+import meeting from '@/public/meeting.jpg'
+import maintenance from '@/public/maintenance.jpg'
+import delivery from '@/public/delivery.jpg'
+import code from '@/public/code.jpg'
+import mockup from '@/public/mockup.jpg'
 
 export const steps: Step[]  = [
     {

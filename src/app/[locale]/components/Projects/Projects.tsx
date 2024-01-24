@@ -29,6 +29,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     }, [])
 
     function openPopUp(id: number) {
+        console.log('all projects', allProjects)
         const project = allProjects.filter(project => project.id === id)[0]
         setSelectedProject(project);
         console.log('selected project ', project)

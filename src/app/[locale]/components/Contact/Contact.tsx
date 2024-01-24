@@ -1,8 +1,9 @@
-import logo_calendly from '../../../../public/calendly_logo.svg'
+import logo_calendly from '../../../../../public/calendly_logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
-import placeholder from '../../../../public/meeting.jpg'
+import placeholder from '../../../../../public/meeting.jpg'
 import { steps } from '@/data/process-steps';
+import parse from 'html-react-parser';
 
 export default function Contact() {
 
@@ -32,7 +33,7 @@ export default function Contact() {
                                     <div className={styles.description + ' ' + 'backdrop-blur-[2px] h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
                                         <div className="p-4 flex justify-center items-center flex-col z-10 ">
                                             <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
-                                            <p className="text-sm w-full text-center">{step.description}</p>
+                                            <p className="text-sm w-full text-center">{parse(step.description)}</p>
                                         </div>
                                     </div>
                                     <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md h-[160px] md:h-[130px] w-full object-cover`} fill src={step.image ?? placeholder} alt="" />

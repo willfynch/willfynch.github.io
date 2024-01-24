@@ -1,14 +1,14 @@
 import { Step } from "@/models/process-step.model";
-import meeting from '../../public/meeting.jpg'
-import maintenance from '../../public/maintenance.jpg'
-import delivery from '../../public/delivery.jpg'
-import code from '../../public/code.jpg'
-import mockup from '../../public/mockup.jpg'
+import meeting from '@/public/meeting.jpg'
+import maintenance from '@/public/maintenance.jpg'
+import delivery from '@/public/delivery.jpg'
+import code from '@/public/code.jpg'
+import mockup from '@/public/mockup.jpg'
 
 export const steps: Step[]  = [
     {
         id: 1,
-        title: 'Starting call',
+        title: 'Appel',
         description: 'Book a <strong>quick</strong> call in my Calendly so we can talk about your project. Then I\'ll propose you an estimate.',
         image: meeting
     },

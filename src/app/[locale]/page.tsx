@@ -5,11 +5,13 @@ import Projects from './components/Projects/Projects'
 import Contact from './components/Contact/Contact'
 import getProjectsMetadata from '@/utilities/getProjectData'
 import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
+import { redirect } from "next/navigation";
 
-
-export default function Home() {
+export default function RootPage() {
 
   const projectsData = getProjectsMetadata();
+
+  redirect('/fr')
 
   return (
     <Layout>

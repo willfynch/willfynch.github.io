@@ -1,6 +1,6 @@
 import styles from './Hero.module.scss'
 import Image from 'next/image'
-import avatar from '../../../../public/photo.jpg'
+import avatar from '../../../../../public/photo.jpg'
 import { FaLinkedin, FaInstagram, FaGithubSquare } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import Link from 'next/link'

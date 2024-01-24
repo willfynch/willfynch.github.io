@@ -3,6 +3,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const LOCALES = ["en", "fr"];
+
+export async function generateStaticParams() {
+  return LOCALES.map((locale) => ({
+    locale,
+  }));
+}
 
 export const metadata: Metadata = {
   title: 'Create Next App',
