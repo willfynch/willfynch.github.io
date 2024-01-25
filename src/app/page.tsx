@@ -5,9 +5,17 @@ import Projects from './components/Projects/Projects'
 import Contact from './components/Contact/Contact'
 import getProjectsMetadata from '@/utilities/getProjectData'
 import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
+import Head from 'next/head'
 
 
 export default function Home() {
+
+  const meta = {
+    title: "William Finzy - Developer",
+    description: `I've been working in web development for 3 years straight. Get in touch with me to know more.`,
+    image: "/avatar.png",
+    type: "website"
+  };
 
   const projectsData = getProjectsMetadata();
 
@@ -16,16 +24,24 @@ export default function Home() {
   // lets try with localstorage data maybe
 
   return (
-        <main >
-          <Hero></Hero>
-          <Bio></Bio>
-          <Projects projects={projectsData}></Projects>
-          <Contact></Contact>
-          <ContactWidget></ContactWidget>
-        </main>
+    <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta content={meta.description} name="description" />
+      </Head>
+
+      <main >
+        <Hero></Hero>
+        <Bio></Bio>
+        <Projects projects={projectsData}></Projects>
+        <Contact></Contact>
+        <ContactWidget></ContactWidget>
+      </main>
+    </>
+
   )
 }
 
-export function getAllText(){
+export function getAllText() {
 
 }
