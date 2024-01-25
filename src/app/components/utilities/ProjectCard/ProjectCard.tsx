@@ -4,8 +4,9 @@ import project_placeholder from '../../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import styles from './ProjectCard.module.scss';
 import { useEffect } from "react";
+import { ProjectModel } from "@/models/project.model";
 
-export default function PostCard({ content, openPopUp }: { content: ProjectCardContent, openPopUp: any }) {
+export default function PostCard({ content, openPopUp }: { content: ProjectModel, openPopUp: any }) {
 
    useEffect(()=> {
       console.log('content', content)

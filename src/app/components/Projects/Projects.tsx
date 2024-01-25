@@ -3,7 +3,8 @@
 import PostCard from '../utilities/ProjectCard/ProjectCard'
 import styles from './Projects.module.scss'
 import { ProjectCardContent } from '../utilities/ProjectCard/ProjectCardContent.model'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { LanguageContext } from '@/contexts/LanguageContext';
 import project_placeholder from '../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import { AiOutlineClose } from "react-icons/ai";
@@ -21,6 +22,9 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
     const { lockScroll, unlockScroll } = useScrollLock();
 
+    //@ts-ignore
+    const {lang, setLang} = useContext(LanguageContext)
+
     useEffect(()=>{
         const id = localStorage.getItem('selectedProject')
         if(id !== 'none' && id !== null){
@@ -28,7 +32,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
         }
     }, [])
 
-    function openPopUp(id: number) {
+    function openPopUp(id: number, slug?: string) {
         const project = allProjects.filter(project => project.id === id)[0]
         setSelectedProject(project);
         console.log('selected project ', project)
@@ -64,7 +68,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
             <div className='mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 {
-                    allProjects.map(project =>
+                    allProjects.filter(project => project.lang === lang).map(project =>
                         <PostCard key={project.id} openPopUp={openPopUp} content={project}></PostCard>
                     )
                 }

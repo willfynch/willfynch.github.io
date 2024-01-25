@@ -1,16 +1,17 @@
 ---
-title: "Miora Sophrologie copie"
+title: "Indarra"
 subtitle: "Showcase website"
-year: "2023"
-technos: ['NextJS', 'TailwindCSS', 'Netlify']
-link: 'https://miorasophrologie.fr'
-image: './miorasophro.png'
-id: 3
+year: "2022"
+technos: ['Scully', 'Angular', 'AWS']
+link: 'www.indarra.fr'
+image: './indarrascreen.png'
+id: 2
+lang: 'fr'
 ---
 
 ## The client
 
-Miora COPIE
+INDARRA
 
 ## The result
 

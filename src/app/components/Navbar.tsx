@@ -1,45 +1,25 @@
 import Link from 'next/link';
 import styles from './Navbar.module.scss';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import logo_calendly from '../../../public/calendly_logo.svg'
 import { BsSunFill } from 'react-icons/bs'
 import Image from 'next/image';
+import { LanguageContext } from '@/contexts/LanguageContext';
 
 export default function Navbar() {
 
     let [scrollY, setScrollY] = useState(0);
-
-    // TOGGLE MENU
-    function navigateTo(id: string): void {
-        setMobileMenuVisible(false);
-        scrollToSection(id);
-    }
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
-    //-------------------
 
-    // SCROLL TO SECTION
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    };
+    //@ts-ignore
+    const {lang, setLang} = useContext(LanguageContext)
 
-    // CHANGE Y POSITION WHEN SCROLL 
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollY(position);
-    }
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    //-----------------------
 
     const navItems = [
         {
@@ -58,6 +38,31 @@ export default function Navbar() {
             id: 3
         }
     ]
+
+    function navigateTo(id: string): void {
+        setMobileMenuVisible(false);
+        scrollToSection(id);
+    }
+
+    function scrollToSection(id: string){
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
+    function handleScroll() {
+        const position = window.pageYOffset;
+        setScrollY(position);
+    }
+
+    function handleLanguage(){
+        if(lang === 'fr'){ setLang('en')}
+        else{setLang('fr')}
+    }
 
     return (
         <nav className="bg-white z-40 top-0 sticky shadow-md px-4 h-16 items-center sticky top-0 grid grid-cols-2 gap-4 ">
@@ -78,6 +83,9 @@ export default function Navbar() {
                             </li>
                         )
                     })}
+                    <li key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
+                        <button>{lang === "fr" ? '🇫🇷' : '🇬🇧'}</button>
+                    </li>
                 </ul>
             </div>
 

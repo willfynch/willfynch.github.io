@@ -1,10 +1,27 @@
+'use client'
 import logo_calendly from '../../../../public/calendly_logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
 import placeholder from '../../../../public/meeting.jpg'
 import { steps } from '@/data/process-steps';
+import { useContext, useEffect, useState } from 'react';
+import {LanguageContext} from '@/contexts/LanguageContext';
 
 export default function Contact() {
+
+    const lang = useContext(LanguageContext)
+    const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
+
+    useEffect(() => {
+        console.log('STEPS', steps, translatedSteps)
+    }, [])
+    
+    useEffect(() => {
+        //@ts-ignore
+        console.log('lang changed', lang.lang)
+        //@ts-ignore
+        setTranslatedSteps(steps[lang.lang])
+    }, [lang])
 
     return (
         <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-72`}>
@@ -22,7 +39,7 @@ export default function Contact() {
                 <p className='text-center mt-2'>Here's the process we'll follow together. ⬇️</p>
 
                 {
-                    steps.map(step => {
+                    translatedSteps?.map(step => {
                         return (
                             <div id='STEP_COMPONENT' className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
                                 <div id='STEP_NUMBER' className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
