@@ -65,7 +65,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-white z-40 top-0 sticky shadow-md px-4 h-16 items-center sticky top-0 grid grid-cols-2 gap-4 ">
+        <nav className="bg-white z-50 top-0 sticky shadow-md px-4 h-16 items-center sticky top-0 grid grid-cols-2 gap-4 ">
 
             <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
                 <div className={styles.chevronOpen}>&#60;</div>
