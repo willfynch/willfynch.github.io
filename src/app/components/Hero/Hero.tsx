@@ -1,4 +1,4 @@
-
+'use client'
 import styles from './Hero.module.scss'
 import Image from 'next/image'
 import avatar from '../../../../public/photo.jpg'
@@ -8,8 +8,21 @@ import Link from 'next/link'
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useContext } from 'react'
 
+export enum HERO_TEXTS {
+    EN_TITLE = "Hello, I am William",
+    FR_TITLE = "Salut, moi c'est William",
+    EN_SUBTITLE = "Web developer",
+    FR_SUBTITLE = "Et je suis développeur",
+    EN_PHRASE = "I design and build websites",
+    FR_PHRASE = "Je réalise ton site web ",
+}
 
 export default function Hero() {
+
+    //@ts-ignore
+    const { lang, setLang } = useContext(LanguageContext)
+
+
 
     return (
         <section id='SECTION_HERO' className='h-screen flex flex-col justify-center items-center '>
@@ -18,13 +31,19 @@ export default function Hero() {
                 <div className={'flex justify-center items-center gap-x-4 h-full'}>
                     <Image className={styles.circleImage + ` `} height={300} width={300} alt="avatar" src={avatar}></Image>
                     <div>
-                        <h1 id='HERO_TITLE' className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black'>Hello, I am William</h1>
-                        <h2 id='HERO_SUBTITLE' className=' text-xl sm:text-2xl md:text-3xl lg:text-4xl'>A web developer</h2>
+                        <h1 id='HERO_TITLE' className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black'>
+                            {lang === 'fr' ? HERO_TEXTS.FR_TITLE : HERO_TEXTS.EN_TITLE}
+                        </h1>
+                        <h2 id='HERO_SUBTITLE' className=' text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
+                            {lang === 'fr' ? HERO_TEXTS.FR_SUBTITLE : HERO_TEXTS.EN_SUBTITLE}
+                        </h2>
                     </div>
                 </div>
 
 
-                <p className='text-center mt-8 mb-4'>I design and build responsive and user-friendly websites and applications.</p>
+                <p className='text-center mt-8 mb-4'>
+                    {lang === 'fr' ? HERO_TEXTS.FR_PHRASE : HERO_TEXTS.EN_PHRASE}
+                </p>
 
                 <ul className='mt-8 flex flex-row justify-center'>
                     <li className={styles.socialItemLi}>

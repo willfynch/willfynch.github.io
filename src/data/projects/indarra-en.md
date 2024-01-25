@@ -6,6 +6,7 @@ technos: ['Scully', 'Angular', 'AWS']
 link: 'www.indarra.fr'
 image: './indarrascreen.png'
 id: 1
+lang: 'en'
 ---
 
 ## The client

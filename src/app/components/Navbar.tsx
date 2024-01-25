@@ -15,10 +15,6 @@ export default function Navbar() {
     const {lang, setLang} = useContext(LanguageContext)
 
     useEffect(() => {
-        console.log('lang' , lang)
-    }, [])
-
-    useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -73,7 +69,7 @@ export default function Navbar() {
 
             <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
                 <div className={styles.chevronOpen}>&#60;</div>
-                <Link href={''}>William FINZY + {lang?.toString()}</Link>
+                <Link href={''}>William FINZY</Link>
                 <span className={styles.chevronClose}>&#62;</span>
             </div>
 
@@ -87,8 +83,8 @@ export default function Navbar() {
                             </li>
                         )
                     })}
-                    <li onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
-                        LANG : {lang.toString()}
+                    <li key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
+                        <button>{lang === "fr" ? '🇫🇷' : '🇬🇧'}</button>
                     </li>
                 </ul>
             </div>
