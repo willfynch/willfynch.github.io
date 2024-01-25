@@ -11,20 +11,21 @@ export default function Home() {
 
   const projectsData = getProjectsMetadata();
 
-  return (
-    <Layout>
-    
-        <main >
+  // no use effect here bc server component
+  // detection of lang change must be in child components
+  // lets try with localstorage data maybe
 
+  return (
+        <main >
           <Hero></Hero>
           <Bio></Bio>
           <Projects projects={projectsData}></Projects>
           <Contact></Contact>
           <ContactWidget></ContactWidget>
-
-
         </main>
-   
-    </Layout>
   )
+}
+
+export function getAllText(){
+
 }
