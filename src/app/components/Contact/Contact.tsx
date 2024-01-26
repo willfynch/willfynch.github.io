@@ -2,7 +2,7 @@
 import logo_calendly from '../../../../public/calendly_logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
-import placeholder from '../../../../public/images/meeting.jpg'
+import placeholder from '../../../../public/images/meeting.webp'
 import { steps } from '@/data/process-steps';
 import { useContext, useEffect, useState } from 'react';
 import {LanguageContext} from '@/contexts/LanguageContext';
@@ -11,10 +11,6 @@ export default function Contact() {
 
     const lang = useContext(LanguageContext)
     const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
-
-    useEffect(() => {
-        console.log('STEPS', steps, translatedSteps)
-    }, [])
     
     useEffect(() => {
         //@ts-ignore
@@ -52,7 +48,8 @@ export default function Contact() {
                                             <p className="text-sm w-full text-center">{step.description}</p>
                                         </div>
                                     </div>
-                                    <Image sizes="(max-width: 800px) 400px, 800px" className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" />
+                                    <Image className={styles.description + ` hidden sm:block z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" />
+                                    <Image className={styles.description + ` block sm:hidden z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.imageSmall ?? placeholder} alt="" />
 
                                 </div>
                             </div>
