@@ -2,7 +2,7 @@
 import logo_calendly from '../../../../public/calendly_logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
-import placeholder from '../../../../public/images/meeting.webp'
+import placeholder from '../../../../public/images/meeting-small.webp'
 import { steps } from '@/data/process-steps';
 import { useContext, useEffect, useState } from 'react';
 import {LanguageContext} from '@/contexts/LanguageContext';
@@ -42,15 +42,13 @@ export default function Contact() {
                                     {step.id}
                                 </div>
                                 <div id='STEP_DESCRIPTION' className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
-                                    <div className={styles.description + ' ' + 'backdrop-blur-[2px] h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
+                                    <div className={styles.description + ' ' + 'backdrop-blur-[3px] h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
                                         <div className="p-4 flex justify-center items-center flex-col z-10 ">
                                             <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
                                             <p className="text-sm w-full text-center">{step.description}</p>
                                         </div>
                                     </div>
-                                    {/* <Image className={styles.description + ` hidden sm:block z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" /> */}
-                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.imageSmall ?? placeholder} alt="" />
-
+                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" />
                                 </div>
                             </div>
                         )
