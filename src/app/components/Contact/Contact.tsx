@@ -48,8 +48,8 @@ export default function Contact() {
                                             <p className="text-sm w-full text-center">{step.description}</p>
                                         </div>
                                     </div>
-                                    <Image className={styles.description + ` hidden sm:block z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" />
-                                    <Image className={styles.description + ` block sm:hidden z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.imageSmall ?? placeholder} alt="" />
+                                    {/* <Image className={styles.description + ` hidden sm:block z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.image ?? placeholder} alt="" /> */}
+                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={step.imageSmall ?? placeholder} alt="" />
 
                                 </div>
                             </div>
