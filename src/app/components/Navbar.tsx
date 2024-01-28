@@ -14,12 +14,12 @@ export default function Navbar() {
     //@ts-ignore
     const {lang, setLang} = useContext(LanguageContext)
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll, { passive: true });
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     const navItems = [
         {
@@ -54,10 +54,10 @@ export default function Navbar() {
         }
     };
 
-    function handleScroll() {
-        const position = window.pageYOffset;
-        setScrollY(position);
-    }
+    // function handleScroll() {
+    //     const position = window.pageYOffset;
+    //     setScrollY(position);
+    // }
 
     function handleLanguage(){
         if(lang === 'fr'){ setLang('en')}
