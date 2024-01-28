@@ -8,11 +8,11 @@ import code from '../../public/images/code-small.webp'
 import mockup from '../../public/images/mockup-small.webp'
 
 export enum IMAGES {
-    CODE = 'https://i.ibb.co/bPqC57S/code-small.webp',
-    DELIVERY = 'https://i.ibb.co/x6C6Fsr/delivery-small.webp',
-    MAINTENANCE = 'https://i.ibb.co/SXXy0sY/maintenance-small.webp',
-    MEETING = 'https://i.ibb.co/17CKDYK/meeting-small.webp',
-    MOCKUP = 'https://i.ibb.co/ngjkY6H/mockup-small.webp'
+    CODE = 'https://i.ibb.co/k9Xth2V/code-small-min.png',
+    DELIVERY = 'https://i.ibb.co/cXRXG4R/delivery-small-min.png',
+    MAINTENANCE = 'https://i.ibb.co/FggK0Xc/maintenance-small-min.png',
+    MEETING = 'https://i.ibb.co/PFzMPrD/meeting-small-min.png',
+    MOCKUP = 'https://i.ibb.co/zmBhdXD/mockup-small-min.png'
 }
 
 export const steps: { [language: string]: Step[] } = {
