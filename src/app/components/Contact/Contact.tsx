@@ -10,7 +10,9 @@ import {LanguageContext} from '@/contexts/LanguageContext';
 export default function Contact() {
 
     const lang = useContext(LanguageContext)
-    const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
+    //const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
+
+    const teststeps = steps['en'];
     
     useEffect(() => {
         //@ts-ignore
@@ -35,7 +37,7 @@ export default function Contact() {
                 <p className='text-center mt-2'>Here's the process we'll follow together. ⬇️</p>
 
                 {
-                    translatedSteps?.map(step => {
+                    teststeps?.map(step => {
                         return (
                             <div id='STEP_COMPONENT' className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
                                 <div id='STEP_NUMBER' className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
