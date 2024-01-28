@@ -14,12 +14,12 @@ export default function Contact() {
 
     const teststeps = steps['en'];
     
-    useEffect(() => {
-        //@ts-ignore
-        console.log('lang changed', lang.lang)
-        //@ts-ignore
-        setTranslatedSteps(steps[lang.lang])
-    }, [lang])
+    // useEffect(() => {
+    //     //@ts-ignore
+    //     console.log('lang changed', lang.lang)
+    //     //@ts-ignore
+    //     setTranslatedSteps(steps[lang.lang])
+    // }, [lang])
 
     return (
         <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-72`}>
