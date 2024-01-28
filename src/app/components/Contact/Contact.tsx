@@ -48,7 +48,7 @@ export default function Contact() {
                                             <p className="text-sm w-full text-center">{step.description}</p>
                                         </div>
                                     </div>
-                                    <img className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} src={`${step.image}`} alt="" />
+                                    {/* <img className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} src={`${step.image}`} alt="" /> */}
                                 </div>
                             </div>
                         )
