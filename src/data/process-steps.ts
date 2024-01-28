@@ -7,12 +7,20 @@ import delivery from '../../public/images/delivery-small.webp'
 import code from '../../public/images/code-small.webp'
 import mockup from '../../public/images/mockup-small.webp'
 
+/**
+ * <a href="https://imgbb.com/"><img src="https://i.ibb.co/D71JFs3/code-small-min.jpg" alt="code-small-min" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/vdF7gpp/delivery-small-min.jpg" alt="delivery-small-min" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/6HP1tvb/maintenance-small-min.jpg" alt="maintenance-small-min" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/fYPsLLF/meeting-small-min.jpg" alt="meeting-small-min" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/Mgbjjnw/mockup-small-min.jpg" alt="mockup-small-min" border="0"></a>
+ */
+
 export enum IMAGES {
-    CODE = 'https://i.ibb.co/k9Xth2V/code-small-min.png',
-    DELIVERY = 'https://i.ibb.co/cXRXG4R/delivery-small-min.png',
-    MAINTENANCE = 'https://i.ibb.co/FggK0Xc/maintenance-small-min.png',
-    MEETING = 'https://i.ibb.co/PFzMPrD/meeting-small-min.png',
-    MOCKUP = 'https://i.ibb.co/zmBhdXD/mockup-small-min.png'
+    CODE = 'https://i.ibb.co/D71JFs3/code-small-min.jpg',
+    DELIVERY = 'https://i.ibb.co/vdF7gpp/delivery-small-min.jpg',
+    MAINTENANCE = 'https://i.ibb.co/6HP1tvb/maintenance-small-min.jpg',
+    MEETING = 'https://i.ibb.co/fYPsLLF/meeting-small-min.jpg',
+    MOCKUP = 'https://i.ibb.co/Mgbjjnw/mockup-small-min.jpg'
 }
 
 export const steps: { [language: string]: Step[] } = {
