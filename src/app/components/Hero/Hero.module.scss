@@ -1,13 +1,9 @@
 @use '../../../global_styles.scss';
 
-.video {
-  filter: brightness(150%);
-}
-
 .circleImage {
   object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
 }
 @media (min-width: 500px) { 
