@@ -49,7 +49,7 @@ export default function Footer() {
 
     return (
 
-        <section className={  ' mb-[60px] sm:mb-0 bg-my-white/60 w-full p-12 overflow-hidden inset-x-0 bottom-0'}>
+        <footer className={  ' mb-[60px] sm:mb-0 bg-my-white/60 w-full p-12 overflow-hidden inset-x-0 bottom-0'}>
 
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">
@@ -103,7 +103,7 @@ export default function Footer() {
                 <span className="cursor-pointer"> Code de déontologie</span>
             </p>
 
-        </section>
+        </footer>
 
 
     )
