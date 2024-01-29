@@ -42,12 +42,12 @@ export default function Navbar() {
     //@ts-ignore
     const {lang, setLang} = useContext(LanguageContext)
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    });
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll, { passive: true });
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // });
 
 
 
@@ -75,11 +75,11 @@ export default function Navbar() {
         }
     };
 
-    function handleScroll() {
-        const position = window.pageYOffset;
-        setScrollY(position);
-        console.log(scrollY)
-    }
+    // function handleScroll() {
+    //     const position = window.pageYOffset;
+    //     setScrollY(position);
+    //     console.log(scrollY)
+    // }
 
     function handleLanguage(){
         if(lang === 'fr'){ setLang('en')}
@@ -87,7 +87,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className={(scrollY > 150 ? '  bg-white shadow-md ' : '  bg-transparent ') + ' ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
+        <nav className={ ' ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
             <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
                 <div className={styles.chevronOpen}>&#60;</div>
