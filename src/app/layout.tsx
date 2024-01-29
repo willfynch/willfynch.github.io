@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import { createContext, useState } from 'react'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import Head from 'next/head'
+import Footer from './components/Footer/Footer'
 //import LanguageContextProvider from '@/contexts/LanguageContext'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LanguageContextProvider value={lang}>
             <Navbar></Navbar>
             {children}
+            <Footer></Footer>
           </LanguageContextProvider>
 
         </body>

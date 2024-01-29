@@ -28,7 +28,8 @@ const config: Config = {
         'fit-view' : 'calc(100vh - 64px)'
       },
       fontSize: {
-        x3xl: ['2.15rem', '2.3rem']
+        x3xl: ['2.15rem', '2.3rem'],
+        x2xl: ['2.05rem', '2.2rem']
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

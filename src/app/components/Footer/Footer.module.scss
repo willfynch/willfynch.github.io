@@ -1,0 +1,9 @@
+@use '../../../global_styles.scss';
+
+.socialItemLi>* {
+    transition: .2s all linear;
+    cursor: pointer;
+    margin-right: .3rem;
+    margin-left: .3rem;
+  }
+  

@@ -7,6 +7,24 @@ import Image from 'next/image';
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useScrollLock } from '@/hooks/scrollLock';
 
+export const navItems = [
+    {
+        name: 'Bio',
+        path: 'about',
+        id: 1,
+    },
+    {
+        name: 'Projects',
+        path: 'projects',
+        id: 2
+    },
+    {
+        name: 'Contact',
+        path: 'contact',
+        id: 3
+    }
+]
+
 export default function Navbar() {
 
     let [scrollY, setScrollY] = useState(0);
@@ -25,23 +43,7 @@ export default function Navbar() {
     //     };
     // }, []);
 
-    const navItems = [
-        {
-            name: 'Bio',
-            path: 'about',
-            id: 1,
-        },
-        {
-            name: 'Projects',
-            path: 'projects',
-            id: 2
-        },
-        {
-            name: 'Contact',
-            path: 'contact',
-            id: 3
-        }
-    ]
+
 
     function navigateTo(id: string): void {
         handleSetMenuVisible()
