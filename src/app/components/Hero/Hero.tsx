@@ -25,7 +25,7 @@ export default function Hero() {
     //@ts-ignore
     const { lang, setLang } = useContext(LanguageContext)
 
-    function scrollToSection(id: string){
+    function scrollToSection(id: string) {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({
@@ -73,13 +73,16 @@ export default function Hero() {
 
                 <div className='flex flex-row justify-center mt-4  text-center'>
                     <button onClick={e => scrollToSection('services')} className={`${styles.btn} w-[150px]`}>
-                    {lang === 'fr' ? HERO_TEXTS.FR_CTA : HERO_TEXTS.EN_CTA}
+                        {lang === 'fr' ? HERO_TEXTS.FR_CTA : HERO_TEXTS.EN_CTA}
                     </button>
                 </div>
 
 
             </div>
-            <video id='VIDEO' autoPlay loop muted className={ styles.video + ' z-10 opacity-20 left-0 -top-[200px] absolute w-auto min-w-full min-h-screen max-w-none'} src="/videos/video_landing_page_compressed.mp4"/>
+            <div className={' z-10 opacity-20 left-0 -top-[200px] absolute w-auto min-w-full min-h-screen max-w-none brightness-150'}>
+                <video id='VIDEO' autoPlay loop muted  src="/videos/video_landing_page_compressed.mp4" />
+
+            </div>
         </section>
 
     )
