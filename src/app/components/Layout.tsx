@@ -3,7 +3,6 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import LanguageWidget from "./utilities/LanguageWidget/LanguageWidget";
 
 export default function Layout({ children, ...customMeta }: {children: React.ReactNode}) {
