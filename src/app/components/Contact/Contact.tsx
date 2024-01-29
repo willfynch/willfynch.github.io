@@ -20,7 +20,7 @@ export default function Contact() {
     }, [lang])
 
     return (
-        <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-40 lg:px-72 mb-20`}>
+        <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-20 xl:px-72 lg:px-40 mb-20`}>
             <h2 className='text-lg font-bold'>WORKING TOGETHER</h2>
 
             <div className={'mt-6 flex flex-col justify-center items-center gap-4' + ' '}>

@@ -76,7 +76,7 @@ export default function Services() {
     };
 
     return (
-        <section id='services' className={styles.servicesSection + ` ` + `lg:mt-32 px-10 sm:px-40 lg:px-72 mb-40`}>
+        <section id='services' className={styles.servicesSection + ` ` + `lg:mt-32 px-10 sm:px-20 xl:px-72 lg:px-40 mb-40`}>
             <h2 className='text-lg font-bold'>SERVICES</h2>
 
             <div className='mt-6 flex flex-col sm:flex-row gap-4'>
@@ -84,7 +84,7 @@ export default function Services() {
                 {
                     services.map(service => {
                         return (
-                            <div className={shadow + ' duration-300 overflow-hidden rounded-md w-full sm:w-1/3 h-[250px] relative group'}>
+                            <div className={shadow + ' duration-300 overflow-hidden rounded-md w-full md:w-1/3 h-[250px] relative group'}>
                                 {renderIcon(service.IMAGE)}
                                 <h2 className='z-10 text-center w-full px-4 text-md font-semibold absolute top-[100px]'>
                                     {lang === 'fr' ? service.FR_TITLE : service.EN_TITLE}

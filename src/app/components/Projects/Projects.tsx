@@ -63,7 +63,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     }
 
     return (
-        <section id='projects' className={styles.prjSection + ` ` + `relative mt-16 lg:mt-40 px-10 sm:px-40 lg:px-72`}>
+        <section id='projects' className={styles.prjSection + ` ` + `relative mt-16 lg:mt-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
             <h2 className='text-lg font-bold'>PROJECTS</h2>
 
             <div className='mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4'>

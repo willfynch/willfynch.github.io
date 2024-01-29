@@ -8,7 +8,7 @@ export default function Experience() {
     const exps: any[] = experience;
 
     return (
-        <section id='experience' className={styles.expSection + ` ` + `mt-16 lg:mt-32 px-10 sm:px-40 lg:px-72`}>
+        <section id='experience' className={styles.expSection + ` ` + `mt-16 lg:mt-32 px-10 sm:px-20 xl:px-72 lg:px-40`}>
             <h2 className='text-lg font-bold'>EXPERIENCE</h2>
 
             <div className='mt-6'>
