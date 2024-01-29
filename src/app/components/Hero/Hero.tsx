@@ -36,7 +36,7 @@ export default function Hero() {
     };
 
     return (
-        <section id='SECTION_HERO' className='overflow-hidden h-screen flex flex-col justify-center items-center relative'>
+        <section id='SECTION_HERO' className='overflow-x-hidden h-screen flex flex-col justify-center items-center relative'>
             <div className={'z-20 absolute  flex flex-col justify-center items-center px-10 md:px-20'}>
 
                 <div className={'flex justify-center items-center gap-x-4 h-full'}>
@@ -79,7 +79,7 @@ export default function Hero() {
 
 
             </div>
-            <video id='VIDEO' autoPlay loop muted className=' z-0 brightness-[150%] opacity-20 -top-40 left-0 absolute w-auto min-w-full min-h-full max-w-none' src="/videos/video_landing_page_compressed.mp4"/>
+            <video id='VIDEO' autoPlay loop muted className=' z-10 opacity-20 left-0 -top-[200px] absolute w-auto min-w-full min-h-screen max-w-none' src="/videos/video_landing_page_compressed.mp4"/>
         </section>
 
     )
