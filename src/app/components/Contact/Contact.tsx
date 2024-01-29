@@ -38,10 +38,10 @@ export default function Contact() {
                     translatedSteps?.map(step => {
                         return (
                             <div id={'STEP_COMPONENT-' + step.id} className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
-                                {/* <div id={'STEP_NUMBER-' + step.id} className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
+                                <div id={'STEP_NUMBER-' + step.id} className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
                                     {step.id}
-                                </div> */}
-                                <div id={'STEP_DESCRIPTION-' + step.id} className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
+                                </div>
+                                {/* <div id={'STEP_DESCRIPTION-' + step.id} className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
                                     <div className={styles.description + ' ' + 'backdrop-blur-[1px] h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
                                         <div className="p-4 flex justify-center items-center flex-col z-10 ">
                                             <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
@@ -49,7 +49,7 @@ export default function Contact() {
                                         </div>
                                     </div>
                                     <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={`${step.image}`} alt="" />
-                                </div>
+                                </div> */}
                             </div>
                         )
                     })
