@@ -80,7 +80,7 @@ export const steps: { [language: string]: Step[] } = {
                 title: 'Development',
                 description: `Along with the mock-up phase I will build the website. You\'ll be 
                 given a link to see real time advancements.`,
-                image: IMAGES.MOCKUP
+                image: IMAGES.CODE
             },
             {
                 id: 4,

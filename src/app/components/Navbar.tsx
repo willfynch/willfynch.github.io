@@ -9,20 +9,26 @@ import { useScrollLock } from '@/hooks/scrollLock';
 
 export const navItems = [
     {
-        name: 'Bio',
-        path: 'about',
+        name: 'Services',
+        path: 'services',
         id: 1,
     },
     {
         name: 'Projects',
         path: 'projects',
-        id: 2
+        id: 2,
     },
     {
         name: 'Contact',
         path: 'contact',
         id: 3
-    }
+    },
+    {
+        name: 'Bio',
+        path: 'about',
+        id: 4
+    },
+
 ]
 
 export default function Navbar() {
@@ -36,12 +42,12 @@ export default function Navbar() {
     //@ts-ignore
     const {lang, setLang} = useContext(LanguageContext)
 
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll, { passive: true });
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
 
 
 
@@ -69,10 +75,11 @@ export default function Navbar() {
         }
     };
 
-    // function handleScroll() {
-    //     const position = window.pageYOffset;
-    //     setScrollY(position);
-    // }
+    function handleScroll() {
+        const position = window.pageYOffset;
+        setScrollY(position);
+        console.log(scrollY)
+    }
 
     function handleLanguage(){
         if(lang === 'fr'){ setLang('en')}
@@ -80,12 +87,12 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-white z-50 top-0 sticky shadow-md px-4 h-16 items-center sticky top-0 grid grid-cols-2 gap-4 ">
+        <nav className={(scrollY > 150 ? ' h-16 bg-white shadow-md ' : ' h-24 bg-transparent ') + ' ' + "duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
             <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
                 <div className={styles.chevronOpen}>&#60;</div>
-                <Link href={''}>William FINZY</Link>
-                <span className={styles.chevronClose}>&#62;</span>
+                <Link href={''}>Will</Link>
+                <span className={styles.chevronClose}>/&#62;</span>
             </div>
 
 

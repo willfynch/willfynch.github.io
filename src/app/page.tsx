@@ -6,6 +6,7 @@ import Contact from './components/Contact/Contact'
 import getProjectsMetadata from '@/utilities/getProjectData'
 import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
 import Head from 'next/head'
+import Services from './components/Services/Services'
 
 
 export default function Home() {
@@ -32,9 +33,12 @@ export default function Home() {
 
       <main >
         <Hero></Hero>
-        <Bio></Bio>
+        <Services></Services>
         <Projects projects={projectsData}></Projects>
         <Contact></Contact>
+        <Bio></Bio>
+        
+        
         <ContactWidget></ContactWidget>
       </main>
     </>

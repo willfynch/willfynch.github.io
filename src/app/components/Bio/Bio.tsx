@@ -9,7 +9,7 @@ export default function Bio() {
 
 
     return (
-        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10 sm:px-40 lg:px-72`}>
+        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10 sm:px-40 lg:px-72 mb-20 sm:mb-40`}>
             <h2 className='text-lg font-bold'>ABOUT</h2>
             <div className='mt-6'>
                 <p className='mb-4'>
@@ -31,10 +31,8 @@ export default function Bio() {
                 <p className="mb-4">
                     Nowadays, I focus on designing and building user-friendly websites and applications, following those three pillars.
                 </p>
-                <h3 className='text-md font-bold text-center mt-10 mb-6'>
-                    MY PILLARS
-                </h3>
-                <div className='flex flex-row justify-center '>
+   
+                <div className='flex flex-row justify-center mt-8'>
                     <ul className='flex flex-row'>
                         <li className='group mr-6 ml-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
                             <ImAccessibility className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></ImAccessibility>
