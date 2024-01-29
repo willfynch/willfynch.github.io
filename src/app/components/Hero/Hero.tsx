@@ -79,7 +79,7 @@ export default function Hero() {
 
 
             </div>
-            <video id='VIDEO' autoPlay loop muted className='z-0 brightness-[150%] opacity-20 -top-40 left-0 absolute  w-auto min-w-full min-h-full max-w-none' src="/videos/video_landing_page_compressed.mp4"/>
+            <video id='VIDEO' autoPlay loop muted className='overflow-hidden z-0 brightness-[150%] opacity-20 -top-40 left-0 absolute  w-auto min-w-full min-h-full max-w-none' src="/videos/video_landing_page_compressed.mp4"/>
         </section>
 
     )
