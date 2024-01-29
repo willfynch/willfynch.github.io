@@ -87,7 +87,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className={(scrollY > 150 ? ' h-16 bg-white shadow-md ' : ' h-16 bg-transparent ') + ' ' + "duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
+        <nav className={(scrollY > 150 ? '  bg-white shadow-md ' : '  bg-transparent ') + ' ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
             <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
                 <div className={styles.chevronOpen}>&#60;</div>
