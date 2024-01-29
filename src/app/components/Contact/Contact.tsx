@@ -42,7 +42,7 @@ export default function Contact() {
                                     {step.id}
                                 </div>
                                 <div id={'STEP_DESCRIPTION-' + step.id} className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
-                                    <div className={styles.description + ' ' + ' h-[160px] md:h-[130px] absolute z-10 w-full bg-black/60 text-white'}>
+                                    <div className={styles.description + ' ' + ' h-[160px] md:h-[130px] absolute z-10 w-full bg-black/70 text-white'}>
                                         <div className="p-4 flex justify-center items-center flex-col z-10 ">
                                             <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
                                             <p className="text-sm w-full text-center">{step.description}</p>
