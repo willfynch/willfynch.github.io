@@ -1,5 +1,8 @@
 @use '../../../global_styles.scss';
 
+.video {
+  filter: brightness(150%);
+}
 
 .circleImage {
   object-fit: cover;
