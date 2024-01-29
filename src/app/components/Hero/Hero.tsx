@@ -36,8 +36,8 @@ export default function Hero() {
     };
 
     return (
-        <section id='SECTION_HERO' className=' h-screen flex flex-col justify-center items-center relative'>
-            <div className={'z-20 absolute  flex flex-col justify-center items-center px-10 md:px-20'}>
+        <section id='SECTION_HERO' className=' h-screen flex flex-col justify-center items-center relative mb-20 sm:mb-40'>
+            <div className={'z-20 absolute -mt-40 sm:mt-0 flex flex-col justify-center items-center px-10 md:px-20'}>
 
                 <div className={'flex justify-center items-center gap-x-4 h-full'}>
                     <Image className={styles.circleImage + ` `} height={300} width={300} alt="avatar" src={avatar}></Image>
@@ -50,7 +50,6 @@ export default function Hero() {
                         </h2>
                     </div>
                 </div>
-
 
                 <p className='text-center mt-8 mb-4'>
                     {lang === 'fr' ? HERO_TEXTS.FR_PHRASE : HERO_TEXTS.EN_PHRASE}
@@ -80,7 +79,7 @@ export default function Hero() {
 
             </div>
 
-            <video id='VIDEO' className='z-10 opacity-20 left-0 absolute w-auto min-w-full min-h-screen max-w-none' autoPlay loop muted src="/videos/video_landing_page_compressed.mp4" />
+            {/* <video id='VIDEO' className={ 'z-10 opacity-20 left-0 float w-auto min-w-full min-h-screen max-w-none'} autoPlay loop muted src="/videos/video_landing_page_compressed.mp4" /> */}
 
         </section>
 
