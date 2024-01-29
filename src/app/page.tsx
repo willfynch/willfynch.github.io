@@ -31,7 +31,7 @@ export default function Home() {
         <meta content={meta.description} name="description" />
       </Head>
 
-      <main >
+      <main className='overflow-x-hidden' >
         <Hero></Hero>
         <Services></Services>
         <Projects projects={projectsData}></Projects>
