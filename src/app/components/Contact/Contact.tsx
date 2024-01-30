@@ -5,13 +5,13 @@ import styles from './Contact.module.scss'
 import placeholder from '../../../../public/images/meeting-small.webp'
 import { steps } from '@/data/process-steps';
 import { useContext, useEffect, useState } from 'react';
-import {LanguageContext} from '@/contexts/LanguageContext';
+import { LanguageContext } from '@/contexts/LanguageContext';
 
 export default function Contact() {
 
     const lang = useContext(LanguageContext)
     const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
-    
+
     useEffect(() => {
         //@ts-ignore
         console.log('lang changed', lang.lang)
@@ -20,8 +20,11 @@ export default function Contact() {
     }, [lang])
 
     return (
-        <section id='contact' className={styles.contactSection + ` mt-16 lg:mt-40 px-10 sm:px-20 xl:px-72 lg:px-40 mb-20`}>
-            <h2 className='text-lg font-bold'>WORKING TOGETHER</h2>
+        <section id='contact' className={styles.contactSection + ` py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
+            <div className='relative h-[100px]'>
+                <h2 className='w-screen left-1/2 -translate-x-1/2 md:w-full text-center absolute font-bilbo  text-x6demixl md:text-9xl -top-[30px] md:-top-[50px] text-my-black/10'>Working together</h2>
+                <h2 className='w-full text-center absolute text-lg font-bold'>WORKING TOGETHER</h2>
+            </div>
 
             <div className={'mt-6 flex flex-col justify-center items-center gap-4' + ' '}>
 
@@ -37,7 +40,7 @@ export default function Contact() {
                 {
                     translatedSteps?.map(step => {
                         return (
-                            <div id={'STEP_COMPONENT-' + step.id} className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
+                            <div data-aos-once="true" data-aos={`fade-${step.id % 2 == 0 ? 'left' : 'right'}`} id={'STEP_COMPONENT-' + step.id} className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
                                 <div id={'STEP_NUMBER-' + step.id} className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
                                     {step.id}
                                 </div>

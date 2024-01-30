@@ -20,21 +20,4 @@
 .coverNavbar {
     transition: all ease .5s;
     position: fixed;
-
-}
-
-.brand, .chevronOpen, .chevronClose {
-    transition: all ease .3s;
-}
-
-.brand:hover > .chevronOpen {
-    transform: translateX(-3px);
-}
-
-.brand:hover > .chevronClose {
-    transform: translateX(3px);
-}
-
-.brand:hover {
-    font-weight: 800;
 }

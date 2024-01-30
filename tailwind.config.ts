@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'bilbo' : ["var(--font-bilbo)"]
+      },
       colors: {
         'my-white' : '#F1F5F9',
         'my-black' : '#1E293B'
@@ -29,7 +32,8 @@ const config: Config = {
       },
       fontSize: {
         x3xl: ['2.15rem', '2.3rem'],
-        x2xl: ['2.05rem', '2.2rem']
+        x2xl: ['2.05rem', '2.2rem'],
+        x6demixl: '4rem'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

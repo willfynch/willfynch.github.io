@@ -3,11 +3,15 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import Head from 'next/head'
 import Footer from './components/Footer/Footer'
 //import LanguageContextProvider from '@/contexts/LanguageContext'
+//@ts-ignore
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Bilbo_Swash_Caps } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 // export const metadata: Metadata = {
@@ -17,15 +21,30 @@ const inter = Inter({ subsets: ['latin'] })
 
 const LanguageContext = createContext('fr')
 
+const bilbo = Bilbo_Swash_Caps({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bilbo',
+})
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
 
 
   const [lang, setLang] = useState('fr')
 
   return (
       <html lang={lang}>
-        <body className={inter.className}>
+        <body className={bilbo.variable}>
           <LanguageContextProvider value={lang}>
             <Navbar></Navbar>
             {children}

@@ -9,7 +9,7 @@ export default function Bio() {
 
 
     return (
-        <section id='about' className={styles.bioSection + ` ` + `lg:mt-32 px-10 sm:px-20 xl:px-72 lg:px-40 mb-20 sm:mb-40`}>
+        <section id='about' className={styles.bioSection + ` ` + `bg-my-white lg:py-32 px-10 sm:px-20 xl:px-72 lg:px-40 py-20 sm:py-40`}>
             <h2 className='text-lg font-bold'>ABOUT</h2>
             <div className='mt-6'>
                 <p className='mb-4'>

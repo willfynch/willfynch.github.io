@@ -89,10 +89,10 @@ export default function Navbar() {
     return (
         <nav className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
-            <div className={styles.brand + " " + " relative align-middle brand flex flex-row"}>
-                <div className={styles.chevronOpen}>&#60;</div>
-                <Link href={''}>Will</Link>
-                <span className={styles.chevronClose}>/&#62;</span>
+            <div onClick={e => scrollToSection('home')} className={ " relative align-middle flex flex-row"}>
+                
+                <span className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</span>
+                
             </div>
 
 
