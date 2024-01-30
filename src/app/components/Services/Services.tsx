@@ -82,9 +82,9 @@ export default function Services() {
         <section id='services' className={styles.servicesSection + ` ` + `px-10 sm:px-20 xl:px-72 lg:px-40 py-20 lg:py-40`}>
             {/* <h2 className='text-lg font-bold'>SERVICES</h2> */}
 
-            <div className='relative h-[100px]'>
-                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl md:text-9xl -top-[10px] md:-top-[50px] text-my-black/10'>Services</h2>
-                <h2 className='w-full text-center absolute text-lg font-bold'>SERVICES</h2>
+            <div className='relative h-[100px] py-20'>
+                <h2 className='w-full text-center absolute font-bilbo text-x6demixl md:text-9xl top-1/2 -translate-y-1/2  text-my-black/10'>Services</h2>
+                <h2 className='w-full text-center absolute text-lg font-bold top-1/2 -translate-y-1/2 '>SERVICES</h2>
             </div>
 
             <div className='mt-6 flex flex-col sm:flex-row gap-4'>

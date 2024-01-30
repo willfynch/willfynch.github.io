@@ -21,9 +21,9 @@ export default function Contact() {
 
     return (
         <section id='contact' className={styles.contactSection + ` py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
-            <div className='relative h-[100px]'>
-                <h2 className='w-screen left-1/2 -translate-x-1/2 md:w-full text-center absolute font-bilbo  text-x6demixl md:text-9xl -top-[35px] md:-top-[50px] text-my-black/10'>Working together</h2>
-                <h2 className='w-full text-center absolute text-lg font-bold'>WORKING TOGETHER</h2>
+            <div className='relative h-[100px] py-20'>
+                <h2 className='w-screen left-1/2 -translate-x-1/2 md:w-full text-center absolute font-bilbo text-x6demixl md:text-9xl top-1/2 -translate-y-1/2 text-my-black/10'>Working together</h2>
+                <h2 className='w-full text-center absolute text-lg font-bold top-1/2 -translate-y-1/2 '>WORKING TOGETHER</h2>
             </div>
 
             <div className={'mt-6 flex flex-col justify-center items-center gap-4' + ' '}>
