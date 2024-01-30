@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   title: "Will - Développeur Web",
   description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
   les TPE et les entreprises individuelles.`,
-  keywords: ['Développeur', 'Développeur Web', 'Développeur Rouen', 'Développeur'],
-  metadataBase: new URL('https://willfynch-github-io.vercel.app/'),
+  keywords: ['Développeur', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs'],
+  metadataBase: new URL('https://will-developpeur.vercel.app'),
   alternates: {
     canonical: '/'
   },
