@@ -1,7 +1,4 @@
 'use client'
-import Image from 'next/image'
-import styles from './ContactWidget.module.scss'
-import logo_calendly from '../../../../../public/calendly_logo.svg'
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useContext } from 'react';
 import { IoCalendarOutline } from "react-icons/io5";

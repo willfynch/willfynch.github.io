@@ -26,9 +26,7 @@ export default function PostCard({ content, openPopUp }: { content: ProjectModel
                </div>
             </div>
 
-            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} fill src={content.image ?? project_placeholder} alt={lang === 'fr' ? 'Screenshot du projet' : 'Project screenshot'} />
-
-
+            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} fill src={content.image ?? project_placeholder} alt={lang === 'fr' ? `Screenshot du projet ${content.title}` : `${content.title} project screenshot`} />
 
          </div>
 

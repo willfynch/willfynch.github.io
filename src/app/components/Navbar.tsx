@@ -1,9 +1,5 @@
-import Link from 'next/link';
 import styles from './Navbar.module.scss';
 import { useContext, useEffect, useState } from 'react';
-import logo_calendly from '../../../public/calendly_logo.svg'
-import { BsSunFill } from 'react-icons/bs'
-import Image from 'next/image';
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useScrollLock } from '@/hooks/scrollLock';
 
