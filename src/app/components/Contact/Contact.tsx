@@ -67,7 +67,7 @@ export default function Contact() {
                                             <p className="text-sm w-full text-center">{step.description}</p>
                                         </div>
                                     </div>
-                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={`${step.image}`} alt="" />
+                                    <Image className={styles.description + ` z-0 duration-300 group-hover:scale-110 rounded-md object-cover`} fill src={`${step.image}`} alt={step.alt} />
                                 </div>
                             </div>
                         )
@@ -79,7 +79,7 @@ export default function Contact() {
                 <a href="https://calendly.com/fr">
 
                     <button className='rounded-md overflow-hidden flex flex-cols items-center justify-center w-[200px] h-[50px]'>
-                        <Image className={styles.btn} src={logo_calendly} width={300} height={300} alt="" />
+                        <Image className={styles.btn} src={logo_calendly} width={300} height={300} alt={lang === 'fr' ? 'Logo calendly' : 'Calendly logo'} />
 
                     </button>
                 </a>

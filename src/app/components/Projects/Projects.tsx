@@ -105,7 +105,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                                 <p className="text-sm">{selectedProject.year}</p>
                             </div>
 
-                            <Image className={`rounded-t-md z-0 duration-300 w-full object-cover ` + (isPopupHeaderResized ? 'h-[100px]' : 'h-[200px]')} width={80} height={12} src={selectedProject.image} alt="" />
+                            <Image className={`rounded-t-md z-0 duration-300 w-full object-cover ` + (isPopupHeaderResized ? 'h-[100px]' : 'h-[200px]')} width={80} height={12} src={selectedProject.image} alt={lang==='fr'?'Screenshot du projet':'Project screenshot'} />
 
                             <div className='group'>
                                 <button className='hover:bg-slate-800 p-2 duration-300 rounded-xl text-white text-lg absolute right-[20px] top-[20px]' onClick={closePopUp}><AiOutlineClose /></button>

@@ -40,7 +40,7 @@ export default function Hero() {
             <div className={'z-20 absolute -mt-40 sm:mt-0 flex flex-col justify-center items-center px-10 md:px-20'}>
 
                 <div className={'flex justify-center items-center gap-x-4 h-full'}>
-                    <Image className={styles.circleImage + ` `} height={300} width={300} alt="avatar" src={avatar}></Image>
+                    <Image className={styles.circleImage + ` `} height={300} width={300} alt={lang==='fr' ? 'Photo de moi' : 'Picture of myself'} src={avatar}></Image>
                     <div>
                         <h1 id='HERO_TITLE' className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black'>
                             {lang === 'fr' ? HERO_TEXTS.FR_TITLE : HERO_TEXTS.EN_TITLE}

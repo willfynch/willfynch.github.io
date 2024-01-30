@@ -3,19 +3,17 @@ import { ProjectCardContent } from "./ProjectCardContent.model";
 import project_placeholder from '../../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import styles from './ProjectCard.module.scss';
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { ProjectModel } from "@/models/project.model";
+import { LanguageContext } from '@/contexts/LanguageContext';
 
 export default function PostCard({ content, openPopUp }: { content: ProjectModel, openPopUp: any }) {
 
-   useEffect(()=> {
-      console.log('content', content)
-   }, [])
-
+   //@ts-ignore
+   const { lang, setLang } = useContext(LanguageContext)
 
    return (
       <>
-
          <div className={`PROJECT_CONTAINER group relative w-full h-[210px] rounded-md overflow-hidden`}>
             <div className="PROJECT_BODY absolute z-10 grid grid-rows-2 w-full h-full bg-black/60 rounded-md text-white">
                <div className="flex justify-center items-center flex-col mt-8">
@@ -28,10 +26,10 @@ export default function PostCard({ content, openPopUp }: { content: ProjectModel
                </div>
             </div>
 
-            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} fill src={content.image ?? project_placeholder} alt="" />
-         
- 
-         
+            <Image className={`z-0 h-[210px] w-[210px] duration-300 group-hover:scale-110 rounded-md w-full object-fill`} fill src={content.image ?? project_placeholder} alt={lang === 'fr' ? 'Screenshot du projet' : 'Project screenshot'} />
+
+
+
          </div>
 
 
