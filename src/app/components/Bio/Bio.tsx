@@ -1,16 +1,20 @@
+'use client'
 import styles from './Bio.module.scss'
 import {ImAccessibility} from 'react-icons/im'
 import {IoIosColorPalette} from 'react-icons/io'
 import { FaThumbsUp } from 'react-icons/fa6'
+import { useContext } from 'react';
+import { LanguageContext } from '@/contexts/LanguageContext';
 
 
 export default function Bio() {
 
-
+    //@ts-ignore
+    const {lang, setLang} = useContext(LanguageContext)
 
     return (
         <section id='about' className={styles.bioSection + ` ` + `bg-my-white lg:py-32 px-10 sm:px-20 xl:px-72 lg:px-40 py-20 sm:py-40`}>
-            <h2 className='text-lg font-bold'>ABOUT</h2>
+            <h2 className='text-lg font-bold'>{lang === 'fr' ? 'À PROPOS' : 'ABOUT'}</h2>
             <div className='mt-6'>
                 <p className='mb-4'>
                     When I was a kid, I discovered the joys of <a className={`${styles.link}`} target='_blank' href='https://www.rpgmakerweb.com/downloads'>RPG&nbsp;Maker</a>, a software that helped you create your own

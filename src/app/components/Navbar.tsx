@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useScrollLock } from '@/hooks/scrollLock';
 
-export const navItems = [
+export const navItemsEn = [
     {
         name: 'Services',
         path: 'services',
@@ -15,6 +15,29 @@ export const navItems = [
     },
     {
         name: 'Projects',
+        path: 'projects',
+        id: 2,
+    },
+    {
+        name: 'Contact',
+        path: 'contact',
+        id: 3
+    },
+    {
+        name: 'Bio',
+        path: 'about',
+        id: 4
+    },
+
+]
+export const navItemsFr = [
+    {
+        name: 'Services',
+        path: 'services',
+        id: 1,
+    },
+    {
+        name: 'Projets',
         path: 'projects',
         id: 2,
     },
@@ -98,7 +121,7 @@ export default function Navbar() {
 
             <div className="hidden sm:inline h-full">
                 <ul className="h-full flex flex-row justify-end">
-                    {navItems.map(navItem => {
+                    {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
                             <li onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
                                 {navItem.name}
@@ -113,7 +136,7 @@ export default function Navbar() {
 
             <div className={styles.coverNavbar + ' ' + (mobileMenuVisible ? ' opacity-100 h-screen top-0 z-50' : 'opacity-0 h-0 -top-20') + ' ' + ' sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
                 <ul className=" h-full flex flex-col justify-center">
-                    {navItems.map(navItem => {
+                    {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
                             <li
                                 onClick={e => navigateTo(navItem.path)}
