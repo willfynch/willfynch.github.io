@@ -83,7 +83,7 @@ export default function Services() {
             {/* <h2 className='text-lg font-bold'>SERVICES</h2> */}
 
             <div className='relative h-[100px]'>
-                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl md:text-9xl -top-[30px] md:-top-[50px] text-my-black/10'>Services</h2>
+                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl md:text-9xl -top-[20px] md:-top-[50px] text-my-black/10'>Services</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold'>SERVICES</h2>
             </div>
 
@@ -105,7 +105,7 @@ export default function Services() {
                     })
                 }
             </div>
-            <div className='flex justify-center my-8'>
+            <div className='flex justify-center py-8'>
                 <button onClick={e => scrollToSection('projects')} className={styles.btn}>{lang === 'fr' ? 'Voir les projets' : 'See projects'}</button>
             </div>
         </section>

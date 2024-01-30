@@ -22,7 +22,7 @@ export default function Contact() {
     return (
         <section id='contact' className={styles.contactSection + ` py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
             <div className='relative h-[100px]'>
-                <h2 className='w-screen left-1/2 -translate-x-1/2 md:w-full text-center absolute font-bilbo  text-x6demixl md:text-9xl -top-[30px] md:-top-[50px] text-my-black/10'>Working together</h2>
+                <h2 className='w-screen left-1/2 -translate-x-1/2 md:w-full text-center absolute font-bilbo  text-x6demixl md:text-9xl -top-[35px] md:-top-[50px] text-my-black/10'>Working together</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold'>WORKING TOGETHER</h2>
             </div>
 
@@ -63,7 +63,7 @@ export default function Contact() {
                 <a href="https://calendly.com/fr">
 
                     <button className='rounded-md overflow-hidden flex flex-cols items-center justify-center w-[200px] h-[50px]'>
-                        <Image className={styles.btn2} src={logo_calendly} width={300} height={300} alt="" />
+                        <Image className={styles.btn} src={logo_calendly} width={300} height={300} alt="" />
 
                     </button>
                 </a>

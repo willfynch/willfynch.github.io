@@ -62,11 +62,21 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
         }
     }
 
+    function scrollToSection(id: string){
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section id='projects' className={styles.prjSection + ` ` + `bg-my-white relative py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
             
             <div className='relative h-[100px]'>
-                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl sm:text-x6demixl md:text-9xl -top-[30px] md:-top-[50px] text-my-black/10'>Projects</h2>
+                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl sm:text-x6demixl md:text-9xl -top-[20px] md:-top-[50px] text-my-black/10'>Projects</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold'>PROJECTS</h2>
             </div>
 
@@ -77,6 +87,10 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                     )
                 }
 
+            </div>
+
+            <div className='flex justify-center pt-8'>
+                <button onClick={e => scrollToSection('contact')} className={styles.btn}>{lang === 'fr' ? 'Travaillons ensemble' : 'Let\'s work together'}</button>
             </div>
 
             { /**backdrop-blur-[3px] */
