@@ -7,16 +7,25 @@ import getProjectsMetadata from '@/utilities/getProjectData'
 import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
 import Head from 'next/head'
 import Services from './components/Services/Services'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: "Will - Développeur Web",
+  description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
+  les TPE et les entreprises individuelles.`,
+  keywords: ['Développeur', 'Développeur Web', 'Développeur Rouen', 'Développeur'],
+  metadataBase: new URL('https://willfynch-github-io.vercel.app/'),
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    images: ['/photo.jpg']
+  }
+};
 
 export default function Home() {
 
-  const meta = {
-    title: "William Finzy - Developer",
-    description: `I've been working in web development for 3 years straight. Get in touch with me to know more.`,
-    image: "/avatar.png",
-    type: "website"
-  };
+
 
   const projectsData = getProjectsMetadata();
 
@@ -26,10 +35,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta content={meta.description} name="description" />
-      </Head>
 
       <main className='overflow-x-hidden' >
         <Hero></Hero>
