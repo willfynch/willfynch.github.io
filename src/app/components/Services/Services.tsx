@@ -83,7 +83,7 @@ export default function Services() {
             {/* <h2 className='text-lg font-bold'>SERVICES</h2> */}
 
             <div className='relative h-[100px]'>
-                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl md:text-9xl -top-[20px] md:-top-[50px] text-my-black/10'>Services</h2>
+                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl md:text-9xl -top-[10px] md:-top-[50px] text-my-black/10'>Services</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold'>SERVICES</h2>
             </div>
 

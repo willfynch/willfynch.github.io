@@ -76,7 +76,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
         <section id='projects' className={styles.prjSection + ` ` + `bg-my-white relative py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40`}>
             
             <div className='relative h-[100px]'>
-                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl sm:text-x6demixl md:text-9xl -top-[20px] md:-top-[50px] text-my-black/10'>Projects</h2>
+                <h2 className='w-full text-center absolute -top-[50px]  font-bilbo text-x6demixl sm:text-x6demixl md:text-9xl -top-[10px] md:-top-[50px] text-my-black/10'>Projects</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold'>PROJECTS</h2>
             </div>
 
