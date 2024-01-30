@@ -98,8 +98,8 @@ export default function Footer() {
             </div>
 
             <p className="text-xs mt-8 text-center">
-                Made with ❤️ using <a className={styles.link} href="https://nextjs.org">NextJS</a>,
-                hosted on <a className={styles.link} target="_blank" href="https://www.vercel.com">Vercel</a>,
+                Made with ❤️ using <a rel="noopener" className={styles.link} href="https://nextjs.org">NextJS</a>,
+                hosted on <a rel="noopener" className={styles.link} target="_blank" href="https://www.vercel.com">Vercel</a>,
                 Copyright © willfynch 2024 -
                 <span className="cursor-pointer"> Mentions légales</span> -
                 <span className="cursor-pointer"> Code de déontologie</span>

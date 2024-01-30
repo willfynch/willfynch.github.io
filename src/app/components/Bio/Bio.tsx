@@ -17,20 +17,20 @@ export default function Bio() {
             <h2 className='text-lg font-bold'>{lang === 'fr' ? 'À PROPOS' : 'ABOUT'}</h2>
             <div className='mt-6'>
                 <p className='mb-4'>
-                    When I was a kid, I discovered the joys of <a className={`${styles.link}`} target='_blank' href='https://www.rpgmakerweb.com/downloads'>RPG&nbsp;Maker</a>, a software that helped you create your own
-                    adventure video-game. It was all about learning by yourself and searching the Internet for tips and tools, and even learning about <a className={`${styles.link}`} target='_blank' href='https://www.ruby-lang.org/fr/'>Ruby</a>, the first programming language I ever touched.
+                    When I was a kid, I discovered the joys of <a rel='noopener' className={`${styles.link}`} target='_blank' href='https://www.rpgmakerweb.com/downloads'>RPG&nbsp;Maker</a>, a software that helped you create your own
+                    adventure video-game. It was all about learning by yourself and searching the Internet for tips and tools, and even learning about <a rel='noopener' className={`${styles.link}`} target='_blank' href='https://www.ruby-lang.org/fr/'>Ruby</a>, the first programming language I ever touched.
                 </p>
                 <p className='mb-4 font-semibold'>
                     And I had no idea of the seeds I was sowing (I like dramatic effects).
                 </p>
                 <p className='mb-4'>
-                    Many years later, under COVID reign, I decided to switch from being a chemical engineer <strong>to become a developer</strong>. I worked late nights locked in my room, going from <a className={`${styles.link}`} target='_blank' href='https://www.freecodecamp.org/news'>freeCodeCamp</a> to <a className={`${styles.link}`} target='_blank' href='https://courses.webdevsimplified.com/'>Web&nbsp;Dev&nbsp;Simplified</a> (and a lot more), until I was finally <strong>ready to get my first job</strong>.
+                    Many years later, under COVID reign, I decided to switch from being a chemical engineer <strong>to become a developer</strong>. I worked late nights locked in my room, going from <a className={`${styles.link}`} target='_blank' rel='noopener' href='https://www.freecodecamp.org/news'>freeCodeCamp</a> to <a  rel='noopener' className={`${styles.link}`} target='_blank' href='https://courses.webdevsimplified.com/'>Web&nbsp;Dev&nbsp;Simplified</a> (and a lot more), until I was finally <strong>ready to get my first job</strong>.
                 </p>
                 <p className='mb-4'>
-                    Thanks to my hard work, I was able to join <a className={`${styles.link}`} target='_blank' href='https://www.ecole-pmn.fr/'>La&nbsp;PMN</a>, <strong>La Passerelle des Métiers du Numérique</strong>, with an apprenticeship at <a className={`${styles.link}`} target='_blank' href='https://www.capgemini.com/fr-fr/'>Capgemini</a> where I met incredible people with whom I learnt a lot.
+                    Thanks to my hard work, I was able to join <a className={`${styles.link}`} rel='noopener' target='_blank' href='https://www.ecole-pmn.fr/'>La&nbsp;PMN</a>, <strong>La Passerelle des Métiers du Numérique</strong>, with an apprenticeship at <a rel='noopener' className={`${styles.link}`} target='_blank' href='https://www.capgemini.com/fr-fr/'>Capgemini</a> where I met incredible people with whom I learnt a lot.
                 </p>
                 <p className="mb-4">
-                    Now working as a <strong>web developer</strong>, I sometimes get a taste of what it was to play around with my old RPG Maker software. Except now my tool is code and I use more <a className={`${styles.link}`} target='_blank' href='https://stackoverflow.com/'>Stack&nbsp;Overflow</a> than <a className={`${styles.link}`} target='_blank' href='https://www.rpg-maker.fr/'>Oniromancie</a> !
+                    Now working as a <strong>web developer</strong>, I sometimes get a taste of what it was to play around with my old RPG Maker software. Except now my tool is code and I use more <a className={`${styles.link}`} target='_blank' rel='noopener' href='https://stackoverflow.com/'>Stack&nbsp;Overflow</a> than <a className={`${styles.link}`} target='_blank' rel='noopener' href='https://www.rpg-maker.fr/'>Oniromancie</a> !
                 </p>
                 <p className="mb-4">
                     Nowadays, I focus on designing and building user-friendly websites and applications, following those three pillars.
