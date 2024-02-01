@@ -56,12 +56,12 @@ export default function Contact() {
                 {
                     translatedSteps?.map(step => {
                         return (
-                            <div data-aos-once="true" data-aos={`fade-${step.id % 2 == 0 ? 'left' : 'right'}`} id={'STEP_COMPONENT-' + step.id} className='group w-full flex h-[160px] rounded-md xs:-rounded-md md:h-[130px] overflow-hidden'>
+                            <div data-aos-once="true" data-aos={`fade-${step.id % 2 == 0 ? 'left' : 'right'}`} id={'STEP_COMPONENT-' + step.id} className='group w-full flex rounded-md xs:-rounded-md h-[200px] md:h-[130px] overflow-hidden'>
                                 <div id={'STEP_NUMBER-' + step.id} className={styles.number + ' ' + 'duration-300 group-hover:text-my-black group-hover:bg-my-white hidden xs:flex justify-center items-center text-xl font-bold w-[120px] '} >
                                     {step.id}
                                 </div>
                                 <div id={'STEP_DESCRIPTION-' + step.id} className={styles.description + ' ' + 'overflow-hidden group relative w-full h-full text-white'}>
-                                    <div className={styles.description + ' ' + ' h-[160px] md:h-[130px] absolute z-10 w-full bg-black/70 text-white'}>
+                                    <div className={styles.description + ' ' + ' h-[200px] md:h-[130px] absolute z-10 w-full bg-black/70 text-white'}>
                                         <div className="p-4 flex justify-center items-center flex-col z-10 ">
                                             <h2 className="font-bold text-lg text-center mb-2">{step.title}</h2>
                                             <p className="text-sm w-full text-center">{step.description}</p>
