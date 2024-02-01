@@ -12,8 +12,8 @@ import { useContext, useEffect } from 'react'
 export enum HERO_TEXTS {
     EN_TITLE = "Hello, I'm Will,",
     FR_TITLE = "Moi, c'est Will,",
-    EN_SUBTITLE = "Web developer",
-    FR_SUBTITLE = "Développeur web",
+    EN_SUBTITLE = "Web developer.",
+    FR_SUBTITLE = "Développeur web.",
     EN_PHRASE = "I build websites for small companies and one-person businesses.",
     FR_PHRASE = "Je réalise des sites vitrine et e-commerce pour des TPE et des entreprises individuelles. ",
     EN_CTA = "View more",
