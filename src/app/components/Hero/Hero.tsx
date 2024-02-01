@@ -36,7 +36,7 @@ export default function Hero() {
     };
 
     return (
-        <section id='home' className='bg-my-white h-screen flex flex-col justify-center items-center relative py-20 lg:py-40'>
+        <section id='home' className={styles.heroSection +  ' ' + 'bg-my-white h-screen flex flex-col justify-center items-center relative py-20 lg:py-40'}>
             <div className={'z-20 absolute -mt-40 sm:mt-0 flex flex-col justify-center items-center px-10 md:px-20'}>
 
                 <div className={'flex justify-center items-center gap-x-4 h-full'}>
