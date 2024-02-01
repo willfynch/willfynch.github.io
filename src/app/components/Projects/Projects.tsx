@@ -18,7 +18,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
     const [popupOpen, setPopupOpen] = useState(false);
     const [selectedProject, setSelectedProject] = useState<ProjectModel>();
-    const [isPopupHeaderResized, setIsPopupHeaderResized] = useState(false);
+    const [isPopupHeaderResized, setIsPopupHeaderResized] = useState(true);
 
     const { lockScroll, unlockScroll } = useScrollLock();
 
@@ -35,16 +35,28 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     function openPopUp(id: number, slug?: string) {
         const project = allProjects.filter(project => project.id === id)[0]
         setSelectedProject(project);
-        console.log('selected project ', project)
         localStorage.setItem('selectedProject', id.toString())
         setPopupOpen(true);
         lockScroll();
     }
 
     function closePopUp() {
-        setPopupOpen(false);
-        unlockScroll();
         localStorage.setItem('selectedProject', 'none')
+        const popupBody = document.getElementById('PROJECT_POPUP_BODY');
+        const popupBg = document.getElementById('PROJECT_POPUP')
+        if(popupBody && popupBg){
+            
+            popupBody.style.transitionDuration = '.5s'
+            popupBody.style.translate = "0px 1000px";
+            popupBg.style.transitionDelay = '.3s'
+            popupBg.style.transitionDuration = '.1s'
+            //@ts-ignore
+            popupBg.style.opacity = 0;
+        }
+        setTimeout(() => {
+            setPopupOpen(false);
+            unlockScroll();
+        }, 500);
     }
 
     function detectClickOutsideOfPopup(event: any) {
@@ -58,7 +70,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
         if (position && position > 100) {
             setIsPopupHeaderResized(true)
         } else {
-            setIsPopupHeaderResized(false)
+            setIsPopupHeaderResized(true)
         }
     }
 
@@ -95,9 +107,9 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
             { /**backdrop-blur-[3px] */
                 popupOpen && selectedProject &&
-                <div onClick={detectClickOutsideOfPopup} id="PROJECT_POPUP" className='overflow-x-hidden top-0 left-0 fixed bg-black/50 w-screen h-screen z-50'>
-                    <div onScroll={handlePopupScroll} id='PROJECT_POPUP_BODY' className='absolute overflow-x-hidden rounded-md w-full h-full xs:w-5/6 xs:h-5/6  bg-white -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2'>
-                        <div id='PROJECT_POPUP_TITLE' className={'sticky z-50 top-0 overflow-y-hidden ' + (isPopupHeaderResized ? '' : '')}>
+                <div onClick={detectClickOutsideOfPopup} id="PROJECT_POPUP" className={styles.popupBackground + ' ' + 'overflow-x-hidden top-0 left-0 fixed w-screen h-screen z-50'}>
+                    <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'absolute overflow-x-hidden rounded-md w-full h-full xs:w-5/6 xs:h-5/6  bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
+                        <div id='PROJECT_POPUP_TITLE' className={'sticky z-50 top-0 overflow-y-hidden '}>
                             <div className='rounded-t-md absolute  top-0 left-0 h-full w-full bg-black bg-opacity-40'></div>
                             <div className={'flex flex-col duration-500 w-max text-white absolute top-1/2  -translate-y-1/2 ' + (isPopupHeaderResized ? 'left-[50px] items-start' : 'left-1/2 -translate-x-1/2 items-center')}>
                                 <h2 className={(isPopupHeaderResized ? ' text-xl xs:text-2xl ' : ' text-2xl xs:text-4xl ') + ' ' + "font-bold duration-300"}>{selectedProject.title}</h2>

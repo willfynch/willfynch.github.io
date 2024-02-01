@@ -15,3 +15,40 @@
 // }
 
 
+
+.popupBackground {
+    background-color: rgba(0,0,0,0);
+    animation: bgopen forwards;
+    animation-duration: .1s;
+}
+
+.popupBody {
+    animation: popupopen forwards;
+    animation-duration: .5s;
+    animation-delay: .2s;
+    top: 1000px
+}
+
+@keyframes popupopen {
+    from {
+    top: 1000px;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
+@keyframes bgopen {
+
+    from {
+        background-color: rgba(0,0,0,0);
+    }
+
+    to {
+        background-color: rgba(0,0,0,.5);
+    }
+    
+}
+
+
