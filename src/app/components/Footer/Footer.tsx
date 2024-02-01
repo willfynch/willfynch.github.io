@@ -7,7 +7,18 @@ import styles from './Footer.module.scss'
 import { navItemsEn, navItemsFr } from "../Navbar";
 import { useContext } from "react";
 import { LanguageContext } from '@/contexts/LanguageContext';
+import parse from 'html-react-parser';
 
+export enum FOOTER_CONTENT {
+    BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" className="link" href="https://nextjs.org">NextJS</a>,
+    hébergé sur <a rel="noopener" className="link" target="_blank" href="https://www.vercel.com">Vercel</a>,
+    Copyright © willfynch 2024 -
+    <span className="cursor-pointer"> Mentions légales</span>`,
+    BOTTOM_EN = `Made with ❤️ using <a rel="noopener" className="link" href="https://nextjs.org">NextJS</a>,
+    hosted on <a rel="noopener" className="link" target="_blank" href="https://www.vercel.com">Vercel</a>,
+    Copyright © willfynch 2024 - 
+    <span className="cursor-pointer">General Condition of Use</span>`
+}
 
 export default function Footer() {
 
@@ -51,7 +62,7 @@ export default function Footer() {
 
     return (
 
-        <footer className={' mb-[60px] sm:mb-0 bg-my-white/60 w-full p-12 overflow-hidden inset-x-0 bottom-0'}>
+        <footer className={' mb-[60px] sm:mb-0 bg-white w-full px-12 pt-12 pb-4 overflow-hidden inset-x-0 bottom-0'}>
 
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">
@@ -60,13 +71,14 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <div className="w-full sm:w-1/3 flex flex-col justify-center ">
+                <div className="w-full sm:w-1/3 flex flex-col justify-center items-center">
+                    <p className="font-semibold">Navigation</p>
                     <ul className="flex flex-col justify-center items-center">
                         {(lang === 'fr' ? navItemsFr : navItemsEn).map(item => {
                             return (
 
                                 <li onClick={e => navigation('', item.path)} key={item.id}>
-                                    <p className="font-bold hover:opacity-50 text-xs uppercase cursor-pointer ">
+                                    <p className=" hover:opacity-50 text-xs cursor-pointer ">
                                         {item.name}
                                     </p>
                                 </li>
@@ -97,13 +109,11 @@ export default function Footer() {
                 </div>
             </div>
 
-            <p className="text-xs mt-8 text-center">
-                Made with ❤️ using <a rel="noopener" className={styles.link} href="https://nextjs.org">NextJS</a>,
-                hosted on <a rel="noopener" className={styles.link} target="_blank" href="https://www.vercel.com">Vercel</a>,
-                Copyright © willfynch 2024 -
-                <span className="cursor-pointer"> Mentions légales</span> -
-                <span className="cursor-pointer"> Code de déontologie</span>
+            <div className="flex justify-center">
+            <p className="sm:w-3/4 text-xs mt-8 pt-6 text-center border-t-[1px]">
+                        {lang === 'fr' ? parse(FOOTER_CONTENT.BOTTOM_FR) : parse(FOOTER_CONTENT.BOTTOM_EN)}
             </p>
+            </div>
 
         </footer>
 
