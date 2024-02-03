@@ -10,14 +10,14 @@ import { LanguageContext } from '@/contexts/LanguageContext';
 import parse from 'html-react-parser';
 
 export enum FOOTER_CONTENT {
-    BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" className="link" href="https://nextjs.org">NextJS</a>,
-    hébergé sur <a rel="noopener" className="link" target="_blank" href="https://www.vercel.com">Vercel</a>,
+    BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" className="link" role="button" href="https://nextjs.org">NextJS</a>,
+    hébergé sur <a rel="noopener" className="link" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
     Copyright © willfynch 2024 -
-    <span className="cursor-pointer"> Mentions légales</span>`,
-    BOTTOM_EN = `Made with ❤️ using <a rel="noopener" className="link" href="https://nextjs.org">NextJS</a>,
-    hosted on <a rel="noopener" className="link" target="_blank" href="https://www.vercel.com">Vercel</a>,
+    <span role="button" className="cursor-pointer"> Mentions légales</span>`,
+    BOTTOM_EN = `Made with ❤️ using <a rel="noopener" className="link" role="button" href="https://nextjs.org">NextJS</a>,
+    hosted on <a rel="noopener" className="link" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
     Copyright © willfynch 2024 - 
-    <span className="cursor-pointer">General Condition of Use</span>`
+    <span role="button" className="cursor-pointer">General Condition of Use</span>`
 }
 
 export default function Footer() {
@@ -67,7 +67,7 @@ export default function Footer() {
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">
                     <div className="font-medium text-2xl duration-200 hover:opacity-100 opacity-60 cursor-pointer ml-2">
-                        <p onClick={e => scrollToSection('home')} className="text-my-black font-bilbo text-6xl">Will</p>
+                        <button onClick={e => scrollToSection('home')} className="text-my-black font-bilbo text-6xl">Will</button>
                     </div>
 
                 </div>
@@ -77,10 +77,10 @@ export default function Footer() {
                         {(lang === 'fr' ? navItemsFr : navItemsEn).map(item => {
                             return (
 
-                                <li onClick={e => navigation('', item.path)} key={item.id}>
-                                    <p className=" hover:opacity-50 text-xs cursor-pointer ">
+                                <li  key={item.id}>
+                                    <button onClick={e => navigation('', item.path)} className=" hover:opacity-50 text-xs cursor-pointer ">
                                         {item.name}
-                                    </p>
+                                    </button>
                                 </li>
 
                             )

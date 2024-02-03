@@ -108,9 +108,9 @@ export default function Navbar() {
     return (
         <nav className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
-            <div onClick={e => scrollToSection('home')} className={ " relative align-middle flex flex-row"}>
+            <div  className={ " relative align-middle flex flex-row"}>
                 
-                <span className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</span>
+                <button onClick={e => scrollToSection('home')} className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</button>
                 
             </div>
 
@@ -119,12 +119,12 @@ export default function Navbar() {
                 <ul className="h-full flex flex-row justify-end">
                     {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
-                            <li onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
-                                {navItem.name}
+                            <li role='button' onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
+                                <button> {navItem.name}</button>
                             </li>
                         )
                     })}
-                    <li key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
+                    <li role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
                         <button>{lang === "fr" ? '🇫🇷' : '🇬🇧'}</button>
                     </li>
                 </ul>
@@ -135,6 +135,7 @@ export default function Navbar() {
                     {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
                             <li
+                                role='button'
                                 onClick={e => navigateTo(navItem.path)}
                                 className={styles.listItemMobile + ' ' + 'justify-center flex items-center h-full cursor-pointer'} key={navItem.id}>
                                 {navItem.name}
@@ -146,7 +147,7 @@ export default function Navbar() {
 
             <div className=' z-50 my-1/2 align-middle h-full sm:hidden flex flex-row justify-end'>
 
-                <div onClick={handleSetMenuVisible} className='mt-1/2 absolute m-auto top-4 cursor-pointer align-middle justify-center flex flex-col'>
+                <div role='button' onClick={handleSetMenuVisible} className='mt-1/2 absolute m-auto top-4 cursor-pointer align-middle justify-center flex flex-col'>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + 'translate-y-3 rotate-45 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id='first'></span>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' opacity-0 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id="second"></span>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' -rotate-45 -translate-y-2' : '') + ' ' + styles.hamBar + ' ' + '  w-7 h-0.5 bg-slate-800 my-1 block'} id="third"></span>
