@@ -106,7 +106,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
+        <div className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
             <div  className={ " relative align-middle flex flex-row"}>
                 
@@ -116,44 +116,44 @@ export default function Navbar() {
 
 
             <div className="hidden sm:inline h-full">
-                <ul className="h-full flex flex-row justify-end">
+                <nav className="h-full flex flex-row justify-end">
                     {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
-                            <li role='button' onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
-                                <button> {navItem.name}</button>
-                            </li>
+                            <button role='button' onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
+                                {navItem.name}
+                            </button>
                         )
                     })}
-                    <li role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
-                        <button>{lang === "fr" ? '🇫🇷' : '🇬🇧'}</button>
-                    </li>
-                </ul>
+                    <button role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
+                        {lang === "fr" ? '🇫🇷' : '🇬🇧'}
+                    </button>
+                </nav>
             </div>
 
-            <div className={styles.coverNavbar + ' ' + (mobileMenuVisible ? ' opacity-100 h-screen top-0 z-50' : 'opacity-0 h-0 -top-20') + ' ' + ' sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
-                <ul className=" h-full flex flex-col justify-center">
+            <nav aria-hidden={!mobileMenuVisible} className={styles.coverNavbar + ' ' + (mobileMenuVisible ? ' opacity-100 h-screen top-0 z-50' : 'opacity-0 h-0 -top-20') + ' ' + ' flex flex-col justify-center sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
+                
                     {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
-                            <li
+                            <button
                                 role='button'
                                 onClick={e => navigateTo(navItem.path)}
                                 className={styles.listItemMobile + ' ' + 'justify-center flex items-center h-full cursor-pointer'} key={navItem.id}>
                                 {navItem.name}
-                            </li>
+                            </button>
                         )
                     })}
-                </ul>
-            </div>
+                
+            </nav>
 
             <div className=' z-50 my-1/2 align-middle h-full sm:hidden flex flex-row justify-end'>
 
-                <div role='button' onClick={handleSetMenuVisible} className='mt-1/2 absolute m-auto top-4 cursor-pointer align-middle justify-center flex flex-col'>
+                <button aria-expanded={mobileMenuVisible} onClick={handleSetMenuVisible} className='mt-1/2 absolute m-auto top-4 cursor-pointer align-middle justify-center flex flex-col'>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + 'translate-y-3 rotate-45 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id='first'></span>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' opacity-0 ' : '') + ' ' + styles.hamBar + ' ' + ' w-7 h-0.5 bg-slate-800 my-1 block'} id="second"></span>
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' -rotate-45 -translate-y-2' : '') + ' ' + styles.hamBar + ' ' + '  w-7 h-0.5 bg-slate-800 my-1 block'} id="third"></span>
-                </div>
+                </button>
             </div>
-        </nav>
+        </div>
 
 
     )

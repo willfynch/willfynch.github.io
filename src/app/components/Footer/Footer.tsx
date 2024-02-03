@@ -73,19 +73,19 @@ export default function Footer() {
                 </div>
                 <div className="w-full sm:w-1/3 flex flex-col justify-center items-center">
                     <p className="font-semibold">Navigation</p>
-                    <ul className="flex flex-col justify-center items-center">
+                    <nav className="flex flex-col justify-center items-center">
                         {(lang === 'fr' ? navItemsFr : navItemsEn).map(item => {
                             return (
 
-                                <li  key={item.id}>
-                                    <button onClick={e => navigation('', item.path)} className=" hover:opacity-50 text-xs cursor-pointer ">
+                                
+                                    <button key={item.id} onClick={e => navigation('', item.path)} className=" hover:opacity-50 text-xs cursor-pointer ">
                                         {item.name}
                                     </button>
-                                </li>
+                            
 
                             )
                         })}
-                    </ul>
+                    </nav>
                 </div>
                 <div className="w-full sm:w-1/3">
 
