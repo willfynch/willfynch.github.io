@@ -13,11 +13,11 @@ export enum FOOTER_CONTENT {
     BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" className="link" role="button" href="https://nextjs.org">NextJS</a>,
     hébergé sur <a rel="noopener" className="link" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
     Copyright © willfynch 2024 -
-    <span role="button" className="cursor-pointer"> Mentions légales</span>`,
+    <button className="cursor-pointer"> Mentions légales</button>`,
     BOTTOM_EN = `Made with ❤️ using <a rel="noopener" className="link" role="button" href="https://nextjs.org">NextJS</a>,
     hosted on <a rel="noopener" className="link" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
     Copyright © willfynch 2024 - 
-    <span role="button" className="cursor-pointer">General Condition of Use</span>`
+    <button className="cursor-pointer">General Condition of Use</button>`
 }
 
 export default function Footer() {
