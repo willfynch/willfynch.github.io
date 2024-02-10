@@ -56,15 +56,15 @@ export default function Hero() {
                 </p>
 
                 <ul className='mt-8 flex flex-row justify-center'>
-                    <li className={styles.socialItemLi}>
+                    <a href='https://www.linkedin.com/in/willdevweb/' target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaLinkedin className='text-x3xl opacity-60 hover:opacity-100'></FaLinkedin>
-                    </li>
-                    <li className={styles.socialItemLi}>
+                    </a>
+                    <a href='https://twitter.com/willdevweb'target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaSquareXTwitter className='text-x3xl opacity-60 hover:opacity-100'></FaSquareXTwitter>
-                    </li>
-                    <li className={styles.socialItemLi}>
+                    </a>
+                    <a href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaInstagram className='text-x3xl opacity-60 hover:opacity-100'></FaInstagram>
-                    </li>
+                    </a>
                     <li className={styles.socialItemLi}>
                         <FaGithubSquare className='text-x3xl opacity-60 hover:opacity-100'></FaGithubSquare>
                     </li>
