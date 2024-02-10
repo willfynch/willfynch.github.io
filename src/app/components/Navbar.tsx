@@ -2,6 +2,7 @@ import styles from './Navbar.module.scss';
 import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useScrollLock } from '@/hooks/scrollLock';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const navItemsEn = [
     {
@@ -46,7 +47,7 @@ export const navItemsFr = [
         name: 'Bio',
         path: 'about',
         id: 4
-    },
+    }
 
 ]
 
@@ -57,9 +58,12 @@ export default function Navbar() {
 
     const { lockScroll, unlockScroll } = useScrollLock();
 
+    const router = useRouter()
+    const pathname = usePathname()
+
 
     //@ts-ignore
-    const {lang, setLang} = useContext(LanguageContext)
+    const { lang, setLang } = useContext(LanguageContext)
 
     // useEffect(() => {
     //     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -69,22 +73,51 @@ export default function Navbar() {
     // });
 
 
+    function navigation(path: string, section?: string) {
+        if (pathname === '/' && section) {
+            console.log(pathname, section)
+            scrollToSection(section)
+            return;
+        }
+        if (pathname.length > 1 && section) {
+            console.log(pathname, section)
+            //@ts-ignore
+            router.push('/' + '#' + section)
+                //@ts-ignore
+                // .then(
+                //     () => {
+                //         if (section) {
+                //             const element = document.getElementById(section);
+                //             if (element) {
+                //                 element.scrollIntoView({
+                //                     behavior: 'smooth',
+                //                 });
+                //             }
+                //         }
+                //     }
+                // )
+        } else {
+            router.push(path);
+        }
+    }
+
+
 
     function navigateTo(id: string): void {
         handleSetMenuVisible()
         scrollToSection(id);
     }
 
-    function handleSetMenuVisible(){
+    function handleSetMenuVisible() {
         setMobileMenuVisible(!mobileMenuVisible)
-        if(mobileMenuVisible){
+        if (mobileMenuVisible) {
             unlockScroll()
-        }else{
+        } else {
             lockScroll()
         }
     }
 
-    function scrollToSection(id: string){
+    function scrollToSection(id: string) {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({
@@ -100,18 +133,18 @@ export default function Navbar() {
     //     console.log(scrollY)
     // }
 
-    function handleLanguage(){
-        if(lang === 'fr'){ setLang('en')}
-        else{setLang('fr')}
+    function handleLanguage() {
+        if (lang === 'fr') { setLang('en') }
+        else { setLang('fr') }
     }
 
     return (
-        <div className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
+        <div className={' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
-            <div  className={ " relative align-middle flex flex-row"}>
-                
-                <button onClick={e => scrollToSection('home')} className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</button>
-                
+            <div className={" relative align-middle flex flex-row"}>
+
+                <button onClick={e => navigation('/', 'home')} className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</button>
+
             </div>
 
 
@@ -119,11 +152,14 @@ export default function Navbar() {
                 <nav className="h-full flex flex-row justify-end">
                     {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
                         return (
-                            <button role='button' onClick={e => scrollToSection(navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
+                            <button role='button' onClick={e => navigation('/', navItem.path)} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
                                 {navItem.name}
                             </button>
                         )
                     })}
+                    <button role='button' onClick={e => navigation('/blog', '')} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={'blog'}>
+                        Blog
+                    </button>
                     <button role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
                         {lang === "fr" ? '🇫🇷' : '🇬🇧'}
                     </button>
@@ -131,18 +167,18 @@ export default function Navbar() {
             </div>
 
             <nav aria-hidden={!mobileMenuVisible} className={styles.coverNavbar + ' ' + (mobileMenuVisible ? ' opacity-100 h-screen top-0 z-50' : 'opacity-0 h-0 -top-20') + ' ' + ' flex flex-col justify-center sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
-                
-                    {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
-                        return (
-                            <button
-                                role='button'
-                                onClick={e => navigateTo(navItem.path)}
-                                className={styles.listItemMobile + ' ' + 'justify-center flex items-center h-full cursor-pointer'} key={navItem.id}>
-                                {navItem.name}
-                            </button>
-                        )
-                    })}
-                
+
+                {(lang === 'fr' ? navItemsFr : navItemsEn).map(navItem => {
+                    return (
+                        <button
+                            role='button'
+                            onClick={e => navigateTo(navItem.path)}
+                            className={styles.listItemMobile + ' ' + 'justify-center flex items-center h-full cursor-pointer'} key={navItem.id}>
+                            {navItem.name}
+                        </button>
+                    )
+                })}
+
             </nav>
 
             <div className=' z-50 my-1/2 align-middle h-full sm:hidden flex flex-row justify-end'>
