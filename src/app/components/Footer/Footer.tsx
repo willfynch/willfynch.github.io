@@ -92,15 +92,15 @@ export default function Footer() {
                     <div className="flex flex-col justify-center items-center">
                         <p className='text-center text-sm -mb-2'>{lang === 'fr' ? 'Suivez-moi sur les réseaux': 'Reach me out on social media'} !</p>
                         <ul className='mt-2 flex flex-row justify-center'>
-                            <li className={styles.socialItemLi}>
+                            <a href="https://www.linkedin.com/in/willdevweb/" rel="noreferrer" target="_blank" className={styles.socialItemLi}>
                                 <FaLinkedin className='text-x2xl opacity-60 hover:opacity-100'></FaLinkedin>
-                            </li>
-                            <li className={styles.socialItemLi}>
+                            </a>
+                            <a href='https://twitter.com/willdevweb'target='_blank' rel='noreferrer'className={styles.socialItemLi}>
                                 <FaSquareXTwitter className='text-x2xl opacity-60 hover:opacity-100'></FaSquareXTwitter>
-                            </li>
-                            <li className={styles.socialItemLi}>
+                            </a>
+                            <a href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                                 <FaInstagram className='text-x2xl opacity-60 hover:opacity-100'></FaInstagram>
-                            </li>
+                            </a>
                             <li className={styles.socialItemLi}>
                                 <FaGithubSquare className='text-x2xl opacity-60 hover:opacity-100'></FaGithubSquare>
                             </li>
