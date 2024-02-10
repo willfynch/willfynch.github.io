@@ -79,7 +79,7 @@ export default function Services() {
     };
 
     return (
-        <section id='services' className={styles.servicesSection + ` ` + `px-10 sm:px-20 xl:px-72 lg:px-40 py-20 lg:py-40`}>
+        <section id='services' className={styles.servicesSection + ` ` + `px-10 sm:px-20 xl:px-72 lg:px-40 2xl:px-[30rem] py-20 lg:py-40`}>
             {/* <h2 className='text-lg font-bold'>SERVICES</h2> */}
 
             <div className='relative h-[100px] py-20'>
