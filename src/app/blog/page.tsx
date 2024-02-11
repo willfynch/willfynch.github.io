@@ -28,13 +28,13 @@ export default function BlogPage() {
     // lets try with localstorage data maybe
 
     return (
-        <>
 
-            <main data-aos='fade-left' className='overflow-x-hidden' >
-                <ArticlesContainer articles={articles}></ArticlesContainer>
-                <ContactWidget></ContactWidget>
-            </main>
-        </>
+
+        <main data-aos='fade-left' className='overflow-x-hidden' >
+            <ArticlesContainer articles={articles}></ArticlesContainer>
+            <ContactWidget></ContactWidget>
+        </main>
+
 
     )
 }

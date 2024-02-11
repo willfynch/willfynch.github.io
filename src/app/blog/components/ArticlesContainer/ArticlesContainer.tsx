@@ -10,7 +10,7 @@ export default function ArticlesContainer({articles}:{articles:ArticleModel[]}) 
     const { lang, setLang } = useContext(LanguageContext)
 
     return (
-        <section className={styles.contactSection + ` py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40 2xl:px-[30rem]`}>
+        <section className={styles.contactSection + `bg-my-white py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40 2xl:px-[30rem]`}>
             <div className='relative h-[100px] py-20'>
                 <h2 className='w-screen left-1/2 -translate-x-1/2  text-center absolute font-bilbo text-x6demixl md:text-9xl top-1/2 -translate-y-1/2 text-my-black/10'>{lang==='fr'?'Articles de blog':'Blog articles'}</h2>
                 <h2 className='w-full text-center absolute text-lg font-bold top-1/2 -translate-y-1/2 '>{lang==='fr'?'Articles de blog'.toUpperCase():'Blog articles'.toUpperCase()}</h2>
