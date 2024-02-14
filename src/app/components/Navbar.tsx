@@ -111,9 +111,7 @@ export default function Navbar() {
             <div  className={ " relative align-middle flex flex-row"}>
                 
                 <button onClick={e => scrollToSection('home')} className='cursor-pointer hover:scale-110 duration-300 text-3xl sm:text-4xl font-bilbo'>Will</button>
-                
             </div>
-
 
             <div className="hidden sm:inline h-full">
                 <nav className="h-full flex flex-row justify-end">
