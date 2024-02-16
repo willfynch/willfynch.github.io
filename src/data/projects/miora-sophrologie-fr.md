@@ -27,8 +27,6 @@ We used an iterative process with a constant feedback to make sure we are always
 
 ## The result
 
-
-
 <video src="/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
 
 [Visit website](https://miorasophrologie.fr)
@@ -36,6 +34,8 @@ We used an iterative process with a constant feedback to make sure we are always
 
 ## The feedback
 
+<p style="text-align: center;">💬</p>
+
 « J’ai fait appel à William pour la construction de mon site web ! Il est à l’écoute de vos besoin ! Je savais que j’allais être bien accompagnée pour le développement de mon site web ! Il a réussi à faire transparaître l’image que je voulais véhiculer avec ce site ! Il est également à l’écoute disponible pour toute question ou remarque. Merci pour ton travail ! Je n’hésiterai pas à faire appel à William pour une refonte ou une mise à jour de mon site ! Il vous livre un produit de qualité, qui répond à vos besoin ! Je vous le recommande »
 
-[Get in touch]()
+[Get in touch](https://calendly.com/willdevweb/talk)
