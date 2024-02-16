@@ -106,7 +106,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className={ ' bg-white shadow-md ' + "h-16 duration-300 z-50 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
+        <div className={ ' bg-white shadow-md ' + "h-16 duration-300 z-40 top-0 sticky px-4  items-center sticky top-0 grid grid-cols-2 gap-4 "}>
 
             <div  className={ " relative align-middle flex flex-row"}>
                 

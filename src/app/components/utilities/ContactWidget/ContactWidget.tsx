@@ -30,7 +30,7 @@ export default function ContactWidget() {
             </a>
 
             {/**MOBILE VIEW */}
-            <div className={shadow + " " + "bg-my-white h-[60px] sm:hidden px-8 py-2 flex justify-between z-40 fixed bottom-0 w-full "}>
+            <div className={shadow + " " + "bg-my-white h-[60px] sm:hidden px-8 py-2 flex justify-between z-30 fixed bottom-0 w-full "}>
                 <a target='_blank' rel='noopener noreferrer' href="https://calendly.com/willdevweb/talk" className={+ ' ' + ' flex flex-col justify-center items-center'}>
                     <span className='text-sm'>Contact</span>
                     <button className={'sm:rounded-md text-xl overflow-hidden flex flex-cols items-center justify-center w-[100px] h-[30px]'}>

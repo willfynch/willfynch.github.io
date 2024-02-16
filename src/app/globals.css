@@ -101,6 +101,24 @@ body {
   background-color: rgb(241 245 249);
   padding: 1rem;
   position: relative;
+  border-radius: 6px;
+}
+
+.PROJECT_MARKDOWN p:has(em) {
+  background-color: rgba(208, 241, 219, .5);
+  padding: 1rem;
+  position: relative;
+  border-radius: 6px;
+}
+
+.PROJECT_MARKDOWN p:has(em)::before {
+  position: absolute;
+  color:  rgb(133, 167, 144);
+  font-weight: 600;
+  content: '❝';
+  top: -36px;
+  font-size: 4rem;
+  letter-spacing: -45px;
 }
 
 /**LINK */
