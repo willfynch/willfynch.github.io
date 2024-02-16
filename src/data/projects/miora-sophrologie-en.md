@@ -4,7 +4,7 @@ subtitle: "Showcase website"
 year: "2023"
 technos: ['NextJS', 'TailwindCSS', 'Netlify']
 link: 'https://miorasophrologie.fr'
-image: './miorasophro.jpg'
+image: './images/miorasophro.jpg'
 id: 3
 lang: 'en'
 ---
@@ -27,7 +27,7 @@ We used an iterative process with a constant feedback to make sure we are always
 
 ## The result
 
-<video src="/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
+<video src="/videos/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
 
 [Visit website](https://miorasophrologie.fr)
 

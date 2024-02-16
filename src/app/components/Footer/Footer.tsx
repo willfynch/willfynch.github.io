@@ -1,10 +1,9 @@
 'use client'
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { FaLinkedin, FaInstagram, FaGithubSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import styles from './Footer.module.scss'
-import { navItemsEn, navItemsFr } from "../Navbar";
+import { navItemsEn, navItemsFr } from "../Navbar/Navbar";
 import { useContext } from "react";
 import { LanguageContext } from '@/contexts/LanguageContext';
 import parse from 'html-react-parser';
@@ -25,7 +24,7 @@ export default function Footer() {
     const router = useRouter()
     const pathname = usePathname()
     //@ts-ignore
-    const { lang, setLang } = useContext(LanguageContext)
+    const { lang } = useContext(LanguageContext)
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);

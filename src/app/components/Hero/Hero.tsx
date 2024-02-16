@@ -1,13 +1,11 @@
 'use client'
 import styles from './Hero.module.scss'
 import Image from 'next/image'
-import avatar from '../../../../public/photo.jpg'
+import avatar from '../../../../public/images/photo.jpg'
 import { FaLinkedin, FaInstagram, FaGithubSquare } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'
-import Link from 'next/link'
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { useContext, useEffect } from 'react'
-
+import { useContext } from 'react'
 
 export enum HERO_TEXTS {
     EN_TITLE = "Hello, I'm Will,",
@@ -23,7 +21,7 @@ export enum HERO_TEXTS {
 export default function Hero() {
 
     //@ts-ignore
-    const { lang, setLang } = useContext(LanguageContext)
+    const { lang } = useContext(LanguageContext)
 
     function scrollToSection(id: string) {
         const element = document.getElementById(id);

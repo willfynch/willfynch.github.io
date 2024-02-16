@@ -4,7 +4,7 @@ subtitle: "Site vitrine"
 year: "2023"
 technos: ['NextJS', 'TailwindCSS', 'Netlify']
 link: 'https://miorasophrologie.fr'
-image: './miorasophro.jpg'
+image: './images/miorasophro.jpg'
 id: 4
 lang: 'fr'
 ---
@@ -27,7 +27,7 @@ Nous avons procédé de manière itérative en s'assurant d'avoir un feedback co
 
 ## Le produit fini
 
-<video src="/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
+<video src="/videos/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
 
 [Visit website](https://miorasophrologie.fr)
 

@@ -1,8 +1,7 @@
 'use client'
-import logo_calendly from '../../../../public/calendly-logo.svg'
+import logo_calendly from '../../../../public/svg/calendly-logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
-import placeholder from '../../../../public/images/meeting-small.webp'
 import { steps } from '@/data/process-steps';
 import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '@/contexts/LanguageContext';
@@ -22,7 +21,7 @@ export enum CONTACT_CONTENT {
 
 export default function Contact() {
     //@ts-ignore
-    const { lang, setLang } = useContext(LanguageContext)
+    const { lang } = useContext(LanguageContext)
     const [translatedSteps, setTranslatedSteps] = useState(steps['fr'])
 
     useEffect(() => {

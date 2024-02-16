@@ -47,7 +47,6 @@ export const navItemsFr = [
         path: 'about',
         id: 4
     },
-
 ]
 
 export default function Navbar() {

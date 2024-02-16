@@ -1,11 +1,8 @@
 'use client'
-//import { projects } from '../../../data/projects'
 import PostCard from '../utilities/ProjectCard/ProjectCard'
 import styles from './Projects.module.scss'
-import { ProjectCardContent } from '../utilities/ProjectCard/ProjectCardContent.model'
 import { useEffect, useState, useContext } from 'react';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import project_placeholder from '../../../../public/project_placeholder.svg'
 import Image from 'next/image'
 import { AiOutlineClose } from "react-icons/ai";
 import { useScrollLock } from '@/hooks/scrollLock'
@@ -23,7 +20,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     const { lockScroll, unlockScroll } = useScrollLock();
 
     //@ts-ignore
-    const {lang, setLang} = useContext(LanguageContext)
+    const {lang} = useContext(LanguageContext)
 
     useEffect(()=>{
         const id = localStorage.getItem('selectedProject')
