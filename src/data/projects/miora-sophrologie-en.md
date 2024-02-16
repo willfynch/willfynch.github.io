@@ -36,8 +36,4 @@ We used an iterative process with a constant feedback to make sure we are always
 
 *« I called on William to build my website! He listens to your needs! I knew I was going to be well supported in the development of my website! He succeeded in conveying the image I wanted to convey with this site! He's also available to listen to any questions or comments. Thank you for all your hard work! I wouldn't hesitate to call on William for a redesign or update of my site! He delivers a quality product that meets your needs! I recommend him »*
 
-
-
-Translated with DeepL.com (free version)
-
 [Get in touch](https://calendly.com/willdevweb/talk)
