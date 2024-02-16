@@ -90,7 +90,7 @@ export default function Footer() {
                 <div className="w-full sm:w-1/3">
 
                     <div className="flex flex-col justify-center items-center">
-                        <p className='text-center text-sm -mb-2'>{lang === 'fr' ? 'Suivez-moi sur les réseaux': 'Reach me out on social media'} !</p>
+                        <p className='text-center text-sm'>{lang === 'fr' ? 'Suivez-moi sur les réseaux': 'Reach me out on social media'} !</p>
                         <ul className='mt-2 flex flex-row justify-center'>
                             <a href="https://www.linkedin.com/in/willdevweb/" rel="noreferrer" target="_blank" className={styles.socialItemLi}>
                                 <FaLinkedin className='text-x2xl opacity-60 hover:opacity-100'></FaLinkedin>
@@ -101,9 +101,9 @@ export default function Footer() {
                             <a href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                                 <FaInstagram className='text-x2xl opacity-60 hover:opacity-100'></FaInstagram>
                             </a>
-                            <li className={styles.socialItemLi}>
+                            {/* <li className={styles.socialItemLi}>
                                 <FaGithubSquare className='text-x2xl opacity-60 hover:opacity-100'></FaGithubSquare>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

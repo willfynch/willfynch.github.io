@@ -92,16 +92,18 @@ body {
   position: absolute;
   color:  rgba(30 ,41 ,59,.5);
   font-weight: 900;
-  content: '>>';
+  content: '>';
   top: -26px;
   font-size: 2rem;
   letter-spacing: -45px;
+
 }
 .PROJECT_MARKDOWN blockquote {
   background-color: rgb(241 245 249);
   padding: 1rem;
   position: relative;
   border-radius: 6px;
+  margin: 40px 0 40px 0;
 }
 
 .PROJECT_MARKDOWN p:has(em) {
@@ -109,6 +111,8 @@ body {
   padding: 1rem;
   position: relative;
   border-radius: 6px;
+  margin: 40px 0 40px 0;
+
 }
 
 .PROJECT_MARKDOWN p:has(em)::before {
@@ -119,6 +123,7 @@ body {
   top: -36px;
   font-size: 4rem;
   letter-spacing: -45px;
+  
 }
 
 /**LINK */

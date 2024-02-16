@@ -22,7 +22,7 @@ export default function PostCard({ content, openPopUp }: { content: ProjectModel
                   <p className="text-sm">{content.year}</p>
                </div>
                <div className="flex justify-center items-center flex-col">
-                  <button onClick={(e) => openPopUp(content.id)} className={styles.VIEW_MORE_BUTTON}>View more</button>
+                  <button onClick={(e) => openPopUp(content.id)} className={styles.VIEW_MORE_BUTTON}>{lang==='fr'?'En savoir +':'View more'}</button>
                </div>
             </div>
 

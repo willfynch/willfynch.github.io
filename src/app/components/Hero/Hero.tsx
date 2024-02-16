@@ -16,8 +16,8 @@ export enum HERO_TEXTS {
     FR_SUBTITLE = "Développeur web.",
     EN_PHRASE = "I build websites for small companies and one-person businesses.",
     FR_PHRASE = "Je réalise des sites vitrine et e-commerce pour des TPE et des entreprises individuelles. ",
-    EN_CTA = "View more",
-    FR_CTA = "En savoir +"
+    EN_CTA = "View services",
+    FR_CTA = "Mes prestations"
 }
 
 export default function Hero() {
@@ -65,9 +65,9 @@ export default function Hero() {
                     <a href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaInstagram className='text-x3xl opacity-60 hover:opacity-100'></FaInstagram>
                     </a>
-                    <li className={styles.socialItemLi}>
+                    {/* <li className={styles.socialItemLi}>
                         <FaGithubSquare className='text-x3xl opacity-60 hover:opacity-100'></FaGithubSquare>
-                    </li>
+                    </li> */}
                 </ul>
 
                 <div className='flex flex-row justify-center mt-4  text-center'>

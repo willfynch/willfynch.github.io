@@ -108,10 +108,10 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
             { /**backdrop-blur-[3px] */
                 popupOpen && selectedProject &&
                 <div aria-hidden={!popupOpen} onClick={detectClickOutsideOfPopup} id="PROJECT_POPUP" className={styles.popupBackground + ' ' + 'overflow-x-hidden top-0 left-0 fixed w-screen h-screen z-50'}>
-                    <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'z-[1000] absolute overflow-x-hidden rounded-md w-full h-full xs:w-5/6 xs:h-5/6  bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
+                    <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'z-[1000] absolute overflow-x-hidden rounded-md w-full h-full bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
                         <div id='PROJECT_POPUP_TITLE' className={'sticky z-50 top-0 overflow-y-hidden '}>
-                            <div className='rounded-t-md absolute  top-0 left-0 h-full w-full bg-black bg-opacity-40'></div>
-                            <div className={'flex flex-col duration-500 w-max text-white absolute top-1/2  -translate-y-1/2 ' + (isPopupHeaderResized ? 'left-[50px] items-start' : 'left-1/2 -translate-x-1/2 items-center')}>
+                            <div className='rounded-t-md absolute z-20 top-0 left-0 h-full w-full bg-black bg-opacity-60'></div>
+                            <div className={'flex flex-col z-30 duration-500 w-max text-white absolute top-1/2  -translate-y-1/2 ' + (isPopupHeaderResized ? 'left-[50px] items-start' : 'left-1/2 -translate-x-1/2 items-center')}>
                                 <h2 className={(isPopupHeaderResized ? ' text-xl xs:text-2xl ' : ' text-2xl xs:text-4xl ') + ' ' + "font-bold duration-300"}>{selectedProject.title}</h2>
                                 <h3 className={(isPopupHeaderResized ? ' text-md xs:text-lg ' : ' text-lg xs:text-xl ') + ' duration-300'}>{selectedProject.subtitle}</h3>
                                 <p className="text-sm">{selectedProject.year}</p>
@@ -119,12 +119,12 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
 
                             <Image className={`rounded-t-md z-0 duration-300 w-full object-cover ` + (isPopupHeaderResized ? 'h-[100px]' : 'h-[200px]')} width={80} height={12} src={selectedProject.image} alt={lang==='fr'?`Screenshot du projet ${selectedProject.title}`:`${selectedProject.title} project screenshot`} />
 
-                            <div className='group'>
-                                <button className='hover:bg-slate-800 p-2 duration-300 rounded-xl text-white text-lg absolute right-[20px] top-[20px]' onClick={closePopUp}><AiOutlineClose /></button>
+                            <div className='group '>
+                                <button className='z-50 hover:bg-slate-800 p-2 duration-300 rounded-xl text-white text-lg absolute right-[20px] top-[20px]' onClick={closePopUp}><AiOutlineClose /></button>
                                 <p className='duration-300 opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 text-white py-[4px] px-[8px] z-50 rounded-sm absolute right-[20px] top-[60px] text-xs'>Close window</p>
                             </div>
                         </div>
-                        <div id="PROJECT_POPUP_CONTENT" className='  px-10 py-4 lg:px-40 2xl:px-[30rem] lg:py-20'>
+                        <div id="PROJECT_POPUP_CONTENT" className='  px-10 py-4 lg:px-80 2xl:px-[30rem] lg:py-20'>
 
                             {/*@ts-ignore*/}
                             <Markdown className={'PROJECT_MARKDOWN'}>

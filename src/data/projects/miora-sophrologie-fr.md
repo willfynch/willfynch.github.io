@@ -4,7 +4,7 @@ subtitle: "Site vitrine"
 year: "2023"
 technos: ['NextJS', 'TailwindCSS', 'Netlify']
 link: 'https://miorasophrologie.fr'
-image: './miorasophro.png'
+image: './miorasophro.jpg'
 id: 4
 lang: 'fr'
 ---
