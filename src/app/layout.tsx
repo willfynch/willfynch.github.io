@@ -1,13 +1,10 @@
 'use client'
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar/Navbar'
 import { createContext, useEffect, useState } from 'react'
 import LanguageContextProvider from '@/contexts/LanguageContext'
-import Head from 'next/head'
 import Footer from './components/Footer/Footer'
-//import LanguageContextProvider from '@/contexts/LanguageContext'
 //@ts-ignore
 import AOS from "aos";
 import "aos/dist/aos.css";
