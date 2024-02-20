@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: ['/images/opengraph.png']
+  },
+  twitter: {
+    images: ['/images/opengraph.png']
   }
 };
 
