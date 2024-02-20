@@ -29,11 +29,11 @@ Nous avons procédé de manière itérative en s'assurant d'avoir un feedback co
 
 <video src="/videos/screen_recording_miora.mp4" type="video/mp4" controls autoplay loop muted>
 
-[Visit website](https://miorasophrologie.fr)
+[Visiter le site](https://miorasophrologie.fr)
 
 
 ## Le feedback
 
 *« J’ai fait appel à William pour la construction de mon site web ! Il est à l’écoute de vos besoin ! Je savais que j’allais être bien accompagnée pour le développement de mon site web ! Il a réussi à faire transparaître l’image que je voulais véhiculer avec ce site ! Il est également à l’écoute disponible pour toute question ou remarque. Merci pour ton travail ! Je n’hésiterai pas à faire appel à William pour une refonte ou une mise à jour de mon site ! Il vous livre un produit de qualité, qui répond à vos besoin ! Je vous le recommande »*
 
-[Get in touch](https://calendly.com/willdevweb/talk)
+[Demander un devis](https://calendly.com/willdevweb/talk)
