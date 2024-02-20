@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
     les TPE et les entreprises individuelles.`,
     creator: '@willdevweb',
-    site: '@willdevweb'
-    
+    site: '@willdevweb',
+    title : 'Will - Développeur Web'
   }
 };
 
