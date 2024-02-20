@@ -20,7 +20,13 @@ export const metadata: Metadata = {
     images: ['/images/opengraph.png']
   },
   twitter: {
-    images: ['/images/opengraph.png']
+    card: 'summary_large_image',
+    images: ['https://i.ibb.co/X8rhBH5/opengraph.png'],
+    description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
+    les TPE et les entreprises individuelles.`,
+    creator: '@willdevweb',
+    site: '@willdevweb'
+    
   }
 };
 
