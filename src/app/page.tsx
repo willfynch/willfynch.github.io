@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://i.ibb.co/X8rhBH5/opengraph.png'],
+    images: ['/images/opengraph.png'],
     description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
     les TPE et les entreprises individuelles.`,
     title : 'Will | Sites web sur mesure'
