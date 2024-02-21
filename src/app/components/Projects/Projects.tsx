@@ -105,7 +105,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
             { /**backdrop-blur-[3px] */
                 popupOpen && selectedProject &&
                 <div aria-hidden={!popupOpen} onClick={detectClickOutsideOfPopup} id="PROJECT_POPUP" className={styles.popupBackground + ' ' + 'overflow-x-hidden top-0 left-0 fixed w-screen h-screen z-50'}>
-                    <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'z-[1000] absolute overflow-x-hidden rounded-md w-full h-full bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
+                    <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'z-[1000] absolute overflow-x-hidden rounded-md w-full h-5/6 bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
                         <div id='PROJECT_POPUP_TITLE' className={'sticky z-50 top-0 overflow-y-hidden '}>
                             <div className='rounded-t-md absolute z-20 top-0 left-0 h-full w-full bg-black bg-opacity-60'></div>
                             <div className={'flex flex-col z-30 duration-500 w-max text-white absolute top-1/2  -translate-y-1/2 ' + (isPopupHeaderResized ? 'left-[50px] items-start' : 'left-1/2 -translate-x-1/2 items-center')}>
