@@ -33,7 +33,7 @@ export default function ContactWidget() {
             <div className={shadow + " " + "bg-my-white h-[60px] sm:hidden px-8 py-2 flex justify-between z-30 fixed bottom-0 w-full "}>
                 <a target='_blank' rel='noopener noreferrer' href="https://calendly.com/willdevweb/talk" className={+ ' ' + ' flex flex-col justify-center items-center'}>
                     <span className='text-sm'>Contact</span>
-                    <button className={'sm:rounded-md text-xl overflow-hidden flex flex-cols items-center justify-center w-[100px] h-[30px]'}>
+                    <button aria-label='Contact' className={'sm:rounded-md text-xl overflow-hidden flex flex-cols items-center justify-center w-[100px] h-[30px]'}>
                         {/* <Image src={logo_calendly} width={300} height={300} alt="" /> */}
                         
                         <IoCalendarOutline />
@@ -41,7 +41,7 @@ export default function ContactWidget() {
 
                 </a>
 
-                <button className=' text-xl flex justify-center items-center  sm:hidden' onClick={handleLanguage} >
+                <button aria-label={lang==='fr'?'Switch to English':'Passer au Français'} className=' text-xl flex justify-center items-center  sm:hidden' onClick={handleLanguage} >
                     {lang === "fr" ? '🇫🇷' : '🇬🇧'}
                 </button>
 

@@ -121,7 +121,7 @@ export default function Navbar() {
                             </button>
                         )
                     })}
-                    <button role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
+                    <button aria-label={lang==='fr'?'Switch to English':'Passer au Français'} role='button' key={'lang'} onClick={handleLanguage} className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'}>
                         {lang === "fr" ? '🇫🇷' : '🇬🇧'}
                     </button>
                 </nav>
