@@ -8,8 +8,6 @@
   margin: 1rem 0;
 }
 
-
-
 .PROJECT_MARKDOWN p:has(a){
   display: flex;
   flex-direction: column;
