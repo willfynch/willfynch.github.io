@@ -8,11 +8,11 @@ import Services from './components/Services/Services'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Will - Développeur Web",
+  title: "Will | Sites web sur mesure",
   description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
   les TPE et les entreprises individuelles.`,
   keywords: ['Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs'],
-  metadataBase: new URL('https://will-developpeur.vercel.app'),
+  metadataBase: new URL('https://www.willdev.me'),
   alternates: {
     canonical: '/'
   },
