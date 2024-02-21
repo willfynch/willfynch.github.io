@@ -77,7 +77,7 @@ export default function Contact() {
                 <p className='text-center text-md font-semibold -mb-2 mt-4'>{lang === 'fr' ? CONTACT_CONTENT.RDV_FR : CONTACT_CONTENT.RDV_EN}</p>
                 <a rel='noopener noreferrer' target='_blank' href="https://calendly.com/willdevweb/talk">
 
-                    <button className='rounded-md overflow-hidden flex flex-cols items-center justify-center w-[200px] h-[50px]'>
+                    <button aria-label='Contact' className='rounded-md overflow-hidden flex flex-cols items-center justify-center w-[200px] h-[50px]'>
                         <Image className={styles.btn} src={logo_calendly} width={300} height={300} alt={lang === 'fr' ? 'Logo calendly' : 'Calendly logo'} />
 
                     </button>

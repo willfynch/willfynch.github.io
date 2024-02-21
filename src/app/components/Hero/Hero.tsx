@@ -53,20 +53,20 @@ export default function Hero() {
                     {lang === 'fr' ? HERO_TEXTS.FR_PHRASE : HERO_TEXTS.EN_PHRASE}
                 </p>
 
-                <ul className='mt-8 flex flex-row justify-center'>
-                    <a href='https://www.linkedin.com/in/willdevweb/' target='_blank' rel='noreferrer' className={styles.socialItemLi}>
+                <div className='mt-8 flex flex-row justify-center'>
+                    <a aria-label={lang==='fr'?'Visiter mon LinkedIn':'Visit my LinkedIn'} href='https://www.linkedin.com/in/willdevweb/' target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaLinkedin className='text-x3xl opacity-60 hover:opacity-100'></FaLinkedin>
                     </a>
-                    <a href='https://twitter.com/willdevweb'target='_blank' rel='noreferrer' className={styles.socialItemLi}>
+                    <a aria-label={lang==='fr'?'Visiter mon Twitter':'Visit my Twitter'} href='https://twitter.com/willdevweb'target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaSquareXTwitter className='text-x3xl opacity-60 hover:opacity-100'></FaSquareXTwitter>
                     </a>
-                    <a href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
+                    <a aria-label={lang==='fr'?'Visiter mon Instagram':'Visit my Instagram'}  href="https://www.instagram.com/willdevweb/" target='_blank' rel='noreferrer' className={styles.socialItemLi}>
                         <FaInstagram className='text-x3xl opacity-60 hover:opacity-100'></FaInstagram>
                     </a>
                     {/* <li className={styles.socialItemLi}>
                         <FaGithubSquare className='text-x3xl opacity-60 hover:opacity-100'></FaGithubSquare>
                     </li> */}
-                </ul>
+                </div>
 
                 <div className='flex flex-row justify-center mt-4  text-center'>
                     <button onClick={e => scrollToSection('services')} className={`${styles.btn} w-[150px]`}>
