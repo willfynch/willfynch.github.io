@@ -24,9 +24,7 @@ export const metadata: Metadata = {
     images: ['https://i.ibb.co/X8rhBH5/opengraph.png'],
     description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
     les TPE et les entreprises individuelles.`,
-    creator: '@willdevweb',
-    site: '@willdevweb',
-    title : 'Will - Développeur Web'
+    title : 'Will | Sites web sur mesure'
   }
 };
 
