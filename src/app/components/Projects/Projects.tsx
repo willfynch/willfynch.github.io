@@ -102,7 +102,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                 <button onClick={e => scrollToSection('contact')} className={styles.btn}>{lang === 'fr' ? 'Travaillons ensemble' : 'Let\'s work together'}</button>
             </div>
 
-            { /**backdrop-blur-[3px] */
+            {
                 popupOpen && selectedProject &&
                 <div aria-hidden={!popupOpen} onClick={detectClickOutsideOfPopup} id="PROJECT_POPUP" className={styles.popupBackground + ' ' + 'overflow-x-hidden top-0 left-0 fixed w-screen h-screen z-50'}>
                     <div id='PROJECT_POPUP_BODY' className={styles.popupBody + ' ' + 'z-[1000] absolute overflow-x-hidden rounded-md w-full h-5/6 lg:h-full bg-white -translate-y-1/2 -translate-x-1/2 left-1/2'}>
@@ -122,18 +122,12 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                             </div>
                         </div>
                         <div id="PROJECT_POPUP_CONTENT" className='w-full  px-10 py-4 lg:px-80 2xl:px-[30rem] lg:py-20'>
-
                             {/*@ts-ignore*/}
                             <Markdown className={'PROJECT_MARKDOWN'}>
                                 {selectedProject.text}
                             </Markdown>
-
-
                         </div>
-
                     </div>
-
-
                 </div>
             }
 
