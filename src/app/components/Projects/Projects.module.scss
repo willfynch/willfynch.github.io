@@ -26,7 +26,8 @@
     animation: popupopen forwards;
     animation-duration: .5s;
     animation-delay: .2s;
-    top: 1000px
+    top: 1000px;
+    height: -webkit-fill-available;
 }
 
 @keyframes popupopen {

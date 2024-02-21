@@ -121,7 +121,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                                 <p className='duration-300 opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 text-white py-[4px] px-[8px] z-50 rounded-sm absolute right-[20px] top-[60px] text-xs'>Close window</p>
                             </div>
                         </div>
-                        <div id="PROJECT_POPUP_CONTENT" className='  px-10 py-4 lg:px-80 2xl:px-[30rem] lg:py-20'>
+                        <div id="PROJECT_POPUP_CONTENT" className='w-full  px-10 py-4 lg:px-80 2xl:px-[30rem] lg:py-20'>
 
                             {/*@ts-ignore*/}
                             <Markdown className={'PROJECT_MARKDOWN'}>
