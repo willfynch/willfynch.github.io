@@ -47,8 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <Footer></Footer>
           </LanguageContextProvider>
-          <div className='bg-my-black/50 p-2 fixed z-40 top-0 left-1/2 -translate-x-1/2'>BETA VERSION</div>
-
         </body>
       </html>
   )
