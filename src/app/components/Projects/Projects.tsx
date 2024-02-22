@@ -82,7 +82,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
     };
 
     return (
-        <section id='projects' className={styles.prjSection + ` ` + `bg-my-white relative py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40 2xl:px-[30rem]`}>
+        <section id='projects' className={styles.prjSection + ` ` + `bg-my-white relative py-16 lg:py-40 px-10 sm:px-20 xl:px-72 lg:px-40 2xl:px-[40rem]`}>
             
             <div className='relative h-[100px] py-20'>
                 <h2 className='w-full text-center absolute font-bilbo text-x6demixl sm:text-x6demixl md:text-9xl top-1/2 -translate-y-1/2  text-my-black/10'>{lang === 'fr' ? 'Projets' : 'Projects'}</h2>
@@ -121,7 +121,7 @@ export default function Projects({ projects }: { projects: ProjectModel[] }) {
                                 <p className='duration-300 opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 text-white py-[4px] px-[8px] z-50 rounded-sm absolute right-[20px] top-[60px] text-xs'>Close window</p>
                             </div>
                         </div>
-                        <div id="PROJECT_POPUP_CONTENT" className='w-full  px-10 py-4 lg:px-80 2xl:px-[30rem] lg:py-20'>
+                        <div id="PROJECT_POPUP_CONTENT" className='w-full  px-10 py-4 lg:px-80 2xl:px-[40rem] lg:py-20'>
                             {/*@ts-ignore*/}
                             <Markdown className={'PROJECT_MARKDOWN'}>
                                 {selectedProject.text}
