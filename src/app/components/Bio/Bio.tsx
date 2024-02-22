@@ -69,7 +69,7 @@ export default function Bio() {
                         </li>
                         <li key={'elegance'} className='group mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
                             <IoIosColorPalette className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></IoIosColorPalette>
-                            <p className='duration-300 group-hover:scale-95 text-xs md:text-sm xl:text-xl text-slate-700'>Elegance</p>
+                            <p className='duration-300 group-hover:scale-95 text-xs md:text-sm xl:text-xl text-slate-700'>{lang==='fr'?'Élégance':'Elegance'}</p>
                         </li>
                         <li key={'simplicity'} className='group mr-6 cursor-default shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] hover:shadow-[rgba(6,_24,_44,_0.6)_0px_0px_2px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset] w-20 h-20 md:w-24 md:h-24 xl:w-40 xl:h-40 rounded-full flex justify-center items-center flex-col  transition-all'>
                             <FaThumbsUp className='duration-300 group-hover:scale-95 text-2xl md:text-3xl xl:text-4xl text-slate-700'></FaThumbsUp>
