@@ -21,3 +21,106 @@
     transition: all ease .5s;
     position: fixed;
 }
+
+
+/* new ham btn */
+
+.hamburgerBtnOne .line {
+    transform-origin: center;
+    transition: 
+        300ms ease-in,
+        translate 300ms ease-out,
+        rotate 300ms ease-in ,
+        opacity 300ms 300ms
+    ;
+}
+
+.hamburgerBtnOne:hover .line {
+    transition: 
+        300ms ease-in,
+        translate 300ms ease-out,
+        rotate 300ms ease-in 300ms,
+        opacity 300ms 300ms
+    ;
+    
+}
+
+.hovered :is(.top, .middle, .bottom) {
+    animation-name: hamburgerBtnHovered;
+    animation-duration: 500ms;
+}
+.hovered :is(.middle) {
+    animation-delay: 100ms;
+}
+.hovered :is(.bottom) {
+    animation-delay: 200ms;
+}
+
+@keyframes hamburgerBtnHovered {
+    0% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+// OPENING AND CLOSING BUTTON
+
+.opened .line {
+    animation-name: to-close-icon;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.closed .line {
+    animation-name: to-open-icon;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes to-close-icon {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 79.9;
+    }
+}
+@keyframes to-open-icon {
+    0% {
+        stroke-dashoffset: 79.9;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+// .hamburgerBtnOneSvg :is(.top) {
+//     transition-delay: 200ms;
+    
+// }
+// .hamburgerBtnOneSvg :is(.middle) {
+//     transition-delay: 100ms;
+    
+// }
+// .hamburgerBtnOneSvg :is(.bottom) {
+    
+
+// }
+
+// .hamburgerBtnOneSvg:hover :is(.top) {
+    
+//     stroke-dashoffset: 80px;
+// }
+// .hamburgerBtnOneSvg:hover :is(.middle) {
+//     transition-delay: 100ms;
+//     stroke-dashoffset: 80px;
+// }
+// .hamburgerBtnOneSvg:hover :is(.bottom) {
+//     transition-delay: 200ms;
+//     stroke-dashoffset: 80px;
+// }
+

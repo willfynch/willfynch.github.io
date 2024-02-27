@@ -33,7 +33,7 @@ export default function Home() {
   const projectsData = getProjectsMetadata();
 
   return (
-      <main className='overflow-x-hidden' >
+      <main className='overflow-x-hidden text-my-black' >
         <Hero></Hero>
         <Services></Services>
         <Projects projects={projectsData}></Projects>

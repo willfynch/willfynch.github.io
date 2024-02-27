@@ -12,8 +12,8 @@ const config: Config = {
         'bilbo' : ["var(--font-bilbo)"]
       },
       colors: {
-        'my-white' : '#F1F5F9',
-        'my-black' : '#1E293B'
+        'my-white' : '#fdf7ec',
+        'my-black' : '#502c15'
       },
       screens: {
         'xs': '400px'
