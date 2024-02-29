@@ -1,7 +1,11 @@
+'use client'
 import styles from './Navbar.module.scss';
 import { useContext, useEffect, useState } from 'react';
 import { LanguageContext } from '@/contexts/LanguageContext';
 import { useScrollLock } from '@/hooks/scrollLock';
+import Hamburger from '../Hamburger/Hamburger';
+import { HamburgerModel } from '@/models/hamburger.model';
+
 
 export const navItemsEn = [
     {
@@ -51,9 +55,16 @@ export const navItemsFr = [
 
 export default function Navbar() {
 
-    let [scrollY, setScrollY] = useState(0);
-
-    const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
+    const [scrollY, setScrollY] = useState(0);
+    const [isMenuOpened, setMenuOpened] = useState(false)
+    const [hamburgerProps, setHamburgerProps] = useState<HamburgerModel>({
+        fill: '#fdf7ec',
+        svgClasses: 'hamburgerBtnOneSvg',
+        lineOneClasses: 'top line',
+        lineTwoClasses:'bottom line',
+        isOpen: false,
+        onOpen: ()=>openMenu()        
+    })
 
     const { lockScroll, unlockScroll } = useScrollLock();
 
@@ -76,8 +87,8 @@ export default function Navbar() {
     }
 
     function handleSetMenuVisible() {
-        setMobileMenuVisible(!mobileMenuVisible)
-        if (mobileMenuVisible) {
+        setMenuOpened(!isMenuOpened)
+        if (isMenuOpened) {
             unlockScroll()
         } else {
             lockScroll()
@@ -97,6 +108,27 @@ export default function Navbar() {
     function handleScroll() {
         const position = window.pageYOffset;
         setScrollY(position);
+        if(scrollY > 500){
+            document.getElementById('hamburger')?.classList.add('bg-my-white')
+            setHamburgerProps({
+                fill:'#593117',
+                svgClasses: hamburgerProps.svgClasses,
+                lineOneClasses: hamburgerProps.lineOneClasses,
+                lineTwoClasses: hamburgerProps.lineTwoClasses,
+                isOpen: hamburgerProps.isOpen,
+                onOpen: hamburgerProps.onOpen
+            })
+        }else{
+            document.getElementById('hamburger')?.classList.remove('bg-my-white')
+            setHamburgerProps({
+                fill:'#fdf7ec',
+                svgClasses: hamburgerProps.svgClasses,
+                lineOneClasses: hamburgerProps.lineOneClasses,
+                lineTwoClasses: hamburgerProps.lineTwoClasses,
+                isOpen: hamburgerProps.isOpen,
+                onOpen: hamburgerProps.onOpen
+            })
+        }
         console.log(scrollY)
     }
 
@@ -113,19 +145,19 @@ export default function Navbar() {
         // }, 10);
     }
 
-    function openMenu(){
+    function openMenu():void{
 
-        setMobileMenuVisible(!mobileMenuVisible)
+        setMenuOpened(!isMenuOpened)
         document.getElementById('hamburger')?.classList.remove(styles.opened)
         document.getElementById('hamburger')?.classList.remove(styles.closed)
 
-        if(mobileMenuVisible){
+        if(isMenuOpened){
             document.getElementById('hamburger')?.classList.add(styles.opened);
         }
-        if(!mobileMenuVisible){
+        if(!isMenuOpened){
             document.getElementById('hamburger')?.classList.add(styles.closed);
         }
-        console.log(mobileMenuVisible)
+        console.log(isMenuOpened)
     }
 
     return (
@@ -174,16 +206,13 @@ export default function Navbar() {
         //         </button>
         //     </div>
         // </div>
-        <div className='absolute  top-10 right-20 z-50 text-white '>
+        <div className='absolute top-[20px] 6 right-[80px] z-50 text-white '>
 
 
-            <button onClick={openMenu} onMouseEnter={handleHamburgerHover} id='hamburger' className={styles.hamburgerBtnOne + " " + "border-my-black border-2 fixed justify-self-center self-center h-[60px] w-[60px] rounded-full bg-my-white"} aria-controls="primary-navigation" aria-expanded={mobileMenuVisible}>
-                <svg fill='#502c15' className={styles.hamburgerBtnOneSvg} viewBox="0 0 100 100" width={50}>
-                    <line className={styles.top + ' ' + styles.line} x1={30} x2={82} y1={30} y2={30} strokeDasharray={80} strokeDashoffset={0} stroke="black" strokeWidth={4} strokeLinecap="round"></line>
-                    <line className={styles.middle + ' ' + styles.line} x1={30} x2={82} y1={50} y2={50} strokeDasharray={80} strokeDashoffset={0} stroke="black" strokeWidth={4} strokeLinecap="round"></line>
-                    <line className={styles.bottom + ' ' + styles.line} x1={30} x2={82} y1={70} y2={70} strokeDasharray={80} strokeDashoffset={0} stroke="black" strokeWidth={4} strokeLinecap="round"></line>
-                </svg>
-            </button>
+
+                <Hamburger props={hamburgerProps}></Hamburger>
+
+          
 
         </div>
 
