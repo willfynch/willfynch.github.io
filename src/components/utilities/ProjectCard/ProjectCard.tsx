@@ -1,5 +1,5 @@
 'use client'
-import project_placeholder from '../../../../../public/svg/project_placeholder.svg'
+import project_placeholder from '../../../../public/svg/project_placeholder.svg'
 import Image from 'next/image'
 import styles from './ProjectCard.module.scss';
 import { useContext } from "react";

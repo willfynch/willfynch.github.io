@@ -1,10 +1,10 @@
-import Hero from './components/Hero/Hero'
-import Bio from './components/Bio/Bio'
-import Projects from './components/Projects/Projects'
-import Contact from './components/Contact/Contact'
+import Hero from '../components/Hero/Hero'
+import Bio from '../components/Bio/Bio'
+import Projects from '../components/Projects/Projects'
+import Contact from '../components/Contact/Contact'
 import getProjectsMetadata from '@/utilities/getProjectData'
-import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
-import Services from './components/Services/Services'
+import ContactWidget from '../components/utilities/ContactWidget/ContactWidget'
+import Services from '../components/Services/Services'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -35,11 +35,6 @@ export default function Home() {
   return (
       <main className='overflow-x-hidden text-my-black' >
         <Hero></Hero>
-        <Services></Services>
-        <Projects projects={projectsData}></Projects>
-        <Contact></Contact>
-        <Bio></Bio>
-        <ContactWidget></ContactWidget>
       </main>
   )
 }

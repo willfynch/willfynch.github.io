@@ -1,5 +1,5 @@
 'use client'
-import logo_calendly from '../../../../public/svg/calendly-logo.svg'
+import logo_calendly from '../../../public/svg/calendly-logo.svg'
 import Image from 'next/image'
 import styles from './Contact.module.scss'
 import { steps } from '@/data/process-steps';

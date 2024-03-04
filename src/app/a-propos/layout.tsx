@@ -1,17 +1,16 @@
 'use client'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '../globals.css'
 import nowFont from 'next/font/local';
-import {useEffect, useState } from 'react'
+import {useEffect } from 'react'
 //@ts-ignore
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] })
+import Footer from '@/components/Footer/Footer';
+import Navbar from '@/components/Navbar/Navbar';
 
 const now = nowFont({
-  src: '../../public/fonts/Now-Regular.otf'
+  src: '../../../public/fonts/Now-Regular.otf'
 })
 
 const bilbo = Bilbo_Swash_Caps({
@@ -36,8 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
       <html lang='fr'>
         <body className={bilbo.variable + ' ' + now.className}>
+          
+          <Navbar></Navbar>
             {children}
+            <Footer></Footer>
         </body>
+        
       </html>
   )
 }
