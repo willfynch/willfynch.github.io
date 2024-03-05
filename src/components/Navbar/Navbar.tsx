@@ -7,7 +7,8 @@ import Hamburger from '../Hamburger/Hamburger';
 import { HamburgerModel } from '@/models/hamburger.model';
 import Link from 'next/link';
 import { navItems } from '@/utilities/navItems';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { IoHome } from "react-icons/io5";
 
 export default function Navbar() {
 
@@ -15,6 +16,13 @@ export default function Navbar() {
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
     const { lockScroll, unlockScroll } = useScrollLock();
     const router = useRouter()
+    const pathName = usePathname()
+
+    useEffect(() => {
+
+        console.log(pathName)
+
+    }, [])
 
     function handleSetMenuVisible() {
         setMobileMenuVisible(!mobileMenuVisible)
@@ -26,13 +34,18 @@ export default function Navbar() {
     }
 
     return (
-        <div className={  "h-10 shadow-md bg-my-white z-50  duration-300 top-0 px-4 sticky "}>
+        <div className={"h-10 shadow-md bg-my-white z-50  duration-300 top-0 px-4 sticky "}>
             <div className="hidden sm:inline h-full">
-                <nav className="h-full flex flex-row justify-end">
+                <nav className="h-full flex flex-row justify-center">
+                    <button className={styles.listItem + ' ' +  'text-my-black'}>
+                        <Link href={'/'}>
+                        <IoHome />
+                        </Link>
+                    </button>
                     {navItems.map(navItem => {
                         return (
-                            <button role='button' className={styles.listItem + ' ' + 'flex items-center h-full transition linear duration-150 ml-4 cursor-pointer'} key={navItem.id}>
-                               <Link href={`/${navItem.path}`}>{navItem.name}</Link>
+                            <button role='button' className={styles.listItem + (pathName === '/'+navItem.path ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full transition linear duration-150 ml-4 cursor-pointer text-my-black'} key={navItem.id}>
+                                <Link href={`/${navItem.path}`}>{navItem.name}</Link>
                             </button>
                         )
                     })}
@@ -40,15 +53,15 @@ export default function Navbar() {
             </div>
 
             <nav aria-hidden={!mobileMenuVisible} className={styles.coverNavbar + ' ' + (mobileMenuVisible ? ' opacity-100 h-screen top-0 z-50' : 'opacity-0 h-0 -top-20') + ' ' + ' flex flex-col justify-center sm:hidden absolute w-full top-0 left-0 coverNavbar bg-white'}>
-                    {navItems.map(navItem => {
-                        return (
-                            <button
-                                role='button'
-                                className={styles.listItemMobile + ' ' + 'bg-my-white justify-center flex items-center h-full text-my-black'} key={navItem.id}>
-                                <Link href={`/${navItem.path}`}>{navItem.name}</Link>
-                            </button>
-                        )
-                    })}
+                {navItems.map(navItem => {
+                    return (
+                        <button
+                            role='button'
+                            className={styles.listItemMobile + ' ' + 'bg-my-white justify-center flex items-center h-full text-my-black'} key={navItem.id}>
+                            <Link href={`/${navItem.path}`}>{navItem.name}</Link>
+                        </button>
+                    )
+                })}
 
             </nav>
 

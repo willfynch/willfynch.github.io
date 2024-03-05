@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
+import SectionHeader from '@/components/SectionHeader/SectionHeader';
 
 const now = nowFont({
   src: '../../../public/fonts/Now-Regular.otf'
@@ -21,7 +22,7 @@ const bilbo = Bilbo_Swash_Caps({
 })
 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     AOS.init({
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
       <html lang='fr'>
         <body className={bilbo.variable + ' ' + now.className}>
-          
+          <SectionHeader></SectionHeader>
           <Navbar></Navbar>
             {children}
             <Footer></Footer>
