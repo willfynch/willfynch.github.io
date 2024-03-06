@@ -4,7 +4,7 @@ import { servicesItem } from '@/utilities/servicesItems'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 
-export enum ABOUT_TEXTS {
+enum ABOUT_TEXTS {
     FIRST = `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web 
     pour aventuriers modernes. Mais <strong>qu’est-ce qu’un aventurier moderne</strong>, 
     me diras-tu, toi qui me lis ?`,
