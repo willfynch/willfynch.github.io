@@ -1,4 +1,6 @@
 import Banner from '@/components/Banner/Banner'
+import ServiceCard from '@/components/ServiceCard/ServiceCard'
+import { servicesItem } from '@/utilities/servicesItems'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 
@@ -31,6 +33,16 @@ export default function About() {
             <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-40'>
                 <p>{ABOUT_TEXTS.THIRD}</p>
                 <p className='font-extrabold'>{ABOUT_TEXTS.FOURTH}</p>
+            </div>
+
+            <div className='w-full flex-col sm:flex-row flex gap-4 items-center justify-center mb-20'>
+                {
+                    servicesItem.map(service => 
+                        (
+                        <ServiceCard available={service.available} title={service.title} options={service.options} buttonText={service.available ? `Ça m'intéresse` : 'À venir'} />
+                        )
+                    )
+                }
             </div>
 
         </section>

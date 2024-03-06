@@ -13,7 +13,10 @@ const config: Config = {
       },
       colors: {
         'my-white' : '#fdf7ec',
-        'my-black' : '#502c15'
+        'my-black' : '#502c15',
+        'my-brown' : '#D4C09E',
+        'my-dark-blue': '#2C4F57',
+        'my-blue': '#A8C7D0'
       },
       screens: {
         'xs': '400px'
