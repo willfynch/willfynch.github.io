@@ -31,20 +31,20 @@ export default function Hero() {
 
                 <div id='logo' className=' self-center flex flex-col justify-center items-center'>
                     <CoffeCup></CoffeCup>
-                    <h2 data-aos='fade-down' data-aos-offset='10' data-aos-duration="1000" className='text-lg text-my-white text-center'>{HERO_TEXTS.FR_LOGO_TEXT}</h2>
+                    <h2 className='text-lg text-my-white text-center'>{HERO_TEXTS.FR_LOGO_TEXT}</h2>
                 </div>
 
-                <h1 data-aos='fade' data-aos-delay='1200' data-aos-duration="1000" id='HERO_TITLE' className={styles.heroTitle + ' ' + 'mt-4 w-full text-center text-my-white text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl'}>
+                <h1 id='HERO_TITLE' className={styles.heroTitle + ' ' + 'mt-4 w-full text-center text-my-white text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl'}>
                     {HERO_TEXTS.FR_TITLE}
                 </h1>
-                <h2 data-aos='fade-up' data-aos-delay='1400' data-aos-duration="1000" id='HERO_SUBTITLE' className={styles.heroTitle + ' ' + ' w-full text-center text-my-white font-bilbo text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl'}>
+                <h2 id='HERO_SUBTITLE' className={styles.heroTitle + ' ' + ' w-full text-center text-my-white font-bilbo text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl'}>
                     {HERO_TEXTS.FR_SUBTITLE}
                 </h2>
-                <p data-aos='fade-up' data-aos-delay='1500' data-aos-duration="1000" id='HERO_SUBTITLE' className={styles.heroTitle + ' ' + 'text-lg mt-4 mb-20 w-full text-center text-my-white'}>
+                <p id='HERO_PHRASE' className={styles.heroTitle + ' ' + 'text-xl px-[40px] md:px-0 md:text-base mt-4 mb-20 w-full text-center text-my-white'}>
                     {HERO_TEXTS.FR_PHRASE}
                 </p>
 
-                <div data-aos='fade' data-aos-delay='1500' data-aos-duration="1000" className=' absolute w-full text-center z-50 top-[70%]'>
+                <div className=' absolute w-full text-center z-50 top-[70%]'>
                     <Link href={'/contact'}>
                         <ButtonTransparent text={HERO_TEXTS.FR_CTA} id={'heroButton'} />
                     </Link>
@@ -53,7 +53,7 @@ export default function Hero() {
                 <nav className='absolute z-50 flex flex-col left-[40px] bottom-[40px]'>
                     {navItems.map(item => {
                         return(
-                            <Link className='text-my-white text-lg' key={item.id} href={`/${item.path}`}>{item.name}</Link>
+                            <Link className='text-my-white text-base' key={item.id} href={`/${item.path}`}>{item.name}</Link>
                         )
                     })}
                 </nav>

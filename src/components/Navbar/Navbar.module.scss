@@ -1,23 +1,10 @@
 .listItem:hover {
-    box-shadow: 0px 2px 0px 0px #530117;
+    box-shadow: 0px 2px 0px 0px #593117;
 }
 
-.listItem,
-.listItemMobile {
-    transition: all ease .3s;
-
-}
-.listItemMobile:hover {
-    font-weight: 900;
-}
 .hamBar {
     border-radius: 25px;
-    transition: all ease .5s;
     z-index: 999;
-}
-.coverNavbar {
-    transition: all ease .5s;
-    position: fixed;
 }
 
 

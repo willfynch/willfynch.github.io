@@ -31,6 +31,8 @@ const config: Config = {
         'fit-view' : 'calc(100vh - 64px)'
       },
       fontSize: {
+        mobileBase: '1.1rem',
+        base: '1.5rem',
         x3xl: ['2.15rem', '2.3rem'],
         x2xl: ['2.05rem', '2.2rem'],
         x6demixl: '4rem'

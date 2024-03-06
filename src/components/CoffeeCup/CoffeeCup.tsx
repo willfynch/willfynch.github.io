@@ -1,12 +1,18 @@
 import styles from './CoffeCup.module.scss'
 
-export default function CoffeCup(){
+export interface CoffeeCupProps {
+    fill?: string;
+    width?: number;
+    height?: number;
+}
+
+export default function CoffeCup(props: CoffeeCupProps){
 
 
     return(
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={100} height={100} viewBox="0 0 1080.000000 1080.000000" preserveAspectRatio="xMidYMid meet">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={props.width ?? 100} height={props.height ?? 100} viewBox="0 0 1080.000000 1080.000000" preserveAspectRatio="xMidYMid meet">
 
-                    <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" fill="#fdf7ec" stroke="none">
+                    <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" fill={props.fill ?? '#fdf7ec'} stroke="none">
                             {/** MIDDLE FUMEE */}
                         <path d="M4415 9684 c-22 -7 -41 -14 -42 -14 -8 0 -64 -101 -118 -210 -112
 -224 -152 -375 -142 -534 10 -161 64 -290 227 -541 168 -260 213 -373 191
