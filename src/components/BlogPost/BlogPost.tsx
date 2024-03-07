@@ -14,7 +14,7 @@ export default function BlogPost(props: BlogPostProps) {
         <div className="text-base text-my-black duration-200 flex flex-col sm:flex-row shadow-md group hover:shadow-lg">
             <div className="sm:w-1/2 h-[300px] relative overflow-hidden">
                 <Image className="absolute z-40 duration-200 w-full group-hover:scale-110 object-cover h-[300px]" src={props.image ?? ''} width={0} height={0} alt={""} />
-                <div id="TAGS" className="absolute z-50 bottom-4 left-4 flex flex-col gap-2">
+                <div id="TAGS" className="absolute z-40 bottom-4 left-4 flex sm:flex-col gap-2">
                     {props.tags?.map(tag => (<div className="capitalize text-sm px-2 bg-my-brown text-center font-black">{tag}</div>))}
                 </div>
             </div>

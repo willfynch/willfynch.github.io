@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { FaSearch } from "react-icons/fa";
 
 export interface BlogSearchBarProps {
