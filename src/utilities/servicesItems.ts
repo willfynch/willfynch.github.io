@@ -5,8 +5,8 @@ export const servicesItem: IService[] = [
         title: `Site d'une seule page`,
         options: [
             'Site sur une page',
-            'Plusieurs sections possible',
-            'Page 404 personnalisée',
+            'Plusieurs sections',
+            'Page 404',
             'Pages légales',
             'RGPD & SEO',
             'Moyen de contact',
@@ -18,8 +18,8 @@ export const servicesItem: IService[] = [
         title: `Site d'une seule page`,
         options: [
             'Site sur une page',
-            'Plusieurs sections possible',
-            'Page 404 personnalisée',
+            'Plusieurs sections',
+            'Page 404',
             'Pages légales',
             'RGPD & SEO',
             'Moyen de contact',

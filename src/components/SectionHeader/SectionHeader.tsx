@@ -6,7 +6,7 @@ export interface SectionHeaderProps {
 
 export default function SectionHeader(props: SectionHeaderProps){
     return(
-        <header className={'relative overflow-hidden w-full h-[250px]'}>
+        <header className={'relative overflow-hidden w-full h-[150px] md:h-[250px]'}>
             <Image className={'absolute top-0 left-0 object-cover'} fill src={'/images/LAPTOPCOFFEE_banner.png'} alt={''}></Image>
             <div className={'bg-black/70 w-full h-full  absolute top-0 left-0 flex flex-col justify-center items-center'}>
                 <CoffeCup height={50} width={50}></CoffeCup>

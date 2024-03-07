@@ -35,7 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
       <html lang='fr' >
-        <body className={bilbo.variable + ' ' + now.className} >
+        <body className={bilbo.variable + ' ' + now.className + ' ' + 'overflow-x-hidden'} >
           <SectionHeader title='À propos'></SectionHeader>
           <Navbar></Navbar>
             {children}
