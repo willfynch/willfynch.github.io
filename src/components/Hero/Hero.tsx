@@ -53,7 +53,7 @@ export default function Hero() {
                 <nav className='absolute z-50 flex flex-col left-[40px] bottom-[40px]'>
                     {navItems.map(item => {
                         return(
-                            <Link className='text-my-white text-base' key={item.id} href={`/${item.path}`}>{item.name}</Link>
+                            <Link className='text-my-white text-mobileBase' key={item.id} href={`/${item.path}`}>{item.name}</Link>
                         )
                     })}
                 </nav>
