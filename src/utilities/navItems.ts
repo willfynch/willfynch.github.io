@@ -21,4 +21,9 @@ export const navItems : NavItem[] = [
         path: 'contact',
         id: 4
     },
+    {
+        name: 'F.A.Q',
+        path: 'foire-aux-questions',
+        id: 5
+    },
     ]
