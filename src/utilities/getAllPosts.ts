@@ -16,8 +16,9 @@ function getAllPosts(): any {
       slug: fileName.replace(".md", ""),
       image: matterResult.data.image,
       tags: matterResult.data.tags,
-      date: matterResult.data.date
-
+      date: matterResult.data.date,
+      author: matterResult.data.author,
+      authorPic: matterResult.data.authorPic
     };
   });
 

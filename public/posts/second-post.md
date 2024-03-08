@@ -2,6 +2,8 @@
 title: "Premier Post"
 categories : ["Next.js", "Next", "Next.js Framework", "Next.js Tutorial", "React.js", "react.js tutorial"]
 tags : ["tag", "next"]
+author: 'Will'
+authorPic: '/images/profile_pic.png'
 subtitle: "Showcase website"
 slug: second-post
 date : "2020-11-10T11:42:46Z"
