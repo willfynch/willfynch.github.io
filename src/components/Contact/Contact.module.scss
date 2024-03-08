@@ -1,0 +1,16 @@
+@use '../../global_styles.scss';
+
+.contactSection {
+    scroll-margin: -50px;
+}
+
+.number {
+    background-color: rgb(30 41 59);
+    color: rgb(241 245 249);
+    border-radius: 3px 0 0 3px;
+    cursor: default;
+}
+
+.description {
+    border-radius: 0 3px 3px 0;
+}

@@ -12,8 +12,11 @@ const config: Config = {
         'bilbo' : ["var(--font-bilbo)"]
       },
       colors: {
-        'my-white' : '#F1F5F9',
-        'my-black' : '#1E293B'
+        'my-white' : '#fdf7ec',
+        'my-black' : '#502c15',
+        'my-brown' : '#D4C09E',
+        'my-dark-blue': '#2C4F57',
+        'my-blue': '#A8C7D0'
       },
       screens: {
         'xs': '400px'
@@ -31,6 +34,8 @@ const config: Config = {
         'fit-view' : 'calc(100vh - 64px)'
       },
       fontSize: {
+        mobileBase: '1.3rem',
+        base: '1.5rem',
         x3xl: ['2.15rem', '2.3rem'],
         x2xl: ['2.05rem', '2.2rem'],
         x6demixl: '4rem'

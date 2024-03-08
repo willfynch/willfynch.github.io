@@ -1,11 +1,7 @@
-import Hero from './components/Hero/Hero'
-import Bio from './components/Bio/Bio'
-import Projects from './components/Projects/Projects'
-import Contact from './components/Contact/Contact'
-import getProjectsMetadata from '@/utilities/getProjectData'
-import ContactWidget from './components/utilities/ContactWidget/ContactWidget'
-import Services from './components/Services/Services'
+import Hero from '../components/Hero/Hero'
 import { Metadata } from 'next'
+import { Bilbo_Swash_Caps } from 'next/font/google';
+import nowFont from 'next/font/local';
 
 export const metadata: Metadata = {
   title: "Will | Sites web sur mesure",
@@ -28,18 +24,21 @@ export const metadata: Metadata = {
   }
 };
 
+const now = nowFont({
+  src: '../../public/fonts/Now-Regular.otf'
+})
+
+const bilbo = Bilbo_Swash_Caps({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bilbo',
+})
+
 export default function Home() {
-
-  const projectsData = getProjectsMetadata();
-
   return (
-      <main className='overflow-x-hidden' >
-        <Hero></Hero>
-        <Services></Services>
-        <Projects projects={projectsData}></Projects>
-        <Contact></Contact>
-        <Bio></Bio>
-        <ContactWidget></ContactWidget>
+      <main className={bilbo.variable + ' ' + now.className} >
+        <Hero ></Hero>
       </main>
   )
 }
