@@ -5,7 +5,7 @@ const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
-  "main";
+  "refonte";
 
 export default defineConfig({
   branch,
@@ -21,7 +21,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "media",
+      mediaRoot: "images",
       publicFolder: "public",
     },
   },
@@ -46,10 +46,49 @@ export default defineConfig({
             label: "Body",
             isBody: true,
           },
+          {
+            type: 'image',
+            name: 'image',
+            label: 'Image',
+            required: true,
+            description: 'Image de couverture',
+          },
+          {
+            type: 'image',
+            name: 'authorPic',
+            label: 'Photo de profil',
+            required: true,
+            description: 'Photo de profil de l\'auteur',
+          },
+          {
+            type: 'string',
+            name: 'author',
+            label: 'Nom de l\'auteur',
+            required: true,
+            description: 'Nom de l\'auteur',
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            description: 'Tags',
+            list: true,
+            ui: {
+              component: 'tags',
+            }
+          },
+          {
+            label: "Date",
+            name: "date",
+            type: "datetime",
+            ui: {
+              dateFormat: 'DD-MM-YYYY'
+            },
+          }
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          router: ({ document }) => `/public/posts/${document._sys.filename}`,
         },
       },
     ],

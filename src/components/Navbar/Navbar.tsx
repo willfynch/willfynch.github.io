@@ -60,7 +60,7 @@ export default function Navbar() {
                     return (
                         <button
                             role='button'
-                            className={(pathName === '/' + navItem.path ? ' font-extrabold ' : ' font-medium ') + ' ' + ' leading-normal hover:font-extrabold bg-my-white uppercase text-2xl text-my-black '} key={navItem.id}>
+                            className={(pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' leading-normal hover:font-extrabold bg-my-white uppercase text-2xl text-my-black '} key={navItem.id}>
                             <Link href={`/${navItem.path}`}>{navItem.name}</Link>
                         </button>
                     )

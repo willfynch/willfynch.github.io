@@ -1,6 +1,8 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { calculateReadingTime } from "./calculateReadingTime";
+import { slugify } from "./slugify";
 
 const getPost = (slug:any): any => {
   const folder = join(process.cwd(), "public/posts");
@@ -14,12 +16,13 @@ const getPost = (slug:any): any => {
     return {
       title: matterResult.data.title,
       content: matterResult.content,
-      slug: fileName.replace(".md", ""),
+      slug: slugify(fileName.replace(".md", "")),
       image: matterResult.data.image,
       tags: matterResult.data.tags,
-      date: matterResult.data.date,
+      date: matterResult.data.date[0],
       author: matterResult.data.author,
-      authorPic: matterResult.data.authorPic
+      authorPic: matterResult.data.authorPic,
+      readingTime: calculateReadingTime(matterResult.content, 0.2)
     };
   });
 

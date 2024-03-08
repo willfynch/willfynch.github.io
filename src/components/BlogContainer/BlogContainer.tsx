@@ -45,13 +45,13 @@ export default function BlogContainer(props: BlogContainerProps) {
     }
 
     return (
-        <Fragment>
+        <>
             <BlogSearchBar onChange={handleSearch} />
             <div className="flex flex-col gap-8">
                 {posts && posts.map((post: IBlogPost) =>
-                    <BlogPost key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
+                    <BlogPost readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
                 )}
             </div>
-        </Fragment>
+        </>
     )
 }

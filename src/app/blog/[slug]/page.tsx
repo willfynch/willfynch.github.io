@@ -1,9 +1,9 @@
 import getPost from "@/utilities/getPost";
 import Markdown from "markdown-to-jsx";
 import Link from "next/link";
-import { Fragment } from "react";
 import Image from "next/image";
 import getAllPosts from "@/utilities/getAllPosts";
+import ButtonColor from "@/components/buttons/ButtonColor";
 
 export async function generateStaticParams(){
     const posts = await getAllPosts();
@@ -15,8 +15,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
     const post = getPost(slug)
 
     return (
-        <Fragment>
-            <Link href={'/blog'}>Back</Link>
+        <section>
+           <Link href={'/blog/'}><ButtonColor text={"RETOUR"} id={"BTN"}/></Link>
+            
             {post &&
                 <article className="px-50">
                     <div className="w-full h-[250px] overflow-y-hidden relative">
@@ -30,7 +31,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
                     <Markdown>{post.content}</Markdown>
                 </article>}
-        </Fragment>
+        </section>
 
     )
 }

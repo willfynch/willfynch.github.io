@@ -4,4 +4,7 @@ export interface IBlogPost {
     date: string;
     slug: string;
     image: string;
+    authorPic: string;
+    author: string;
+    readingTime: number;
 }
