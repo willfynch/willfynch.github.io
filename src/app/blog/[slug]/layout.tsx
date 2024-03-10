@@ -28,14 +28,9 @@ export default function Layout({ children, params }: { children: any, params:any
   const {slug} = params;
   const post:IBlogPost = getPost(slug)
   return (
-      <html lang='fr' >
-        <body className={bilbo.variable + ' ' + now.className + ' ' + 'overflow-x-hidden'} >
-          <SectionHeader image={post.image} title={post.title}></SectionHeader>
-          <Navbar></Navbar>
+      < >
             {children}
-          <Footer></Footer>
-        </body>
-        
-      </html>
+
+      </>
   )
 }
