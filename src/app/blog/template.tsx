@@ -1,0 +1,14 @@
+import Navbar from "@/components/Navbar/Navbar";
+import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import { Fragment } from "react";
+
+export default function Template({ children }: { children: React.ReactNode }) {
+    return (
+        <Fragment>
+            <SectionHeader title='Blog' />
+            <Navbar/>
+            {children}
+        </Fragment>
+    )
+
+}
