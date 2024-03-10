@@ -6,6 +6,7 @@ import {useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
+import Footer from '@/components/Footer/Footer';
 
 const now = nowFont({
   src: '../../public/fonts/Now-Regular.otf'
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang='fr'>
         <body className={bilbo.variable + ' ' + now.className}>
             {children}
+            <Footer></Footer>
         </body>
       </html>
   )

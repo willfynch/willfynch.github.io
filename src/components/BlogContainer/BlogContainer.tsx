@@ -51,6 +51,7 @@ export default function BlogContainer(props: BlogContainerProps) {
                 {posts && posts.map((post: IBlogPost) =>
                     <BlogPost readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
                 )}
+                {posts.length===0 && <>Il n'y a aucun post qui correspond à ta recherche.</>}
             </div>
         </>
     )

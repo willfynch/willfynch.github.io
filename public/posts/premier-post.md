@@ -2,7 +2,7 @@
 slug: premier-post
 summary: |
   Easy Ways Add CSS in Next.js #SeriesPart2 
-title: Deuxième Post
+title: PREMIER POST
 image: /images/miorasophro.jpg
 authorPic: /images/profile_pic.png
 author: Will

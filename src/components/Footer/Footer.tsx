@@ -16,7 +16,7 @@ export default function Footer() {
 
     return (
 
-        <footer className={' text-my-black bg-my-white w-full px-12 pt-12 pb-4 overflow-hidden inset-x-0 bottom-0'}>
+        <footer className={'text-my-black bg-my-white w-full px-12 pt-12 pb-4 overflow-hidden inset-x-0 bottom-0'}>
 
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">

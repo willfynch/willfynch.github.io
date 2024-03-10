@@ -11,7 +11,7 @@ export default function Blog(){
 
 
     return(
-        <section className="px-4 sm:px-20 xl:px-96 mb-10">
+        <section className="px-4 sm:px-20 xl:px-96 mb-10 min-h-[500px]">
 
             <BlogContainer posts={posts}/>
 

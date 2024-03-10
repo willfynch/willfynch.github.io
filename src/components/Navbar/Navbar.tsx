@@ -18,6 +18,11 @@ export default function Navbar() {
     const { lockScroll, unlockScroll } = useScrollLock();
     const pathName = usePathname()
 
+    useEffect(()=>{
+        console.log(pathName);
+        console.log(pathName?.includes('blog'))
+    },[])
+
     function handleSetMenuVisible() {
         setMobileMenuVisible(!mobileMenuVisible)
         if (mobileMenuVisible) {
@@ -38,7 +43,7 @@ export default function Navbar() {
                     </button>
                     {navItems.map(navItem => {
                         return (
-                            <button role='button' className={styles.listItem + (pathName === '/' + navItem.path ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black'} key={navItem.id}>
+                            <button role='button' className={styles.listItem + (pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black'} key={navItem.id}>
                                 <Link href={`/${navItem.path}`}>{navItem.name}</Link>
                             </button>
                         )

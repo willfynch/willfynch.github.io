@@ -5,10 +5,10 @@ import Image from "next/image";
 import getAllPosts from "@/utilities/getAllPosts";
 import ButtonColor from "@/components/buttons/ButtonColor";
 
-// export async function generateStaticParams(){
-//     const posts = await getAllPosts();
-//     return posts.map((post:any)=>({slug:post.slug}))
-// }
+export async function generateStaticParams(){
+    const posts = await getAllPosts();
+    return posts.map((post:any)=>({slug:post.slug}))
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
     const {slug} = params;
