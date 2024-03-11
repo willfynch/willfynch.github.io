@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import { Fragment } from "react";
@@ -7,7 +8,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <Fragment>
             <SectionHeader title='Blog' />
             <Navbar/>
-            {children}
+            {children}<Footer></Footer>
         </Fragment>
     )
 

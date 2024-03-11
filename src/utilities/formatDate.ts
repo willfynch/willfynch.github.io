@@ -1,4 +1,4 @@
-export function formatDate(date: any, format: string): string{
+export function formatDate(date: any): string{
     if(!date) {return ''}
 
     let theDate = new Date(date);

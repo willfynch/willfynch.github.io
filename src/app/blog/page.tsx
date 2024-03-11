@@ -1,13 +1,13 @@
 import BlogContainer from "@/components/BlogContainer/BlogContainer";
-import BlogPost from "@/components/BlogPost/BlogPost";
+import BlogPost from "@/components/BlogPostCard/BlogPostCard";
 import BlogSearchBar from "@/components/BlogSearchBar/BlogSearchBar";
 import { IBlogPost } from "@/models/blog-post.model";
 import getAllPosts from "@/utilities/getAllPosts"
 import { useState } from "react";
 
-export default function Blog(){
+export default async function Blog(){
 
-    const posts: IBlogPost[] = getAllPosts();
+    const posts: IBlogPost[] = await getAllPosts();
 
 
     return(

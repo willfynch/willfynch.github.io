@@ -3,25 +3,50 @@ import matter from "gray-matter";
 import { join } from "path";
 import { calculateReadingTime } from "./calculateReadingTime";
 import { slugify } from "./slugify";
+import { formatDate } from "./formatDate";
+import { getHeadings } from "./getHeadings";
+import { IBlogPost } from "@/models/blog-post.model";
 
-function getAllPosts(): any {
+export async function getAllPosts(): Promise<IBlogPost[]> {
   const folder = join(process.cwd(), "public/posts");
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
-  // Get gray-matter data from each file.
-  const posts = markdownPosts.map((fileName) => {
+
+  let headingsArray: any[] = [];
+  const headingPromises = markdownPosts.map((fileName)=>{
     const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
+    return getHeadings(matterResult.content)
+  })
+  await Promise.allSettled(headingPromises)
+    .then(
+      response => {
+        //@ts-ignore
+        console.log('RESPONSE ', response.map(response=>response.value))
+        //@ts-ignore
+       headingsArray = [...(response.map(response=>response.value))]
+      })
+      // [{},{status: fullfiled, value: myvalue}]
+  
+
+
+  // Get gray-matter data from each file.
+  const posts: IBlogPost[] = markdownPosts.map( (fileName, index) => {
+    const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
+    const matterResult = matter(fileContents);
+    //const headings = await getHeadings(matterResult.content);
+
     return {
       title: matterResult.data.title,
       slug: slugify(fileName.replace(".md", "")),
       image: matterResult.data.image,
       tags: matterResult.data.tags,
-      date: matterResult.data.date,
+      date: formatDate(matterResult.data.date),
       author: matterResult.data.author,
       authorPic: matterResult.data.authorPic,
-      readingTime: calculateReadingTime(matterResult.content, 0.2)
+      readingTime: calculateReadingTime(matterResult.content, 0.2),
+      nodes: headingsArray[index]
     };
   });
 

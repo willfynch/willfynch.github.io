@@ -7,4 +7,5 @@ export interface IBlogPost {
     authorPic: string;
     author: string;
     readingTime: number;
+    nodes?: any[]
 }

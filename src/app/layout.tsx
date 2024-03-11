@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang='fr'>
         <body className={bilbo.variable + ' ' + now.className}>
             {children}
-            <Footer></Footer>
+            
         </body>
       </html>
   )

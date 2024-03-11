@@ -1,36 +1,25 @@
 import getPost from "@/utilities/getPost";
-import Markdown from "markdown-to-jsx";
 import Link from "next/link";
-import Image from "next/image";
 import getAllPosts from "@/utilities/getAllPosts";
 import ButtonColor from "@/components/buttons/ButtonColor";
+import BlogPost from "@/components/BlogPost/BlogPost";
+import { IBlogPost } from "@/models/blog-post.model";
+import OtherPosts from "@/components/OtherPosts/OtherPosts";
 
-export async function generateStaticParams(){
+export async function generateStaticParams() {
     const posts = await getAllPosts();
-    return posts.map((post:any)=>({slug:post.slug}))
+    return posts.map((post: any) => ({ slug: post.slug }))
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {
-    const {slug} = params;
-    const post = getPost(slug)
+    const { slug } = params;
+    const post: IBlogPost = getPost(slug)
 
     return (
-        <section>
-           <Link href={'/blog/'}><ButtonColor text={"RETOUR"} id={"BTN"}/></Link>
-            
-            {post &&
-                <article className="px-50">
-                    <div className="w-full h-[250px] overflow-y-hidden relative">
-                        <h1 className="text-3xl text-white absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20">
-                            {post.title}
-                        </h1>
-                        <div className="w-full h-full bg-black/50 absolute z-10"></div>
-                        <Image className="w-full overflow-y-hidden absolute z-0" width={100} height={100} src={post.image} alt={"Title image"}></Image>
-
-                    </div>
-
-                    <Markdown>{post.content}</Markdown>
-                </article>}
+        <section className="pt-10 px-4 sm:px-20 2xl:px-96 mb-10 min-h-[500px]">
+            <Link className="text-my-black" href={'/blog/'}><ButtonColor width={100} text={"🡰 RETOUR"} id={"BTN"} /></Link>
+            <BlogPost nodes={post.nodes??[]} title={post.title} date={post.date} socials={[{ icon: '/svg/linkedin.svg', link: '/' }]} author={post.author} authorPic={post.authorPic} readingTime={post.readingTime} tags={post.tags} content={"hyello"} />
+            <OtherPosts/>
         </section>
 
     )
