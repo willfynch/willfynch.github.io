@@ -23,11 +23,8 @@ export async function getAllPosts(): Promise<IBlogPost[]> {
     .then(
       response => {
         //@ts-ignore
-        console.log('RESPONSE ', response.map(response=>response.value))
-        //@ts-ignore
        headingsArray = [...(response.map(response=>response.value))]
       })
-      // [{},{status: fullfiled, value: myvalue}]
   
 
 

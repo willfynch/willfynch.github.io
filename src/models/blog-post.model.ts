@@ -8,4 +8,5 @@ export interface IBlogPost {
     author: string;
     readingTime: number;
     nodes?: any[]
+    content?:string;
 }

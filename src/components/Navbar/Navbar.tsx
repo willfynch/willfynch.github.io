@@ -1,15 +1,13 @@
 'use client'
 import styles from './Navbar.module.scss';
-import { Fragment, useContext, useEffect, useState } from 'react';
-import { LanguageContext } from '@/contexts/LanguageContext';
+import { useEffect, useState } from 'react';
 import { useScrollLock } from '@/hooks/scrollLock';
-import Hamburger from '../Hamburger/Hamburger';
-import { HamburgerModel } from '@/models/hamburger.model';
 import Link from 'next/link';
 import { navItems } from '@/utilities/navItems';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { IoHome } from "react-icons/io5";
-import CoffeCup from '../CoffeeCup/CoffeeCup';
+import { useRouter } from 'next/navigation';
+
 
 export default function Navbar() {
 
@@ -17,11 +15,17 @@ export default function Navbar() {
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
     const { lockScroll, unlockScroll } = useScrollLock();
     const pathName = usePathname()
+    const router = useRouter();
 
-    useEffect(()=>{
-        console.log(pathName);
-        console.log(pathName?.includes('blog'))
-    },[])
+    function handleNavigate(path:string){
+        router.push(path)
+        setTimeout(() => {
+            if(mobileMenuVisible){
+                handleSetMenuVisible()
+            }
+        }, 300);
+        
+    }
 
     function handleSetMenuVisible() {
         setMobileMenuVisible(!mobileMenuVisible)
@@ -43,8 +47,8 @@ export default function Navbar() {
                     </button>
                     {navItems.map(navItem => {
                         return (
-                            <button role='button' className={styles.listItem + (pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black'} key={navItem.id}>
-                                <Link href={`/${navItem.path}`}>{navItem.name}</Link>
+                            <button role='button' className={styles.listItem + (pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black hover:text-my-brown'} key={navItem.id}>
+                                <Link onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}>{navItem.name}</Link>
                             </button>
                         )
                     })}
@@ -65,8 +69,8 @@ export default function Navbar() {
                     return (
                         <button
                             role='button'
-                            className={(pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' leading-normal hover:font-extrabold bg-my-white uppercase text-2xl text-my-black '} key={navItem.id}>
-                            <Link href={`/${navItem.path}`}>{navItem.name}</Link>
+                            className={(pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' leading-normal hover:font-extrabold bg-my-white uppercase text-2xl text-my-black  '} key={navItem.id}>
+                            <Link onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}>{navItem.name}</Link>
                         </button>
                     )
                 })}

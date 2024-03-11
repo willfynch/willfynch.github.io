@@ -15,7 +15,7 @@ export default async function OtherPosts(){
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
                 {shownPosts.map((post:any) => {
                     return(
-                        <div key={post.slug} className="flex flex-col justify-center items-start sm:w-1/3">
+                        <div key={post.slug} className="flex flex-col justify-center items-start mb-2 sm:mb-0  w-11/12 sm:w-1/3">
                             <Image width={400} height={150} src={post.image} alt={""} />
                             <Link  className="font-bold text-lg hover:text-my-brown" href={`/blog/${post.slug}`}>{post.title}</Link>
                             <span className="w-full">{post.date} · {post.readingTime} min de lecture</span>

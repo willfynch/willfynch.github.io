@@ -2,110 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ARTICLE */
 
-.PROJECT_MARKDOWN h2 {
-  font-size: large;
-  font-weight: bold;
-  margin: 1rem 0;
+
+.blogArticleMarkdown p {
+  font-size: smaller;
 }
-
-.PROJECT_MARKDOWN p:has(a){
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.PROJECT_MARKDOWN li>a {
-  position: relative;
+.blogArticleMarkdown h1, h2, h3 {
+  scroll-margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: 600;
-  transition: all linear .2s;
-  color: rgba(30, 41, 59,.8);
-}
-.PROJECT_MARKDOWN li>a:after {
-  content: '';
-  position: absolute;
-  z-index: -5;
-  left: 0px;
-  bottom: -2px;
-  width: 100%;
-  height: 15%;
-  background-color: rgba(30, 41, 59,.8);
-  transition: all linear .2s;
 }
 
-.PROJECT_MARKDOWN li>a:hover {
-  color: rgb(30 41 59);
-  color: rgb(241 245 249);
+.blogArticleMarkdown h1 {
+  font-size: xx-large;
 }
-
-.PROJECT_MARKDOWN li>a:hover::after {
-  height:110%;
-  background-color: rgba(30, 41, 59,1);
+.blogArticleMarkdown h2 {
+  font-size: larger;
 }
-
-.PROJECT_MARKDOWN p>a {
-  width: fit-content;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  background-color: rgb(30 41 59);
-  color: rgb(241 245 249);
-  transition: .2s all linear;
-  border-radius: 3px;
-  margin: 5px;
-}
-
-
-.PROJECT_MARKDOWN p>a:hover {
-  background-color: rgb(241 245 249);
-  color: rgb(30 41 59);
-}
-
-.PROJECT_MARKDOWN ul {
-  list-style:disc;
-  padding-left: 50px;
-  margin: 10px 0;
-}
-
-.PROJECT_MARKDOWN blockquote::before {
-  position: absolute;
-  color:  rgba(30 ,41 ,59,.5);
-  font-weight: 900;
-  content: '>';
-  top: -26px;
-  font-size: 2rem;
-  letter-spacing: -45px;
-
-}
-.PROJECT_MARKDOWN blockquote {
-  background-color: rgb(241 245 249);
-  padding: 1rem;
-  position: relative;
-  border-radius: 6px;
-  margin: 40px 0 40px 0;
-}
-
-.PROJECT_MARKDOWN p:has(em) {
-  background-color: rgba(208, 241, 219, .5);
-  padding: 1rem;
-  position: relative;
-  border-radius: 6px;
-  margin: 40px 0 40px 0;
-
-}
-
-.PROJECT_MARKDOWN p:has(em)::before {
-  position: absolute;
-  color:  rgb(133, 167, 144);
-  font-weight: 600;
-  content: '❝';
-  top: -36px;
-  font-size: 4rem;
-  letter-spacing: -45px;
-  
+.blogArticleMarkdown h3 {
+  font-size: x-large;
 }
 
 /**LINK */

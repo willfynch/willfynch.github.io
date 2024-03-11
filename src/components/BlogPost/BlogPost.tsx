@@ -1,9 +1,10 @@
 'use client'
-import Link from "next/link";
-import Image from "next/image";
-import { formatDate } from "@/utilities/formatDate";
 import BlogPostTopInfos from "../BlogPostTopInfos/BlogPostTopInfos";
 import { useEffect } from "react";
+import BlogTableOfContents from "../BlogTableOfContents/BlogTableOfContents";
+import { IMarkdownNode } from "@/models/markdown-node.model";
+import Markdown from "markdown-to-jsx";
+import Banner from "../Banner/Banner";
 
 export interface BlogPostProps {
     title?: string;
@@ -15,30 +16,28 @@ export interface BlogPostProps {
     authorPic: string;
     readingTime: number;
     content: string;
-    socials: {icon:string;link:string}[];
-    nodes: any[];
+    socials: { icon: string; link: string }[];
+    nodes: IMarkdownNode[];
 }
 
 export default function BlogPost(props: BlogPostProps) {
 
-    useEffect(()=>{console.log('NODES ', props.nodes)}, [])
+    useEffect(() => { console.log('content ', props.content) }, [])
 
     return (
-        <div className="text-base text-my-black duration-200 flex flex-col sm:flex-row">
-                <BlogPostTopInfos socials={props.socials} authorPic={props.authorPic} author={props.author} readingTime={props.readingTime} date={props.date!} tags={props.tags ?? []}/>
-                <p>NODES {props.nodes.toString()}</p>
-                {/* <article className="px-50">
-                    <div className="w-full h-[250px] overflow-y-hidden relative">
-                        <h1 className="text-3xl">
-                            {props.title} {props.date}
-                        </h1>
-                        <div className="w-full h-full bg-black/50 absolute z-10"></div>
-                        <Image className="w-full overflow-y-hidden absolute z-0" width={100} height={100} src={props.image ?? ''} alt={"Title image"}></Image>
+        <div className=" text-base text-my-black duration-200 flex flex-col mb-20">
 
-                    </div>
+            <BlogPostTopInfos socials={props.socials} authorPic={props.authorPic} author={props.author} readingTime={props.readingTime} date={props.date!} tags={props.tags ?? []} />
+            
+            <div className="w-full flex flex-col gap-2 md:flex-row ">
+                <div className="order-2 md:order-1 w-full md:w-3/5  ">
+                    <Markdown className='blogArticleMarkdown'>{props.content}</Markdown>
+                </div>
+                <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/5">
+                    <BlogTableOfContents nodes={props.nodes}/>
+                </aside>
 
-                    
-                </article> */}
+            </div>
         </div>
     )
 }
