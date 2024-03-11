@@ -29,9 +29,9 @@ export default function BlogPostTopInfos(props: BlogPostTopInfosProps) {
                     </div>
                 </div>
             </div>
-            <div className="text-[1rem] flex gap-2">
-                <span>{props.date} · {props.readingTime} min de lecture |</span> 
-                <span className="flex gap-2">{props.tags.map((tag,index)=>{return <Tag key={index} name={tag}/>})}</span>
+            <div className="text-[1rem] flex gap-2 flex-col sm:flex-row">
+                <span>{props.date} · {props.readingTime} min de lecture ·</span> 
+                <span className="flex gap-2 flex-wrap">{props.tags.map((tag,index)=>{return <Tag key={index} name={tag}/>})}</span>
             </div>
         </div>
     )

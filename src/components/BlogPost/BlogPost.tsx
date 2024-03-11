@@ -30,10 +30,10 @@ export default function BlogPost(props: BlogPostProps) {
             <BlogPostTopInfos socials={props.socials} authorPic={props.authorPic} author={props.author} readingTime={props.readingTime} date={props.date!} tags={props.tags ?? []} />
             
             <div className="w-full flex flex-col gap-2 md:flex-row ">
-                <div className="order-2 md:order-1 w-full md:w-3/5  ">
+                <div className="order-2 md:order-1 w-full md:w-4/6  ">
                     <Markdown className='blogArticleMarkdown'>{props.content}</Markdown>
                 </div>
-                <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/5">
+                <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/6">
                     <BlogTableOfContents nodes={props.nodes}/>
                 </aside>
 

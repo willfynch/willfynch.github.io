@@ -15,20 +15,20 @@ export const servicesItem: IService[] = [
         available: true
     },
     {
-        title: `Site d'une seule page`,
+        title: `Site éditorial`,
         options: [
-            'Site sur une page',
-            'Plusieurs sections',
+            'Site sur plusieurs pages',
             'Page 404',
             'Pages légales',
             'RGPD & SEO',
             'Moyen de contact',
+            'Pages blog',
             'Accompagnement'
         ],
         available: true
     },
     {
-        title: `Site d'une seule page`,
+        title: `Site e-commerce`,
         options: [
 
         ],
