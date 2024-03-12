@@ -50,7 +50,7 @@ export default defineConfig({
             type: "rich-text",
             name: "intro",
             label: "Intro",
-            required: true,
+            required: false,
             description: 'Introduction. Figure en en-tête des articles.'
             
           },

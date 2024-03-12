@@ -1,11 +1,9 @@
 import getPost from "@/utilities/getPost";
-import Link from "next/link";
 import getAllPosts from "@/utilities/getAllPosts";
 import ButtonColor from "@/components/buttons/ButtonColor";
 import BlogPost from "@/components/BlogPost/BlogPost";
 import { IBlogPost } from "@/models/blog-post.model";
 import OtherPosts from "@/components/OtherPosts/OtherPosts";
-import Banner from "@/components/Banner/Banner";
 import { Fragment } from "react";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import Navbar from "@/components/Navbar/Navbar";
