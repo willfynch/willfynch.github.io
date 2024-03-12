@@ -32,10 +32,10 @@ export async function getAllPosts(): Promise<IBlogPost[]> {
   const posts: IBlogPost[] = markdownPosts.map( (fileName, index) => {
     const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
-    //const headings = await getHeadings(matterResult.content);
 
     return {
       title: matterResult.data.title,
+      intro: matterResult.data.intro,
       slug: slugify(fileName.replace(".md", "")),
       image: matterResult.data.image,
       tags: matterResult.data.tags,

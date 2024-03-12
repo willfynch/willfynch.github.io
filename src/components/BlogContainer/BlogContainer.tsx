@@ -50,7 +50,7 @@ export default function BlogContainer(props: BlogContainerProps) {
             <BlogSearchBar onChange={handleSearch} />
             <div className="flex flex-col gap-8">
                 {posts && posts.map((post: IBlogPost) =>
-                    <BlogPostCard nodes={post.nodes} readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
+                    <BlogPostCard intro={post.intro} nodes={post.nodes} readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
                 )}
                 {posts.length===0 && <>Il n'y a aucun post qui correspond à ta recherche.</>}
             </div>

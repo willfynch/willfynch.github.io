@@ -17,14 +17,14 @@ export default function Navbar() {
     const pathName = usePathname()
     const router = useRouter();
 
-    function handleNavigate(path:string){
+    function handleNavigate(path: string) {
         router.push(path)
         setTimeout(() => {
-            if(mobileMenuVisible){
+            if (mobileMenuVisible) {
                 handleSetMenuVisible()
             }
         }, 300);
-        
+
     }
 
     function handleSetMenuVisible() {
@@ -37,19 +37,17 @@ export default function Navbar() {
     }
 
     return (
-        <div className={"h-[50px] shadow-md bg-my-white z-50 top-0 sticky "}>
+        <div className={"h-[50px] shadow-md bg-my-white z-50 top-0 sticky"}>
             <div className="hidden sm:inline h-full">
                 <nav className="text-base h-full flex flex-row justify-center">
-                    <button className={styles.listItem + ' ' + 'text-my-black'}>
-                        <Link href={'/'}>
-                            <IoHome />
-                        </Link>
-                    </button>
+                    <Link onClick={() => handleNavigate(`/`)} href={'/'} className={styles.listItem + ' ' + 'flex justify-center  items-center hover:text-my-brown text-my-black'}>
+                        <IoHome />
+                    </Link>
                     {navItems.map(navItem => {
                         return (
-                            <button role='button' className={styles.listItem + (pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black hover:text-my-brown'} key={navItem.id}>
-                                <Link onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}>{navItem.name}</Link>
-                            </button>
+                            <Link onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`} role='button' className={styles.listItem + (pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' uppercase flex items-center h-full  ml-4 cursor-pointer text-my-black hover:text-my-brown'} key={navItem.id}>
+                                {navItem.name}
+                            </Link>
                         )
                     })}
                 </nav>
@@ -63,22 +61,21 @@ export default function Navbar() {
             </div>
             <nav
                 aria-hidden={!mobileMenuVisible}
-                className={(mobileMenuVisible ? ' bg-my-white opacity-100 z-40 left-0 h-screen ' : 'opacity-0 left-[1000px] ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
+                className={(mobileMenuVisible ? ' opacity-100 bg-my-white z-40 top-[50px] h-screen ' : '  h-0 opacity-0 -top-[500px] ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
 
                 {navItems.map(navItem => {
                     return (
-                        <button
+                        <Link
+                            onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}
                             role='button'
                             className={(pathName?.includes(navItem.path) ? ' font-extrabold ' : ' font-medium ') + ' ' + ' leading-normal hover:font-extrabold bg-my-white uppercase text-2xl text-my-black  '} key={navItem.id}>
-                            <Link onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}>{navItem.name}</Link>
-                        </button>
+                            {navItem.name}
+                        </Link>
                     )
                 })}
-                <button className={' ' + ' font-medium text-my-black flex justify-center '}>
-                    <Link href={'/'}>
-                        <IoHome />
-                    </Link>
-                </button>
+                <Link onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
+                    <IoHome />
+                </Link>
 
             </nav>
 

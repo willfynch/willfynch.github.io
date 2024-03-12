@@ -47,6 +47,14 @@ export default defineConfig({
             isBody: true,
           },
           {
+            type: "rich-text",
+            name: "intro",
+            label: "Intro",
+            required: true,
+            description: 'Introduction. Figure en en-tête des articles.'
+            
+          },
+          {
             type: 'image',
             name: 'image',
             label: 'Image',

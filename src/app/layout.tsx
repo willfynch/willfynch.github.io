@@ -33,9 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
       <html lang='fr'>
-        <body className={bilbo.variable + ' ' + now.className + ' ' + 'overflow-x-hidden'}>
+        <body className={bilbo.variable + ' ' + now.className + ' ' + ' overflow-x-hidden ' }>
             {children}
-            
         </body>
       </html>
   )

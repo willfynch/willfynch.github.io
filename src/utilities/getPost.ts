@@ -19,6 +19,7 @@ export async function getPost(slug:any): Promise<IBlogPost> {
 
     return {
       title: matterResult.data.title,
+      intro: matterResult.data.intro,
       content: matterResult.content,
       slug: slugify(fileName.replace(".md", "")),
       image: matterResult.data.image,
@@ -29,7 +30,7 @@ export async function getPost(slug:any): Promise<IBlogPost> {
       readingTime: calculateReadingTime(matterResult.content, 0.2),
     };
   }).find(post => post.slug === slug)
-  ?? {author:'', authorPic:'', readingTime:0, tags:[], title:'', image:'', date:'', slug:''};
+  ?? {author:'', authorPic:'', readingTime:0, tags:[], title:'', image:'', date:'', slug:'', intro:''};
 
   post.nodes = await getHeadings(post?.content)
   return post

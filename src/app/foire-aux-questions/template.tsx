@@ -8,7 +8,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <Fragment>
             <SectionHeader title='Foire Aux Questions' />
             <Navbar/>
-            {children}<Footer></Footer>
+            {children}
+            <Footer/>
         </Fragment>
     )
 

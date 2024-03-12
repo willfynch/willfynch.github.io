@@ -1,4 +1,5 @@
 export interface IBlogPost {
+    intro: string;
     title: string;
     tags: string[];
     date: string;

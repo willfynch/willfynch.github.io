@@ -24,9 +24,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
             <SectionHeader title={post.title} image={post.image} />
             <Navbar/>
             <section className={"pt-10 px-4 sm:px-20 2xl:px-80 mb-10 min-h-[500px]"}>
-
-                <Link className="text-my-black" href={'/blog/'}><ButtonColor width={100} text={"🡰 RETOUR"} id={"BTN"} /></Link>
-                <BlogPost nodes={post.nodes ?? []} title={post.title} date={post.date} socials={[{ icon: '/svg/linkedin.svg', link: '/' }]} author={post.author} authorPic={post.authorPic} readingTime={post.readingTime} tags={post.tags} content={post.content ?? ''} />
+                <ButtonColor link={{isLink:true, path: '/blog'}} width={100} text={"🡰 RETOUR"} id={"BTN"} />
+                <BlogPost intro={post.intro} nodes={post.nodes ?? []} title={post.title} date={post.date} socials={[{ icon: '/svg/linkedin.svg', link: '/' }]} author={post.author} authorPic={post.authorPic} readingTime={post.readingTime} tags={post.tags} content={post.content ?? ''} />
                 <OtherPosts />
             </section>
         </Fragment>

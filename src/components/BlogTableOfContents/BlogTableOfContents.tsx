@@ -4,12 +4,18 @@ export interface TOCProps {
     nodes: IMarkdownNode[];
 }
 
+export const TOC_FONT_SIZE:any = {
+    2: '1.2',
+    3: '1',
+    4: '.8'
+}
+
 function renderNodes(nodes: any) {
     return (
         <ul>
             {nodes.map((node: any) => (
                 <li key={node.data.hProperties.id}>
-                    <a className={`text-[${node.depth}px]`} href={`#${node.data.hProperties.id}`}>{node.value}</a>
+                    <a className={`text-[${TOC_FONT_SIZE[node.depth]}rem]`} href={`#${node.data.hProperties.id}`}>{node.value}</a>
                     {node.children?.length > 0 && renderNodes(node.children)}
                 </li>
             ))}

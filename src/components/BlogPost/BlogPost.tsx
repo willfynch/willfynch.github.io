@@ -12,6 +12,7 @@ export interface BlogPostProps {
     date?: string;
     image?: string;
     slug?: string;
+    intro: string;
     author: string;
     authorPic: string;
     readingTime: number;
@@ -22,18 +23,17 @@ export interface BlogPostProps {
 
 export default function BlogPost(props: BlogPostProps) {
 
-    useEffect(() => { console.log('content ', props.content) }, [])
-
     return (
-        <div className=" text-base text-my-black duration-200 flex flex-col mb-20">
+        <div className="text-my-black duration-200 flex flex-col mb-20">
 
             <BlogPostTopInfos socials={props.socials} authorPic={props.authorPic} author={props.author} readingTime={props.readingTime} date={props.date!} tags={props.tags ?? []} />
             
-            <div className="w-full flex flex-col gap-2 md:flex-row ">
-                <div className="order-2 md:order-1 w-full md:w-4/6  ">
+            <div className="w-full flex flex-col gap-2 md:flex-row justify-between">
+                <div className="order-2 md:order-1 w-full md:w-9/12  ">
+                    <Markdown className='blogArticleMarkdown'>{props.intro}</Markdown>
                     <Markdown className='blogArticleMarkdown'>{props.content}</Markdown>
                 </div>
-                <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/6">
+                <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/12">
                     <BlogTableOfContents nodes={props.nodes}/>
                 </aside>
 

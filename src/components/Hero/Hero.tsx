@@ -23,7 +23,7 @@ export default function Hero() {
 
 
     return (
-        <section id='home' className={styles.heroSection + ' ' + ' relative w-full h-full'}>
+        <div id='home' className={styles.heroSection + ' ' + ' relative w-full h-full'}>
             <Image className={'z-10 left-0 h-screen w-screen object-cover'} width={200} height={200} src={'/images/LAPTOPCOFFEE.jpg'} alt={''}></Image>
             {/* <video id='VIDEO' className={styles.video + ' ' + 'h-screen w-screen object-cover  z-10 absolute left-0 top-0 float overflow-hidden '} disablePictureInPicture autoPlay loop muted src="/videos/coffee.mp4" /> */}
 
@@ -40,7 +40,7 @@ export default function Hero() {
                 <h2 id='HERO_SUBTITLE' className={styles.heroTitle + ' ' + ' w-full text-center text-my-white font-bilbo text-3xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl'}>
                     {HERO_TEXTS.FR_SUBTITLE}
                 </h2>
-                <p id='HERO_PHRASE' className={styles.heroTitle + ' ' + 'text-xl px-[40px] md:px-0 md:text-base mt-4 mb-20 w-full text-center text-my-white'}>
+                <p id='HERO_PHRASE' className={styles.heroTitle + ' ' + 'text-xl px-[40px] md:px-0 sm::text-base mt-4 mb-20 w-full text-center text-my-white'}>
                     {HERO_TEXTS.FR_PHRASE}
                 </p>
 
@@ -49,7 +49,7 @@ export default function Hero() {
                         <ButtonTransparent text={HERO_TEXTS.FR_CTA} id={'heroButton'} />
                     </Link>
                 </div>
-                <div id='RECTANGLE' className='z-30 border-my-white absolute w-[calc(100vw-40px)] h-[calc(100vh-40px)] border-[1px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'></div>
+                <div id='RECTANGLE' className='z-30 hidden sm:block border-my-white absolute w-[calc(100vw-40px)] h-[calc(100vh-40px)] border-[1px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'></div>
                 <nav className='absolute z-50 flex flex-col left-[40px] bottom-[40px]'>
                     {navItems.map(item => {
                         return(
@@ -60,7 +60,7 @@ export default function Hero() {
             </div>
 
 
-        </section>
+        </div>
 
     )
 }

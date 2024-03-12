@@ -11,27 +11,37 @@ export interface BlogPostCardProps {
     date?: string;
     image?: string;
     slug?: string;
+    intro: string;
     author: string;
     authorPic: string;
     readingTime: number;
-    nodes?:any[];
+    nodes?: any[];
 }
 
 export default function BlogPostCard(props: BlogPostCardProps) {
-    useEffect(()=>{
+    useEffect(() => {
         console.log(props)
-    },[])
+    }, [])
     return (
         <div className="text-base text-my-black duration-200 flex flex-col sm:flex-row hover:shadow-md group shadow-lg">
             <div className="sm:w-1/2 h-[300px] relative overflow-hidden">
                 <Image className="absolute z-40 duration-200 w-full group-hover:scale-110 object-cover h-[300px]" src={props.image ?? ''} width={0} height={0} alt={""} />
                 <div id="TAGS" className="absolute z-40 bottom-4 left-4 flex sm:flex-col gap-2">
-                    {props.tags?.map(tag => (<Tag name={tag}/>))}
+                    {props.tags?.map(tag => (<Tag name={tag} />))}
                 </div>
             </div>
             <div className="sm:w-1/2 p-8 sm:p-0 bg-my-white flex flex-col justify-center items-center">
-                <Link className="uppercase font-black hover:text-my-brown" href={`/blog/${props.slug}`}>{props.title}</Link>
+                <Link className=" font-black hover:text-my-brown" href={`/blog/${props.slug}`}>{props.title}</Link>
                 <p className="mt-4 text-sm text-mobileBase">{props.date} · {props.readingTime} min de lecture</p>
+                <p className="text-sm mt-8 px-8 flex flex-col">
+                    {props.intro?.slice(0, 150)}
+                    <Link className="text-sm mt-2 link flex gap-1 items-center w-fit" href={`blog/${props.slug}`}>
+                        <span>Lire la suite </span>
+                        <span className="arrow">➔</span>
+                    </Link>
+                </p>
+
+
             </div>
         </div>
     )

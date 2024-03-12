@@ -1,5 +1,12 @@
 ---
 title: Stat undis increpuit nec
+intro: >
+  Lorem markdownum Lycaeo profunda Euros, haec, quo utve lassatis. \[Sic
+
+  aequora]\([http://per-illa.com/](http://per-illa.com/)) locutus damus ait
+  pulsatus, exasperat laniatque
+
+  quis astris geminis quove.
 image: /images/user-matheus-bertelli.jpg
 authorPic: /images/profile_pic.png
 author: Will
@@ -8,8 +15,6 @@ tags:
   - new
 date: 2024-03-07T23:00:00.000Z
 ---
-
-# Stat undis increpuit nec
 
 ## Periclymeni attonitas cape genitore
 
@@ -40,24 +45,7 @@ nefas]\([http://alcidamas.org/et-verba.aspx](http://alcidamas.org/et-verba.aspx)
 Tibi est deae more relinquam non gerit, erat ad fratrum in. Lyram erat tantum,
 portas bicorni plurimus: quae caput utar adspicit ut figentem captum. Illi
 
-```javascript
-export default async function Template({ children, params }: { children: React.ReactNode, params: { slug: string } }) {
-
-  //const slug  = params.slug;
-  //const post: IBlogPost = await getPost(slug)
-
-  return (
-    <Fragment>
-
-      <SectionHeader title={"pas de titre"} />
-      <Navbar />
-      {children}
-    </Fragment>
-  )
-
-}
-```
-
+#### Hello world
 
 solantia urbis Panthoides stabula Anaphen et palles puerilem potitur solito
 pennae alumno formosissima. Tuens scire flebile vulnus fata feroxque dapes
