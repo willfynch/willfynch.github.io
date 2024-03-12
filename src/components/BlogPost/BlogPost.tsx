@@ -30,7 +30,7 @@ export default function BlogPost(props: BlogPostProps) {
             
             <div className="w-full flex flex-col gap-2 md:flex-row justify-between">
                 <div className="order-2 md:order-1 w-full md:w-9/12  ">
-                    <Markdown className='blogArticleMarkdown'>{props.intro}</Markdown>
+                    <Markdown className='blogArticleMarkdown'>{props.intro ?? ""}</Markdown>
                     <Markdown className='blogArticleMarkdown'>{props.content}</Markdown>
                 </div>
                 <aside className=" order-1 md:sticky top-[70px] mb-[20px] bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-2/12">
