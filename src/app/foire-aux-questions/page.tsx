@@ -38,7 +38,7 @@ export default function Faq() {
                     })}
                 </div>
 
-                <div className="flex justify-center flex-col items-center">
+                <div className="flex justify-center flex-col items-center my-10">
                     <p className="text-center mt-6 mb-8">
                         Si une collaboration pour la réalisation d'un <strong>site vitrine, éditorial ou e-commerce</strong> t'intéresse et que tu as d'autres questions, tu peux réserver un <strong>appel découverte</strong>.
                     </p>

@@ -33,9 +33,9 @@ export default function BlogPostCard(props: BlogPostCardProps) {
             <div className="sm:w-1/2 p-8 sm:p-0 bg-my-white flex flex-col justify-center items-center">
                 <Link className=" font-black hover:text-my-brown" href={`/blog/${props.slug}`}>{props.title}</Link>
                 <p className="mt-4 text-sm text-mobileBase">{props.date} · {props.readingTime} min de lecture</p>
-                <p className="text-sm mt-8 px-8 flex flex-col">
-                    {props.intro?.slice(0, 150)}
-                    <Link className="text-sm mt-2 link flex gap-1 items-center w-fit" href={`blog/${props.slug}`}>
+                <p className="text-sm mt-8 sm:px-8 flex flex-col">
+                    {props.intro?.slice(0, 150)}...
+                    <Link className="mt-2 link flex gap-1 items-center w-fit" href={`blog/${props.slug}`}>
                         <span>Lire la suite </span>
                         <span className="arrow">➔</span>
                     </Link>
