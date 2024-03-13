@@ -4,24 +4,25 @@ import styles from './Footer.module.scss'
 import parse from 'html-react-parser';
 import Link from "next/link";
 import { navItems } from "@/utilities/navItems";
+import CoffeCup from "../CoffeeCup/CoffeeCup";
 
 export enum FOOTER_CONTENT {
-    BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" className="link" role="button" href="https://nextjs.org">NextJS</a>,
-    hébergé sur <a rel="noopener" className="link" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
+    BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" role="button" href="https://nextjs.org">NextJS</a>,
+    hébergé sur <a rel="noopener" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
     Copyright © willfynch 2024 -
-    <button className="cursor-pointer"> Mentions légales</button>`,
+    <button className="cursor-pointer"><a href='/mentions-legales'>Mentions légales</a></button>`,
 }
 
 export default function Footer() {
 
     return (
 
-        <footer className={'text-my-black bg-my-white w-full px-12 pt-12 pb-4 overflow-hidden inset-x-0 bottom-0'}>
+        <footer className={'text-my-black bg-my-brown w-full px-12 pt-12 pb-4 overflow-hidden inset-x-0 bottom-0'}>
 
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">
-                    <div className="font-medium text-2xl duration-200 hover:opacity-100 opacity-60 cursor-pointer ml-2">
-                        <button className="text-my-black font-bilbo text-6xl"><Link href={'/'}>Will</Link></button>
+                    <div className="duration-200 opacity-100 hover:opacity-40 cursor-pointer ">
+                        <Link href={'/'}><CoffeCup animated={false} fill="#593117" /></Link>
                     </div>
 
                 </div>
@@ -60,7 +61,7 @@ export default function Footer() {
             </div>
 
             <div className="flex justify-center">
-                <p className="sm:w-3/4 text-xs mt-8 pt-6 text-center border-t-[1px]">
+                <p className="sm:w-3/4 text-xs mt-8 pt-6 text-center border-my-black border-t-[1px]">
                     {parse(FOOTER_CONTENT.BOTTOM_FR)}
                 </p>
             </div>

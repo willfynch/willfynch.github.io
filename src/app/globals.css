@@ -21,7 +21,7 @@ h4 {
 }
 
 .blogArticleMarkdown h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .blogArticleMarkdown h2 {
@@ -40,13 +40,14 @@ h4 {
 
 .link {
   position: relative;
-  vertical-align: middle;
   font-weight: 600;
   transition: all linear .2s;
   color: #593117;
   z-index: 1;
-  padding: 0px 0 0px 0;
+  text-decoration: underline;
+  text-decoration-thickness:2px;
 }
+
 
 .link::before {
   content: '';
@@ -74,6 +75,7 @@ h4 {
 
 .arrow {
   transition-duration: 300ms;
+  text-decoration: none;
 }
 
 .link:hover .arrow {
