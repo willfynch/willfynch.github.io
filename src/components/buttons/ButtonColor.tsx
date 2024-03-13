@@ -6,11 +6,12 @@ export interface ButtonColorProps {
     id: string;
     width?: number;
     blink?:boolean;
-    link?: {
+    link: {
         isLink: boolean;
         path?: string;
         blank?: boolean;
     };
+    disabled?: boolean;
     onClick?: () => void;
 }
 
@@ -28,7 +29,7 @@ export default function ButtonColor(props: ButtonColorProps) {
         }
         {
             props.link?.isLink===false && 
-                <button onClick={props.onClick} className={`w-[${props.width ?? 200}px] shadow-md text-my-black rounded-sm uppercase p-2 font-semibold ${props.blink ? isBlinkClass : ' bg-my-white '}`}>
+                <button onClick={props.disabled ? ()=>{} :  props.onClick} className={`w-[${props.width ?? 200}px] shadow-md text-my-black rounded-sm uppercase p-2 font-semibold ${props.blink && !props.disabled ? isBlinkClass : ' bg-my-white '} ${props.disabled ? ' cursor-default bg-gray-200 hover:bg-gray-200 text-black/60  ' : ''}`}>
                     {props.text}
                 </button>
         }

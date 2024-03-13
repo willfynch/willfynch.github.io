@@ -12,8 +12,7 @@ enum ABOUT_TEXTS {
     <br/><br/>Personne qui fait, nourrie de foi mais enveloppée de solitude, ce 
     voyage initiatique qu’est l’entreprenariat.
     `,
-    THIRD = `À chaque aventure, ses personnages. Moi, je suis celui qui 
-    vend un outil indispensable à ta quête : `,
+    THIRD = `À chaque aventure, ses personnages. Moi, je suis celui qui vend un outil indispensable à ta quête : `,
     FOURTH = `Un site web sur-mesure, sans WordPress et adapté à tes besoins.`,
     FIFTH = `<strong style='font-size:3rem;'>Halte-là, noble internaute !</strong>
     <br/><br/>Ne demande pas à ChatGPT si tu as des questions. La Foire Aux Questions 
@@ -23,7 +22,7 @@ enum ABOUT_TEXTS {
 
 export default function About() {
     return (
-        <section className="text-mobileBase sm:text-base text-my-black ">
+        <section className="text-normal text-my-black ">
 
             <div className='w-full flex flex-col items-center py-20 gap-8'>
 
@@ -39,11 +38,11 @@ export default function About() {
                 <p className='font-extrabold'>{ABOUT_TEXTS.FOURTH}</p>
             </div>
 
-            <div className='w-full flex-col md:flex-row flex gap-4 items-center justify-center mb-20'>
+            <div className='px-8 sm:px-40 flex-col md:flex-row flex gap-4 items-center justify-center mb-20'>
                 {
-                    servicesItem.map(service => 
+                    servicesItem.map((service , index) => 
                         (
-                        <ServiceCard available={service.available} title={service.title} options={service.options} buttonText={service.available ? `Ça m'intéresse` : 'À venir'} />
+                        <ServiceCard key={index} available={service.available} title={service.title} options={service.options} buttonText={service.available ? `Ça m'intéresse` : 'À venir'} />
                         )
                     )
                 }
