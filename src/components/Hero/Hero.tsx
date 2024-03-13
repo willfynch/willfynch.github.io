@@ -5,7 +5,7 @@ import CoffeCup from '../CoffeeCup/CoffeeCup'
 import ButtonTransparent from '../buttons/ButtonTransparent'
 import Link from 'next/link'
 import { navItems } from '@/utilities/navItems'
-import { useState } from 'react'
+import {  useState } from 'react'
 
 export enum HERO_TEXTS {
     FR_TITLE = "Pas un site web.",
@@ -41,12 +41,12 @@ export default function Hero() {
                 </button>
             </div>
             <nav aria-expanded={mobileMenuVisible} className={'bg-black/90 z-40 flex flex-col w-full h-full items-center justify-center ' + (mobileMenuVisible ? 'absolute top-0 left-0' : 'hidden')}>
-                    {navItems.map(item => {
-                        return (
-                            <Link className='' key={item.id} href={`/${item.path}`}>{item.name}</Link>
-                        )
-                    })}
-                </nav>
+                {navItems.map(item => {
+                    return (
+                        <Link data-aos='fade-left' className='text-h2 uppercase hover:text-my-brown' key={item.id} href={`/${item.path}`}>{item.name}</Link>
+                    )
+                })}
+            </nav>
             <div className={'bg-black/70 w-full h-full z-20 absolute top-0 left-0 flex flex-col justify-center'}>
 
                 <div id='logo' className='mb-4 self-center flex flex-col justify-center items-center'>

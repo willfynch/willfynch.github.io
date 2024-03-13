@@ -24,7 +24,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     AOS.init({
-      disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
     });
