@@ -4,7 +4,7 @@ import { Bilbo_Swash_Caps } from 'next/font/google';
 import nowFont from 'next/font/local';
 
 export const metadata: Metadata = {
-  title: "Du café et du code | développement de sites web",
+  title: "Du café et du code | développement de sites web sur mesure",
   description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
   keywords: ['Café', 'Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
   metadataBase: new URL('https://ducafeetducode.com'),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: ['/images/opengraph.png'],
     description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
-    title : 'Du café et du code | développement de sites web'
+    title : 'Du café et du code | développement de sites web sur mesure'
   }
 };
 
