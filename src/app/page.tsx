@@ -4,11 +4,10 @@ import { Bilbo_Swash_Caps } from 'next/font/google';
 import nowFont from 'next/font/local';
 
 export const metadata: Metadata = {
-  title: "Will | Sites web sur mesure",
-  description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
-  les TPE et les entreprises individuelles.`,
-  keywords: ['Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs'],
-  metadataBase: new URL('https://www.willdev.me'),
+  title: "Du café et du code | développement de sites web",
+  description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
+  keywords: ['Café', 'Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
+  metadataBase: new URL('https://ducafeetducode.com'),
   alternates: {
     canonical: '/'
   },
@@ -18,9 +17,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     images: ['/images/opengraph.png'],
-    description: `Développeur Web, je conçois et réalise des sites vitrines et e-commerce pour
-    les TPE et les entreprises individuelles.`,
-    title : 'Will | Sites web sur mesure'
+    description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
+    title : 'Du café et du code | développement de sites web'
   }
 };
 
