@@ -10,13 +10,13 @@ export async function getAllProjects(): Promise<IProject[]> {
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   // Get gray-matter data from each file.
-  const projects: IProject[] = markdownPosts.map( (fileName, index) => {
+  const projects: IProject[] = markdownPosts.map( (fileName) => {
     const fileContents = fs.readFileSync(`public/data/projects/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
 
     return {
         title: matterResult.data.title,
-        body: matterResult.content,
+        content: matterResult.content,
         type: matterResult.data.type,
         image: matterResult.data.image,
         slug: slugify(matterResult.data.title)

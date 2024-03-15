@@ -63,7 +63,7 @@ export default function Navbar() {
                 aria-hidden={!mobileMenuVisible}
                 className={(mobileMenuVisible ? ' opacity-100 bg-my-white z-40 top-[50px] h-screen ' : '  h-0 opacity-0 -top-[500px] ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
 
-                {navItems.map(navItem => {
+                {mobileMenuVisible && navItems.map(navItem => {
                     return (
                         <Link
                             onClick={() => handleNavigate(`/${navItem.path}`)} href={`/${navItem.path}`}
@@ -73,9 +73,12 @@ export default function Navbar() {
                         </Link>
                     )
                 })}
-                <Link onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
-                    <IoHome />
-                </Link>
+                {
+                    mobileMenuVisible &&
+                    <Link onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
+                        <IoHome />
+                    </Link>
+                }
 
             </nav>
 

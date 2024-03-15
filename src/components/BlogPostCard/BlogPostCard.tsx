@@ -23,7 +23,7 @@ export default function BlogPostCard(props: BlogPostCardProps) {
     return (
         <div className="text-base text-my-black duration-200 flex flex-col sm:flex-row hover:shadow-md group shadow-lg">
             <div className="sm:w-1/2 h-[300px] relative overflow-hidden">
-                <Image className="absolute z-40 duration-200 w-full group-hover:scale-110 object-cover h-[300px]" src={props.image ?? ''} width={0} height={0} alt={""} />
+                <Image className="absolute z-40 duration-200 w-full group-hover:scale-110 object-cover h-[300px]" src={props.image ?? ''} fill alt={""} />
                 <div id="TAGS" className="absolute z-40 bottom-4 left-4 flex sm:flex-col gap-2">
                     {props.tags?.map(tag => (<Tag name={tag} />))}
                 </div>

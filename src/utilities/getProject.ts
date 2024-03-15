@@ -16,7 +16,6 @@ export async function getProject(slug: string): Promise<IProject> {
 
     return {
         title: matterResult.data.title,
-        body: matterResult.content,
         type: matterResult.data.type,
         image: matterResult.data.image,
         slug: slugify(matterResult.data.title),

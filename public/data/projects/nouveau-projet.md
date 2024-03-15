@@ -1,10 +1,14 @@
 ---
-title: Nouveau Projet
-type: Site vitrine
-image: /images/SHOWCASE PROJECTS.png
+title: Indarra
+type: Site éditorial
+image: /images/SHOWCASE PROJECTS(3).png
 ---
 
-## La cliente
+## Le contexte
+
+Ce projet a été réalisé en équipe, au sein d'une ESN, pour le cadre du fonds de dotation territorial [Indarra](https://www.indarra.fr/ "Site d'Indarra"). 
+
+## Le client
 
 Miora est une sophrologue française qui voulait mettre en avant son activité pour attirer plus de clients. Le site devait également refléter sa personnalité afin de donner l'impression au visiteur de la connaître avant même de prendre rendez-vous.
 

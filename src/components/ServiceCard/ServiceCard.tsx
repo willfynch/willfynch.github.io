@@ -4,6 +4,7 @@ import WaitingGuy from "../WaitingGuy/WaitingGuy";
 import ButtonColor from "../buttons/ButtonColor";
 import CoffeCup from "../CoffeeCup/CoffeeCup";
 import { Glow, GlowCapture } from '@codaworks/react-glow'
+import { Fragment } from "react";
 
 export interface ServiceCardProps {
     title: string;
@@ -22,8 +23,7 @@ export default function ServiceCard(props: ServiceCardProps) {
     }
 
     return (
-
-            <Glow color="red">
+       
                 <div className=" shadow-md hover:shadow-sm duration-300 shadow-my-brown border-[1px] border-my-brown rounded-lg w-full sm:w-[300px] px-4 py-8">
                     <div className="flex justify-center -mb-14">
                         <CoffeCup width={70} animated={false} fill="#593117" />
@@ -49,7 +49,6 @@ export default function ServiceCard(props: ServiceCardProps) {
                         <ButtonColor onClick={() => openLinkInNewTab('https://calendly.com/willdevweb/talk')} disabled={!(props.available)} blink={true} text={props.buttonText} id={"s"} link={{ isLink: false }} />
                     </div>
                 </div>
-            </Glow>
 
     )
 }

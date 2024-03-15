@@ -18,7 +18,7 @@ export default async function Faq() {
 
     return (
         <main>
-            <Banner opacity={60} text={BANNER_TEXT} image={"/images/travel-yaroslav-shuraev.jpg"} callToAction={{ path: 'https://www.instagram.com/willdevweb/', text: 'Envoie-moi un message' }} isCallToAction={true} />
+            <Banner opacity={'60'} text={BANNER_TEXT} image={"/images/travel-yaroslav-shuraev.jpg"} callToAction={{ path: 'https://www.instagram.com/willdevweb/', text: 'Envoie-moi un message' }} isCallToAction={true} />
             <section id="ACCORDIONS" className=" min-h-[500px] text-mobileBase sm:text-base text-my-black px-4 sm:px-40 2xl:px-96">
                 <p className="mt-20 w-full text-center">Voici quelques questions que tu te poses peut-être.</p>
                 <div className="flex flex-col gap-4 mt-20 mb-20">

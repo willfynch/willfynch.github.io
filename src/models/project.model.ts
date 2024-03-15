@@ -5,6 +5,6 @@ export interface IProject {
     link?: string;
     image: string;
     video?: string;
-    text?: string;
+    content?: string;
     slug: string;
 }

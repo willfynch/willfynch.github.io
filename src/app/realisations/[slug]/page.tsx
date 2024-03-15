@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import getAllProjects from "@/utilities/getAllProjects";
 import { IProject } from "@/models/project.model";
 import getProject from "@/utilities/getProject";
+import ProjectPost from "@/components/ProjectPost/ProjectPost";
 
 
 export async function generateStaticParams() {
@@ -21,9 +22,9 @@ export default async function Project({ params }: { params: { slug: string } }) 
         <Fragment>
             <SectionHeader title={project.title} image={project.image} />
             <Navbar/>
-            <section className={"pt-10 px-4 sm:px-20 2xl:px-80 mb-10 min-h-[500px]"}>
+            <section className={"pt-10 px-4 sm:px-40 2xl:px-80 mb-10 min-h-[500px]"}>
                 <ButtonColor link={{isLink:true, path: '/realisations'}} width={100} text={"🡰 RETOUR"} id={"BTN"} />
-                    EN CONSTRUCTION                
+                <ProjectPost type={project.type} title={project.title} content={project.content ??"Pas de contenu"}/>               
             </section>
         </Fragment>
 

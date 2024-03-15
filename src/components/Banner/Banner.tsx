@@ -8,7 +8,7 @@ export interface BannerProps {
     text: string;
     image: string;
     isCallToAction: boolean;
-    opacity?: number;
+    opacity: string;
     callToAction?: {
         path: string;
         text: string;
@@ -17,11 +17,13 @@ export interface BannerProps {
 
 export default function Banner(props: BannerProps) {
 
+    const OPACITY = props.opacity;
+
     return (
         <div className={`h-[600px] md:h-[400px] w-screen overflow-y-hidden relative flex justify-center items-center`}>
             <Image className="absolute object-cover" fill src={props.image} alt={""}></Image>
-            <div className={`bg-black/${props.opacity ?? '70'} w-full h-full absolute`}></div>
-            <p className={"absolute  text-my-white  text-center w-[300px] sm:w-full"}>
+            <div className={`bg-black opacity-${OPACITY} w-full h-full absolute`}></div>
+            <div className={"absolute  text-my-white  text-center w-[300px] sm:w-full"}>
                 {parse(props.text)}
                 {props.isCallToAction &&
                     <div className=" mt-10 w-full flex justify-center">
@@ -30,7 +32,7 @@ export default function Banner(props: BannerProps) {
                         </Link>
                     </div>
                 }
-            </p>
+            </div>
 
         </div>
     )
