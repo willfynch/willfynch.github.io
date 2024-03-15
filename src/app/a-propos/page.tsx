@@ -1,6 +1,7 @@
 import Banner from '@/components/Banner/Banner'
 import ServiceCard from '@/components/ServiceCard/ServiceCard'
 import { servicesItem } from '@/utilities/servicesItems'
+import { GlowCapture } from '@codaworks/react-glow'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 
@@ -37,7 +38,7 @@ export default function About() {
                 <p>{ABOUT_TEXTS.THIRD}</p>
                 <p className='font-extrabold'>{ABOUT_TEXTS.FOURTH}</p>
             </div>
-
+        <GlowCapture>
             <div className='px-8 sm:px-40 flex-col md:flex-row flex gap-4 items-center justify-center mb-20'>
                 {
                     servicesItem.map((service , index) => 
@@ -47,6 +48,7 @@ export default function About() {
                     )
                 }
             </div>
+            </GlowCapture>
 
             <Banner isCallToAction={true} callToAction={{text: 'F.A.Q', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.jpg'}></Banner>
 

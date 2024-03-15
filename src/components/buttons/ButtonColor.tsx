@@ -23,13 +23,13 @@ export default function ButtonColor(props: ButtonColorProps) {
         <Fragment>
         {
             props.link?.isLink && 
-                <Link role="link" target={props.link.blank ?"_blank":""} className={`w-[${props.width ?? 200}px] text-my-black rounded-sm shadow-md uppercase  p-2 font-semibold ${props.blink ? isBlinkClass : ' bg-my-white '}`} href={props.link.path??"/"}>
+                <Link role="link" target={props.link.blank ?"_blank":""} className={`w-[${props.width ?? 200}px] text-my-black text-center rounded-sm shadow-md uppercase  p-2 font-semibold ${props.blink ? isBlinkClass : ' bg-my-white '}`} href={props.link.path??"/"}>
                     <span>{props.text}</span>
                 </Link>
         }
         {
             props.link?.isLink===false && 
-                <button onClick={props.disabled ? ()=>{} :  props.onClick} className={`w-[${props.width ?? 200}px] shadow-md text-my-black rounded-sm uppercase p-2 font-semibold ${props.blink && !props.disabled ? isBlinkClass : ' bg-my-white '} ${props.disabled ? ' cursor-default bg-gray-200 hover:bg-gray-200 text-black/60  ' : ''}`}>
+                <button onClick={props.disabled ? ()=>{} :  props.onClick} className={`w-[${props.width ?? 200}px] shadow-md text-my-black rounded-sm uppercase p-2 font-semibold ${props.blink && !props.disabled ? isBlinkClass : ' bg-my-white '} ${props.disabled ? ' cursor-default bg-gray-200 text-black/60  ' : ''}`}>
                     {props.text}
                 </button>
         }

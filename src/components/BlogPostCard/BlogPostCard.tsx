@@ -19,9 +19,7 @@ export interface BlogPostCardProps {
 }
 
 export default function BlogPostCard(props: BlogPostCardProps) {
-    useEffect(() => {
-        console.log(props)
-    }, [])
+
     return (
         <div className="text-base text-my-black duration-200 flex flex-col sm:flex-row hover:shadow-md group shadow-lg">
             <div className="sm:w-1/2 h-[300px] relative overflow-hidden">
@@ -35,7 +33,7 @@ export default function BlogPostCard(props: BlogPostCardProps) {
                 <p className="mt-4 text-sm text-mobileBase">{props.date} · {props.readingTime} min de lecture</p>
                 <p className="text-sm mt-8 sm:px-8 flex flex-col">
                     {props.intro?.slice(0, 150)}...
-                    <Link className="mt-2 link flex gap-1 items-center w-fit" href={`blog/${props.slug}`}>
+                    <Link className="mt-2 link flex gap-0 items-center w-fit" href={`blog/${props.slug}`}>
                         <span>Lire la suite </span>
                         <span className="arrow">➔</span>
                     </Link>

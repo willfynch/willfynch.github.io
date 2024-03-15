@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 
 export interface AccordionProps {
     title: string;
-    content: string;
+    body: string;
 }
 export default function Accordion(props: AccordionProps) {
 
@@ -16,7 +16,7 @@ export default function Accordion(props: AccordionProps) {
                 <span >{isOpen ? '-' : '+'}</span>
             </button>
             <div aria-labelledby={props.title} className={(isOpen ? '  ': ' -mt-5 h-0 opacity-0') + ' ' +'text-mobileBase px-2 w-full  duration-[200ms]'}>
-                <span className={(isOpen ? '  ': ' hidden') + ' delay-150 '}>{props.content}</span>
+                <span className={(isOpen ? '  ': ' hidden') + ' delay-150 '}>{props.body}</span>
             </div>
         </Fragment>
     )

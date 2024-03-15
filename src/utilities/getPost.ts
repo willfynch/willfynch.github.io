@@ -21,7 +21,7 @@ export async function getPost(slug:any): Promise<IBlogPost> {
       title: matterResult.data.title,
       intro: matterResult.data.intro,
       content: matterResult.content,
-      slug: slugify(fileName.replace(".md", "")),
+      slug: slugify(matterResult.data.title),
       image: matterResult.data.image,
       tags: matterResult.data.tags,
       date: formatDate(matterResult.data.date),

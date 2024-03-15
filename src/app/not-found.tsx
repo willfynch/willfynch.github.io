@@ -12,7 +12,7 @@ export default function NotFound() {
             <SectionHeader title='Le vide intersidéral' />
             <Navbar />
             <section className="w-full flex flex-col justify-center items-center my-14">
-                <h2 className=" text-center text-h3 font-bold mb-4">
+                <h2 className=" text-center text-h4 sm:text-h3 mb-4">
                     <span className="">Il n'y a rien ici, noble internaute.</span>
                         <br/>
                     <span className="mr-2">Mais tu peux

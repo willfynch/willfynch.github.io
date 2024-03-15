@@ -44,10 +44,9 @@ h4 {
   transition: all linear .2s;
   color: #593117;
   z-index: 1;
-  text-decoration: underline;
-  text-decoration-thickness:2px;
+  border-bottom-color: #593117;
+  border-bottom-width: 2px;
 }
-
 
 .link::before {
   content: '';
@@ -75,9 +74,12 @@ h4 {
 
 .arrow {
   transition-duration: 300ms;
-  text-decoration: none;
 }
 
 .link:hover .arrow {
-  margin-left: 5px;
+  padding-left: 5px;
+}
+
+svg {
+  max-width: 100%;
 }

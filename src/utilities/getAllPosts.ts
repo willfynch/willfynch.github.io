@@ -36,7 +36,7 @@ export async function getAllPosts(): Promise<IBlogPost[]> {
     return {
       title: matterResult.data.title,
       intro: matterResult.data.intro,
-      slug: slugify(fileName.replace(".md", "")),
+      slug: slugify(matterResult.data.title),
       image: matterResult.data.image,
       tags: matterResult.data.tags,
       date: formatDate(matterResult.data.date),

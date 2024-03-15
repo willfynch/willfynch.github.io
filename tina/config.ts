@@ -29,6 +29,59 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "project",
+        label: "Projets",
+        path: 'public/data/projects',
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "type",
+            label: "Type",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+          },
+          {
+            type: 'image',
+            name: 'image',
+            label: 'Image',
+            required: true,
+            description: 'Image de couverture',
+          },
+        ]
+      },
+      {
+        name: "accordion",
+        label: "Accordions",
+        path: 'public/data/accordions',
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+          }
+        ]
+      },
+      {
         name: "post",
         label: "Posts",
         path: "public/posts",

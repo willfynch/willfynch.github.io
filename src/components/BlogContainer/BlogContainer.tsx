@@ -2,7 +2,7 @@
 
 import { IBlogPost } from "@/models/blog-post.model"
 import { Fragment, useState } from "react"
-import BlogSearchBar from "../BlogSearchBar/BlogSearchBar"
+import BlogSearchBar from "../SearchBar/SearchBar"
 import BlogPost from "../BlogPostCard/BlogPostCard"
 import BlogPostCard from "../BlogPostCard/BlogPostCard"
 
@@ -47,7 +47,7 @@ export default function BlogContainer(props: BlogContainerProps) {
 
     return (
         <>
-            <BlogSearchBar onChange={handleSearch} />
+            <BlogSearchBar placeholder="Chercher un article..." onChange={handleSearch} />
             <div className="flex flex-col gap-8">
                 {posts && posts.map((post: IBlogPost) =>
                     <BlogPostCard intro={post.intro} nodes={post.nodes} readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />

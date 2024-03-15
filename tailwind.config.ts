@@ -13,7 +13,7 @@ const config: Config = {
       },
       colors: {
         'my-white' : '#fdf7ec',
-        'my-black' : '#502c15',
+        'my-black' : '#382208',
         'my-brown' : '#D4C09E',
         'my-dark-blue': '#2C4F57',
         'my-blue': '#A8C7D0'
@@ -52,6 +52,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@codaworks/react-glow/tailwind')
+  ],
 }
 export default config

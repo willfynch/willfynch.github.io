@@ -1,16 +1,12 @@
 import { StaticImageData } from "next/image";
 
-export interface ProjectModel {
+export interface IProject {
     title: string;
-    subtitle:string;
-    year: string;
-    description: string;
-    technos: string[];
-    link: string;
-    image: string | StaticImageData;
-    id: number;
+    type:string;
+    technos?: string[];
+    link?: string;
+    image: string;
     video?: string;
     text?: string;
-    lang: string;
     slug: string;
 }
