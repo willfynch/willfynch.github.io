@@ -1,8 +1,6 @@
 'use client'
 import Link from "next/link";
 import Image from "next/image";
-import { formatDate } from "@/utilities/formatDate";
-import Tag from "../Tag/Tag";
 import { useEffect } from "react";
 
 export interface ProjectCardProps {

@@ -1,7 +1,6 @@
 import PortfolioContainer from "@/components/PortfolioContainer/PortfolioContainer";
 import { IProject } from "@/models/project.model";
 import getAllProjects from "@/utilities/getAllProjects";
-import { Fragment } from "react";
 
 export default async function Portfolio(){    
 

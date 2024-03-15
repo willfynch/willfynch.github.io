@@ -33,8 +33,8 @@ export default function PortfolioContainer(props: PortfolioContainerProps) {
     }
 
     return (
-        <>
-            <div ><SearchBar placeholder="Chercher un projet..." onChange={handleSearch} /></div>
+        <Fragment>
+            <SearchBar placeholder="Chercher un projet..." onChange={handleSearch} />
             <section className="flex flex-col lg:flex-row gap-4">
                 <aside className="h-full w-full px-8 py-14 lg:w-1/4 top-[50px] sticky flex flex-col justify-center items-center gap-14 text-my-black ">
                     
@@ -57,6 +57,6 @@ export default function PortfolioContainer(props: PortfolioContainerProps) {
                 </div>
             </section>
 
-        </>
+        </Fragment>
     )
 }

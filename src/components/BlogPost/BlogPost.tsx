@@ -1,10 +1,8 @@
 'use client'
 import BlogPostTopInfos from "../BlogPostTopInfos/BlogPostTopInfos";
-import { useEffect } from "react";
 import BlogTableOfContents from "../BlogTableOfContents/BlogTableOfContents";
 import { IMarkdownNode } from "@/models/markdown-node.model";
 import Markdown from "markdown-to-jsx";
-import Banner from "../Banner/Banner";
 
 export interface BlogPostProps {
     title?: string;

@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 export interface IProject {
     title: string;
     type:string;
