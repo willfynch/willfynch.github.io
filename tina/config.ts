@@ -29,7 +29,7 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "project",
+        name: "projects",
         label: "Projets",
         path: 'public/data/projects',
         fields: [
@@ -59,10 +59,14 @@ export default defineConfig({
             required: true,
             description: 'Image de couverture',
           },
-        ]
+        ],
+        ui: {
+          // This is an DEMO router. You can remove this to fit your site
+          router: ({ document }) => `/public/data/projects/${document._sys.filename}`,
+        },
       },
       {
-        name: "accordion",
+        name: "accordions",
         label: "Accordions",
         path: 'public/data/accordions',
         fields: [
@@ -79,10 +83,14 @@ export default defineConfig({
             label: "Body",
             isBody: true,
           }
-        ]
+        ],
+        ui: {
+          // This is an DEMO router. You can remove this to fit your site
+          router: ({ document }) => `/public/data/accordions/${document._sys.filename}`,
+        },
       },
       {
-        name: "post",
+        name: "posts",
         label: "Posts",
         path: "public/posts",
         fields: [
