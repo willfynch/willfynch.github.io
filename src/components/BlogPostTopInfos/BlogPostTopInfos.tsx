@@ -6,7 +6,7 @@ import Tag from "../Tag/Tag";
 export interface BlogPostTopInfosProps {
     authorPic: string;
     author: string;
-    socials?: { icon: string; link: string }[];
+    socials?: { icon: React.ReactNode; link: string }[];
     readingTime: number;
     date: string;
     tags: string[];
@@ -18,11 +18,11 @@ export default function BlogPostTopInfos(props: BlogPostTopInfosProps) {
             <div className="flex items-center gap-2">
                 <Image width={80} height={80} src={props.authorPic} alt={"Photo de profil de l'auteur"} />
                 <div className="flex flex-col">
-                    <span className="font-bold">{props.author}</span>
-                    <div>{props.socials?.map((social,index) => {
+                    <h4 className="font-bold text-h4 my-0">{props.author}</h4>
+                    <div className="flex gap-1">{props.socials?.map((social,index) => {
                         return (
-                            <Link key={index} href={social.link}>
-                                <Image src={social.icon} width={20} height={20} alt={"Icône de réseau social"}></Image>
+                            <Link  target="_blank" className="hover:text-my-brown" key={index} href={social.link}>
+                                {social.icon}
                             </Link>
                         )
                     })}

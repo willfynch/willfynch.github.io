@@ -11,10 +11,10 @@ export interface ProjectCardProps {
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
-    useEffect(() => { console.log(props) }, [])
+
     return (
         <Link href={`/realisations/${props.slug}`} className="text-base group text-my-black duration-200 flex flex-col group">
-            <div className="w-full h-[400px] relative overflow-hidden">
+            <div className="w-full h-[200px] md:h-[300px] lg:h-[400px] relative overflow-hidden">
                 <Image className="group-hover:brightness-50 absolute z-40 duration-200 w-full object-cover" src={props.image ?? ''} sizes="100vw"
                     style={{
                         width: '100%',
