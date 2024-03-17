@@ -36,6 +36,35 @@ h4 {
   font-size: 1.4rem;
 }
 
+.blogArticleMarkdown a {
+  position: relative;
+  font-weight: 600;
+  transition: all linear .2s;
+  color: #593117;
+  z-index: 1;
+  border-bottom-color: #593117;
+  border-bottom-width: 2px;
+}
+.blogArticleMarkdown a::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: #D4C09E;
+  transition: all linear .2s;
+}
+.blogArticleMarkdown a:hover::before {
+  width: 100%;
+  position: absolute;
+  background-color: #D4C09E;
+  z-index: -1;
+}
+.blogArticleMarkdown a {
+  margin: 0px 4px 0px 4px;
+}
+
 /**LINK */
 
 .link {
