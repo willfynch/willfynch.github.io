@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
     title : 'Du café et du code | développement de sites web sur mesure'
   },
-  icons: ['./favicon.ico']
+  icons: [{rel: 'icon', url:'./favicon.ico'}, {rel: 'apple-touch-icon', url:'./apple-touch-icon.png'}]
 };
 
 const now = nowFont({
