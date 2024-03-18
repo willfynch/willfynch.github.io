@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       description: `Si tu viens d’arriver sur cette page, c’est que ton sac est plein de questions. Si tu ne trouves pas de réponse, envoie-moi un message. Je tâcherai de te répondre au plus vite.`,
       title : 'Du café et du code | Foire Aux Questions'
     }
-  };
+};
 
 export default async function Faq() {
 

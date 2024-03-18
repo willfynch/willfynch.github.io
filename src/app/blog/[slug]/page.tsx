@@ -11,6 +11,42 @@ import { FaInstagram } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 import NotFoundImage from "@/components/NotFoundImage/NotFoundImage";
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+    params: { slug: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+    const slug = params.slug
+   
+    // fetch data
+    const post: IBlogPost = await getPost(slug)
+
+    return {
+      title: post.title,
+      description: post.intro,
+      keywords: [post.title, ...post.tags, 'Sophrologie', 'Café', 'Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
+      openGraph: {
+        images: post.image,
+      },
+      metadataBase: new URL('https://ducafeetducode.com'),
+      alternates: {
+        canonical: '/'
+      },
+      twitter: {
+        card: 'summary_large_image',
+        images: [post.image],
+        description: post.intro,
+        title : post.title
+      }
+    }
+  }
 
 export async function generateStaticParams() {
     const posts = await getAllPosts();

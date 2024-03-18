@@ -25,8 +25,23 @@ enum ABOUT_TEXTS {
 }
 
 export const metadata: Metadata = {
-    title: 'À propos'
-}
+    title: "Du café et du code | À propos",
+    description: `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web pour aventuriers modernes. Mais qu’est-ce qu’un aventurier moderne, me diras-tu, toi qui me lis ?`,
+    keywords: ['Café', 'Développeur', 'Créateur de sites','Foire aux questions', 'Combien coûte un site web', 'Comment créer un site web', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
+    metadataBase: new URL('https://ducafeetducode.com'),
+    alternates: {
+      canonical: '/'
+    },
+    openGraph: {
+      images: ['/images/opengraph.png']
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['/images/opengraph.png'],
+      description: `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web pour aventuriers modernes. Mais qu’est-ce qu’un aventurier moderne, me diras-tu, toi qui me lis ?`,
+      title : 'Du café et du code | À propos`'
+    }
+};
 
 export default function About() {
     return (

@@ -9,7 +9,42 @@ import getProject from "@/utilities/getProject";
 import ProjectPost from "@/components/ProjectPost/ProjectPost";
 import NotFoundImage from "@/components/NotFoundImage/NotFoundImage";
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
 
+type Props = {
+    params: { slug: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+    const slug = params.slug
+   
+    // fetch data
+    const project: IProject = await getProject(slug)
+
+    return {
+      title: project.title,
+      description: project.type + ' pour ' + project.title,
+      keywords: [project.title, 'Sophrologie', 'Café', 'Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
+      openGraph: {
+        images: project.image,
+      },
+      metadataBase: new URL('https://ducafeetducode.com'),
+      alternates: {
+        canonical: '/'
+      },
+      twitter: {
+        card: 'summary_large_image',
+        images: [project.image],
+        description: project.type + ' pour ' + project.title,
+        title : project.title
+      }
+    }
+  }
 
 export async function generateStaticParams() {
     const projects = await getAllProjects();
