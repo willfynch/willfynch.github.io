@@ -1,13 +1,13 @@
 'use client'
 import './globals.css'
 import nowFont from 'next/font/local';
-import {useEffect } from 'react'
+import { useEffect } from 'react'
 //@ts-ignore
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
 import Footer from '@/components/Footer/Footer';
-
+import { TinaProvider, useCMS } from 'tinacms';
 const now = nowFont({
   src: '../../public/fonts/Now-Regular.otf'
 })
@@ -29,12 +29,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     });
   }, []);
 
+  const cms = useCMS();
+
 
   return (
+    <TinaProvider cms={cms}>
       <html lang='fr'>
-        <body className={bilbo.variable + ' ' + now.className + ' ' + ' overflow-x-hidden ' }>
-            {children}
+        <body className={bilbo.variable + ' ' + now.className + ' ' + ' overflow-x-hidden '}>
+          {children}
         </body>
       </html>
+    </TinaProvider>
   )
 }
