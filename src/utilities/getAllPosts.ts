@@ -7,7 +7,7 @@ import { formatDate } from "./formatDate";
 import { getHeadings } from "./getHeadings";
 import { IBlogPost } from "@/models/blog-post.model";
 
-export async function getAllPosts(): Promise<IBlogPost[]> {
+export async function getAllPosts(slug?:string): Promise<IBlogPost[]> {
   const folder = join(process.cwd(), "public/posts");
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
@@ -47,7 +47,10 @@ export async function getAllPosts(): Promise<IBlogPost[]> {
     };
   });
 
-  return posts;
+  if(slug){
+    return posts.filter(post => post.tags.includes(slug))
+  }else{return posts}
+
 };
 
 export default getAllPosts;

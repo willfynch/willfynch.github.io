@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     images: ['/images/opengraph.png'],
     description: `Sites vitrine et éditoriaux pour aventuriers modernes.`,
     title : 'Du café et du code | développement de sites web sur mesure'
-  }
+  },
+  icons: ['./favicon.ico']
 };
 
 const now = nowFont({
