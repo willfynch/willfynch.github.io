@@ -10,8 +10,10 @@ import { IBlogPost } from "@/models/blog-post.model";
 export async function getAllPosts(slug?:string): Promise<IBlogPost[]> {
   const folder = join(process.cwd(), "public/posts");
   const files = fs.readdirSync(folder);
-  const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
+  if(files.length === 0){return[]}
+
+  const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   let headingsArray: any[] = [];
   const headingPromises = markdownPosts.map((fileName)=>{
@@ -26,8 +28,6 @@ export async function getAllPosts(slug?:string): Promise<IBlogPost[]> {
        headingsArray = [...(response.map(response=>response.value))]
       })
   
-
-
   // Get gray-matter data from each file.
   const posts: IBlogPost[] = markdownPosts.map( (fileName, index) => {
     const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
@@ -46,7 +46,6 @@ export async function getAllPosts(slug?:string): Promise<IBlogPost[]> {
       nodes: headingsArray[index]
     };
   });
-
   if(slug){
     return posts.filter(post => post.tags.includes(slug))
   }else{return posts}

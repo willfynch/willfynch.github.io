@@ -11,7 +11,7 @@ export enum HERO_TEXTS {
     FR_TITLE = "Pas un site web.",
     FR_SUBTITLE = "Une signature.",
     FR_PHRASE = "Sites vitrine et éditoriaux pour aventuriers modernes.",
-    FR_CTA = "Prendre rendez-vous",
+    FR_CTA = "Découvrir",
     FR_LOGO_TEXT = 'Du café et du code'
 }
 
@@ -67,8 +67,8 @@ export default function Hero() {
                 </h3>
 
                 <div className='  w-full text-center z-50'>
-                    <Link href={'/contact'}>
-                        <ButtonTransparent text={HERO_TEXTS.FR_CTA} id={'heroButton'} />
+                    <Link href={'/a-propos'}>
+                        <ButtonTransparent width={150} text={HERO_TEXTS.FR_CTA} id={'heroButton'} />
                     </Link>
                 </div>
                 <div id='WHITE_RECTANGLE' className='z-30 hidden sm:block border-my-white absolute w-[calc(100vw-40px)] h-[calc(100vh-40px)] border-[1px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'></div>
