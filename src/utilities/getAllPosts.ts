@@ -9,9 +9,6 @@ import { IBlogPost } from "@/models/blog-post.model";
 
 export async function getAllPosts(slug?:string): Promise<IBlogPost[]> {
   const folder = join(process.cwd(), "public/posts");
-  if(!folder){
-    return [];
-  }
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
