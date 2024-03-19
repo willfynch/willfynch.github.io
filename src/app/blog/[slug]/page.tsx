@@ -50,7 +50,8 @@ export async function generateMetadata(
 
 export async function generateStaticParams() {
     const posts = await getAllPosts();
-    return posts.map((post: any) => ({ slug: post.slug }))
+    const paths = posts.map((post: any) => ({ slug: post.slug }))
+    return {paths, fallback:false}
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {
