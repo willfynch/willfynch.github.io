@@ -40,7 +40,8 @@ export const metadata: Metadata = {
       images: ['/images/opengraph.png'],
       description: `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web pour aventuriers modernes. Mais qu’est-ce qu’un aventurier moderne, me diras-tu, toi qui me lis ?`,
       title : 'Du café et du code | À propos`'
-    }
+    },
+    icons: [{rel: 'icon', url:'./favicon.ico'}, {rel: 'apple-touch-icon', url:'./apple-touch-icon.png'}]
 };
 
 export default function About() {
