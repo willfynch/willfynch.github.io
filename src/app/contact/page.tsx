@@ -7,7 +7,7 @@ import parse from 'html-react-parser'
 import Image from 'next/image'
 
 import { Metadata } from 'next'
-import ContactForm from '@/components/ContactForm/ContactForm'
+import ContactForm, { ContactFormProps } from '@/components/ContactForm/ContactForm'
 import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses'
 import { Fragment } from 'react'
 
@@ -32,11 +32,18 @@ export const metadata: Metadata = {
   icons: [{ rel: 'icon', url: './favicon.ico' }, { rel: 'apple-touch-icon', url: './apple-touch-icon.png' }]
 };
 
-export default function Contact() {
+export default async function Contact() {
 
   const BANNER_TEXT = `Tu peux me contacter sur les réseaux pour aller plus vite. 
     <br/><br/>Ou ici.<br/><br/> Je suis plus réactif sur les réseaux sociaux mais je ne 
     manquerai pas de te répondre.`
+
+  const contactFormProps: ContactFormProps = {
+    publicKey: process.env.EMAILJS_PUBLIC_KEY ?? "",
+    serviceId: process.env.EMAILJS_SERVICE_ID ?? "",
+    templateId: process.env.EMAILJS_TEMPLATE_ID ?? "",
+    sitekey: process.env.RECAPTCHA_SITE_KEY ?? "",
+  }
 
   return (
     <Fragment>
@@ -45,7 +52,12 @@ export default function Contact() {
       <section className={TW_COMPONENTS['section'] + ' ' + "text-normal text-my-black flex"}>
         {/* <aside className='w-2/6'></aside> */}
         <div className='w-full'>
-          <ContactForm></ContactForm>
+          <ContactForm
+            sitekey={contactFormProps.sitekey}
+            templateId={contactFormProps.templateId}
+            publicKey={contactFormProps.publicKey}
+            serviceId={contactFormProps.serviceId}>
+          </ContactForm>
         </div>
 
 
