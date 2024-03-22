@@ -23,24 +23,41 @@ export default function ContactForm(props: ContactFormProps) {
     { mode: "all" }
   );
   const EMAIL_REGEX: RegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-  const recaptchaRef = React.createRef();
-
+  const recaptchaRef:any = React.createRef();
   const registerOptions: { [key: string]: RegisterOptions } = {
     name: { required: true },
     email: { required: true, pattern: EMAIL_REGEX },
     message: { required: true, }
   };
 
-  function onReCAPTCHAChange() {
+  async function onSubmit(data:ContactFormValues) {
+    try {
+      recaptchaRef.current.reset();
+      const token = await recaptchaRef.current.executeAsync();
+      if(token){
+        const apiQuery:any = await fetch(`/api/captcha?response=${token}`)
+        const {success} = await apiQuery.json();
+        if(success){
+          sendFormData(data)
+        }else{
+          console.log('failed')
+        }
+        
+      }else{
+        console.log('no token')
+      }
+    }catch(error){
+        console.log(error)
+    }
+  };
 
+  const onChange = () => {
+    // on captcha change
   }
 
-  function onSubmit() {
-    //@ts-ignore
-    recaptchaRef.current.getValue();
-    //@ts-ignore
-    recaptchaRef.current.reset();
-  };
+  const asyncScriptOnLoad = () => {
+    console.log('Google recaptcha loaded just fine')
+  }
 
   function sendFormData(data: ContactFormValues) {
     const payload = {
@@ -67,17 +84,15 @@ export default function ContactForm(props: ContactFormProps) {
     })
   }, [])
 
-
-
-
   return (
     <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
 
       <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
+        onChange={onChange}
+        asyncScriptOnLoad={asyncScriptOnLoad}
         sitekey={props.sitekey}
-        onChange={onReCAPTCHAChange}
       />
 
 

@@ -56,8 +56,7 @@ export default async function Contact() {
             sitekey={contactFormProps.sitekey}
             templateId={contactFormProps.templateId}
             publicKey={contactFormProps.publicKey}
-            serviceId={contactFormProps.serviceId}>
-          </ContactForm>
+            serviceId={contactFormProps.serviceId} />
         </div>
 
 
