@@ -89,7 +89,7 @@ export default function ContactForm(props: ContactFormProps) {
 
       <ReCAPTCHA
         ref={recaptchaRef}
-        size="invisible"
+        size="normal"
         onChange={onChange}
         asyncScriptOnLoad={asyncScriptOnLoad}
         sitekey={props.sitekey}
