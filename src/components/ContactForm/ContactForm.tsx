@@ -1,6 +1,6 @@
 'use client'
 import { RegisterOptions, useForm } from 'react-hook-form';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses';
 import emailjs from '@emailjs/browser'
 //@ts-ignore
@@ -23,43 +23,15 @@ export default function ContactForm(props: ContactFormProps) {
     { mode: "all" }
   );
   const EMAIL_REGEX: RegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-  const recaptchaRef:any = React.createRef();
   const registerOptions: { [key: string]: RegisterOptions } = {
     name: { required: true },
     email: { required: true, pattern: EMAIL_REGEX },
     message: { required: true, }
   };
+  const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false)
+
 
   async function onSubmit(data:ContactFormValues) {
-    try {
-      recaptchaRef.current.reset();
-      const token = await recaptchaRef.current.executeAsync();
-      if(token){
-        const apiQuery:any = await fetch(`/api/captcha?response=${token}`)
-        const {success} = await apiQuery.json();
-        if(success){
-          sendFormData(data)
-        }else{
-          console.log('failed')
-        }
-        
-      }else{
-        console.log('no token')
-      }
-    }catch(error){
-        console.log(error)
-    }
-  };
-
-  const onChange = () => {
-    // on captcha change
-  }
-
-  const asyncScriptOnLoad = () => {
-    console.log('Google recaptcha loaded just fine')
-  }
-
-  function sendFormData(data: ContactFormValues) {
     const payload = {
       name: data.name,
       email: data.email,
@@ -69,6 +41,11 @@ export default function ContactForm(props: ContactFormProps) {
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => console.log('ok'))
       .catch((e) => console.log(e))
+  };
+
+
+  function onChange(value:any) {
+    setIsCaptchaSuccess(true)
   }
 
   useEffect(() => {
@@ -86,15 +63,6 @@ export default function ContactForm(props: ContactFormProps) {
 
   return (
     <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
-
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        size="normal"
-        onChange={onChange}
-        asyncScriptOnLoad={asyncScriptOnLoad}
-        sitekey={props.sitekey}
-      />
-
 
       <div className='flex flex-col md:flex-row gap-2 '>
 
@@ -144,8 +112,11 @@ export default function ContactForm(props: ContactFormProps) {
       </div>
 
 
-
-      <input type="submit" className={TW_COMPONENTS['buttonBrown'] + ' my-4 '} />
+      <ReCAPTCHA
+        onChange={onChange}
+        sitekey={props.sitekey}
+      />
+      <input disabled={!isCaptchaSuccessful} type="submit" className={TW_COMPONENTS['buttonBrown'] + ' my-4 '} />
     </form>
   );
 };
