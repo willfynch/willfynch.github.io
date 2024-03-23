@@ -133,7 +133,7 @@ export default function ContactForm(props: ContactFormProps) {
           className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
 
         <div className='flex justify-center'>
-          {
+          {formStatus === formStatuses.SENT &&
             <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
           }
           {formStatus === formStatuses.NOT_SENT &&
