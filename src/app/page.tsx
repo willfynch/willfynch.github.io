@@ -36,7 +36,7 @@ const bilbo = Bilbo_Swash_Caps({
 
 export default function Home() {
   return (
-      <main className={bilbo.variable + ' ' + now.className} >
+      <main >
         <Hero ></Hero>
       </main>
   )

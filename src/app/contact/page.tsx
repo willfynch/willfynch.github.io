@@ -1,11 +1,5 @@
 
 import Banner from '@/components/Banner/Banner'
-import ServiceCard from '@/components/ServiceCard/ServiceCard'
-import { servicesItem } from '@/utilities/servicesItems'
-import { GlowCapture } from '@codaworks/react-glow'
-import parse from 'html-react-parser'
-import Image from 'next/image'
-
 import { Metadata } from 'next'
 import ContactForm, { ContactFormProps } from '@/components/ContactForm/ContactForm'
 import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses'
@@ -32,7 +26,7 @@ export const metadata: Metadata = {
   icons: [{ rel: 'icon', url: './favicon.ico' }, { rel: 'apple-touch-icon', url: './apple-touch-icon.png' }]
 };
 
-export default async function Contact() {
+export default function Contact() {
 
   const BANNER_TEXT = `Tu peux me contacter sur les réseaux pour aller plus vite. 
     <br/><br/>Ou ici.<br/><br/> Je suis plus réactif sur les réseaux sociaux mais je ne 
@@ -47,9 +41,9 @@ export default async function Contact() {
 
   return (
     <Fragment>
-      <Banner height='200' text={BANNER_TEXT} image={'/images/contact.jpg'} isCallToAction={false} opacity={'70'} />
+      <Banner mobileHeight='400' height='200' text={BANNER_TEXT} image={'/images/contact.jpg'} isCallToAction={false} opacity={'70'} />
 
-      <section className={TW_COMPONENTS['section'] + ' ' + "text-normal text-my-black flex"}>
+      <section className={TW_COMPONENTS['section'] + ' ' + "flex"}>
         {/* <aside className='w-2/6'></aside> */}
         <div className='w-full'>
           <ContactForm

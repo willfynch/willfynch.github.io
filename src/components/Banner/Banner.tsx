@@ -15,6 +15,7 @@ export interface BannerProps {
         text: string;
     }
     height?: string;
+    mobileHeight?: string;
 }
 
 export default function Banner(props: BannerProps) {
@@ -32,9 +33,15 @@ export default function Banner(props: BannerProps) {
         '400' : 'sm:h-[400px]',
         '600' : 'sm:h-[600px]'
     }
+    const MOBILE_HEIGHT : any= {
+        '200' : 'h-[200px]',
+        '300' : 'h-[300px]',
+        '400' : 'h-[400px]',
+        '600' : 'h-[600px]'
+    }
 
     return (
-        <div className={`h-[600px] ${props.height ? HEIGHT[props.height] : 'h-[400px]'} w-screen overflow-y-hidden relative flex justify-center items-center`}>
+        <div className={` ${props.mobileHeight ? MOBILE_HEIGHT[props.mobileHeight] : ' h-[600px] '} ${props.height ? HEIGHT[props.height] : 'h-[400px]'} w-screen overflow-y-hidden relative flex justify-center items-center`}>
             <Image className="absolute object-cover" fill src={props.image} alt={""}></Image>
             <div className={`bg-black ${OPACITY[props.opacity]} w-full h-full absolute`}></div>
             <div className={"absolute  text-my-white  text-center w-[300px] sm:w-full"}>

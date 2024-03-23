@@ -1,21 +1,17 @@
 'use client'
 import './globals.css'
-import nowFont from 'next/font/local';
+
 import { useEffect } from 'react'
 //@ts-ignore
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
-const now = nowFont({
-  src: '../../public/fonts/Now-Regular.otf'
-})
+import { bilbo, now } from './styles/fonts';
 
-const bilbo = Bilbo_Swash_Caps({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-bilbo',
-})
+
+
+
+
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -31,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
       <html lang='fr'>
-        <body className={bilbo.variable + ' ' + now.className + ' ' + ' overflow-x-hidden '}>
+        <body className={bilbo.variable + ' ' + now.className + ' ' + 'overflow-x-hidden'}>
           {children}
         </body>
       </html>
