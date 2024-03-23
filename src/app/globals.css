@@ -135,4 +135,8 @@ svg {
   .alertError {
     @apply bg-yellow-200 p-4 text-center text-yellow-800;
   }
+
+  .buttonDisabled {
+    @apply w-fit shadow-md rounded-sm uppercase p-2 font-semibold text-my-black bg-slate-200;
+  }
 }

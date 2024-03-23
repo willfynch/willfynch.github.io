@@ -45,10 +45,10 @@ export default function ContactForm(props: ContactFormProps) {
       message: data.message
     };
     console.log(payload);
-
+    setFormStatus(formStatuses.SENDING)
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
-      .then(() => console.log('ok'))
-      .catch((e) => console.log(e));
+      .then(() => setFormStatus(formStatuses.SENT))
+      .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
 
 
@@ -129,7 +129,7 @@ export default function ContactForm(props: ContactFormProps) {
         <input
           disabled={!isCaptchaSuccessful}
           type="submit"
-          className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : TW_COMPONENTS['buttonDisabled']) + ' ' + ' my-4 '} />
+          className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
 
         { formStatus === formStatuses.SENT &&
           <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
