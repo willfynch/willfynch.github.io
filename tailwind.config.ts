@@ -17,7 +17,9 @@ const config: Config = {
         'my-black' : '#382208',
         'my-brown' : '#D4C09E',
         'my-dark-blue': '#2C4F57',
-        'my-blue': '#A8C7D0'
+        'my-blue': '#A8C7D0',
+        'my-green' : '#e9ebe3',
+        'my-dark-green' : '#535b3d'
       },
       screens: {
         'xs': '400px'

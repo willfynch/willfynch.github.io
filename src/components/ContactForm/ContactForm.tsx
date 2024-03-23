@@ -29,8 +29,14 @@ export default function ContactForm(props: ContactFormProps) {
     email: { required: true, pattern: EMAIL_REGEX },
     message: { required: true, }
   };
+  const formStatuses = {
+    NOTHING: 'no_status',
+    SENDING: 'sending',
+    SENT: 'sent',
+    NOT_SENT: 'not_sent'
+  }
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
-
+  const [formStatus, setFormStatus] = useState(formStatuses.NOTHING)
 
   async function onSubmit(data: ContactFormValues) {
     const payload = {
@@ -39,6 +45,7 @@ export default function ContactForm(props: ContactFormProps) {
       message: data.message
     };
     console.log(payload);
+
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => console.log('ok'))
       .catch((e) => console.log(e));
@@ -64,65 +71,79 @@ export default function ContactForm(props: ContactFormProps) {
 
   return (
 
-      <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
+    <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
 
-        <div className='flex flex-col md:flex-row gap-2 '>
+      <div className='flex flex-col md:flex-row gap-2 '>
 
-          <div className='flex flex-col w-full'>
-            <label className={styles.required + " text-my-black "} htmlFor="name">Nom / Prénom</label>
-            <input id='name'
-              required={true} aria-required={true}
-              aria-invalid={errors.name ? "true" : "false"}
-              className={TW_COMPONENTS['formField']}
-              type="text" placeholder="Nom / Prénom"
-              {...register("name", registerOptions.name)} />
-            {errors?.name &&
-              <small className={TW_COMPONENTS['errorText']}>
-                Sans nom, comment te reconnaître ?
-              </small>}
-          </div>
-
-          <div className='flex flex-col w-full'>
-            <label className={styles.required + " text-my-black "} htmlFor="email">Email</label>
-            <input type="email"
-              aria-invalid={errors.email ? "true" : "false"}
-              className={TW_COMPONENTS['formField']}
-              placeholder="Email"
-              {...register("email", registerOptions.email)} />
-            {errors.email
-              &&
-              <small className={TW_COMPONENTS['errorText']}>
-                {errors.email.type === 'required'
-                  ? 'Quelle est ton adresse, noble internaute ?'
-                  : 'Format d\'email invalide'}
-              </small>}
-          </div>
-        </div>
-
-        <div className='flex flex-col'>
-          <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
-          <textarea
-            aria-invalid={errors.message ? "true" : "false"}
-            className={TW_COMPONENTS['formField'] + ' ' + 'h-[300px]'}
-            {...register("message", registerOptions.message)} />
-          {errors.message &&
-            <small className={TW_COMPONENTS['errorText']}>
-              Les messages vides volent moins loin que les autres !
+        <div className='flex flex-col w-full'>
+          <label className={styles.required + " text-my-black "} htmlFor="name">Nom / Prénom</label>
+          <input id='name'
+            required={true} aria-required={true}
+            aria-invalid={errors.name ? "true" : "false"}
+            className={'formField'}
+            type="text" placeholder="Nom / Prénom"
+            {...register("name", registerOptions.name)} />
+          {errors?.name &&
+            <small className={'errorText'}>
+              Sans nom, comment te reconnaître ?
             </small>}
         </div>
 
+        <div className='flex flex-col w-full'>
+          <label className={styles.required + " text-my-black "} htmlFor="email">Email</label>
+          <input type="email"
+            aria-invalid={errors.email ? "true" : "false"}
+            className={'formField'}
+            placeholder="Email"
+            {...register("email", registerOptions.email)} />
+          {errors.email
+            &&
+            <small className={'errorText'}>
+              {errors.email.type === 'required'
+                ? 'Quelle est ton adresse, noble internaute ?'
+                : 'Format d\'email invalide'}
+            </small>}
+        </div>
+      </div>
 
-        <ReCAPTCHA
-          className='my-4'
-          onChange={onChange}
-          sitekey={props.sitekey} />
-        <input 
-          disabled={!isCaptchaSuccessful} 
-          type="submit" 
+      <div className='flex flex-col'>
+        <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
+        <textarea
+          aria-invalid={errors.message ? "true" : "false"}
+          className={'formField' + ' ' + 'h-[300px]'}
+          {...register("message", registerOptions.message)} />
+        {errors.message &&
+          <small className={'errorText'}>
+            Les messages vides volent moins loin que les autres !
+          </small>}
+      </div>
+
+
+
+      <ReCAPTCHA
+        className='my-4'
+        onChange={onChange}
+        sitekey={props.sitekey} />
+
+      <div className='flex flex-col gap-4'>
+        <input
+          disabled={!isCaptchaSuccessful}
+          type="submit"
           className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : TW_COMPONENTS['buttonDisabled']) + ' ' + ' my-4 '} />
-      </form>
+
+        { formStatus === formStatuses.SENT &&
+          <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
+        }
+        { formStatus === formStatuses.NOT_SENT &&
+          <small className={'alertError'}>Une erreur est survenue. Recharge la page puis essaie à nouveau. Si cela bug encore, contacte-moi sur les réseaux sociaux.</small>
+        }
+        { formStatus === formStatuses.SENDING &&
+          <small className={'alertPending'}>Le formulaire voyage sur la toile... </small>
+        }
+      </div>
+    </form>
   )
 };
 
-    
+
 

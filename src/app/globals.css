@@ -112,3 +112,27 @@ h4 {
 svg {
   max-width: 100%;
 }
+
+/* TAILWIND COMPONENTS*/
+
+@layer components {
+  .errorText {
+    @apply text-sm text-red-600; 
+  }
+
+  .formField {
+    @apply px-2 h-10 border-my-brown border-[1.5px] focus:outline-none focus:border-my-black focus:border-[2px]
+  }
+
+  .alertSuccess {
+    @apply bg-my-green p-4 text-center text-my-dark-green;
+  }
+
+  .alertError {
+    @apply bg-red-200 p-4 text-center text-red-600;
+  }
+
+  .alertError {
+    @apply bg-yellow-200 p-4 text-center text-yellow-800;
+  }
+}
