@@ -24,7 +24,7 @@ export default function ContactForm(props: ContactFormProps) {
     { mode: "all" }
   );
   const EMAIL_REGEX: RegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-  const registerOptions: { [key: string]: RegisterOptions; } = {
+  const registerOptions: { [key: string]: RegisterOptions } = {
     name: { required: true },
     email: { required: true, pattern: EMAIL_REGEX },
     message: { required: true, }
@@ -63,7 +63,7 @@ export default function ContactForm(props: ContactFormProps) {
   }, []);
 
   return (
-    <Fragment>
+
       <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
 
         <div className='flex flex-col md:flex-row gap-2 '>
@@ -85,7 +85,6 @@ export default function ContactForm(props: ContactFormProps) {
           <div className='flex flex-col w-full'>
             <label className={styles.required + " text-my-black "} htmlFor="email">Email</label>
             <input type="email"
-
               aria-invalid={errors.email ? "true" : "false"}
               className={TW_COMPONENTS['formField']}
               placeholder="Email"
@@ -117,11 +116,12 @@ export default function ContactForm(props: ContactFormProps) {
           className='my-4'
           onChange={onChange}
           sitekey={props.sitekey} />
-        <input disabled={!isCaptchaSuccessful} type="submit" className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : TW_COMPONENTS['buttonDisabled']) + ' ' + ' my-4 '} />
+        <input 
+          disabled={!isCaptchaSuccessful} 
+          type="submit" 
+          className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : TW_COMPONENTS['buttonDisabled']) + ' ' + ' my-4 '} />
       </form>
-
-
-      </Fragment>);
+  )
 };
 
     

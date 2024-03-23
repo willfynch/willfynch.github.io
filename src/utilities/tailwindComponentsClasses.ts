@@ -3,5 +3,5 @@ export const TW_COMPONENTS: {[key:string]:string} = {
     buttonBrown: 'cursor-pointer shadow-md text-my-black rounded-sm uppercase p-2 font-semibold bg-my-black hover:bg-my-white text-my-white hover:text-my-black disabled:bg-slate-400 disabled:cursor-default ',
     buttonDisabled: 'shadow-md rounded-sm uppercase p-2 font-semibold text-my-black',
     section: 'px-4 sm:px-24 2xl:px-96 mb-10 min-h-[500px]',
-    errorText: ' text-sm text-red-600 ' 
+    errorText: 'text-sm text-red-600' 
 }
