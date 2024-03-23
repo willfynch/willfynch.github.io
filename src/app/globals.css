@@ -125,15 +125,15 @@ svg {
   }
 
   .alertSuccess {
-    @apply bg-my-green p-4 text-center text-my-dark-green;
+    @apply w-3/5 rounded-sm bg-my-green p-4 text-center text-my-dark-green;
   }
 
   .alertError {
-    @apply bg-red-200 p-4 text-center text-red-600;
+    @apply w-3/5 rounded-sm bg-red-200 p-4 text-center text-red-600;
   }
 
   .alertPending {
-    @apply bg-yellow-200 p-4 text-center text-yellow-800;
+    @apply w-3/5 rounded-sm bg-yellow-200 p-4 text-center text-yellow-800;
   }
 
   .buttonDisabled {

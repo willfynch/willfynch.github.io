@@ -109,8 +109,9 @@ export default function ContactForm(props: ContactFormProps) {
       <div className='flex flex-col'>
         <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
         <textarea
+          
           aria-invalid={errors.message ? "true" : "false"}
-          className={'formField'}
+          className={'formField min-h-[200px]'}
           {...register("message", registerOptions.message)} />
         {errors.message &&
           <small className={'errorText'}>
@@ -131,15 +132,17 @@ export default function ContactForm(props: ContactFormProps) {
           type="submit"
           className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
 
-        { formStatus === formStatuses.SENT &&
-          <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
-        }
-        { formStatus === formStatuses.NOT_SENT &&
-          <small className={'alertError'}>Une erreur est survenue. Recharge la page puis essaie à nouveau. Si cela bug encore, contacte-moi sur les réseaux sociaux.</small>
-        }
-        { formStatus === formStatuses.SENDING &&
-          <small className={'alertPending'}>Le formulaire voyage sur la toile... </small>
-        }
+        <div className='flex justify-center'>
+          {
+            <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
+          }
+          {formStatus === formStatuses.NOT_SENT &&
+            <small className={'alertError'}>Une erreur est survenue. Recharge la page puis essaie à nouveau. Si cela bug encore, contacte-moi sur les réseaux sociaux.</small>
+          }
+          {formStatus === formStatuses.SENDING &&
+            <small className={'alertPending'}>Le formulaire voyage sur la toile... </small>
+          }
+        </div>
       </div>
     </form>
   )
