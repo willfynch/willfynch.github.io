@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Bilbo_Swash_Caps } from 'next/font/google';
+
+
 const now = nowFont({
   src: '../../public/fonts/Now-Regular.otf'
 })
