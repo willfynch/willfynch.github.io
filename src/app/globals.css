@@ -133,7 +133,7 @@ svg {
   }
 
   .alertPending {
-    @apply w-3/5 rounded-sm bg-yellow-200 p-4 text-center text-yellow-800;
+    @apply w-3/5 rounded-sm bg-yellow-100 p-4 text-center text-yellow-800;
   }
 
   .buttonDisabled {
