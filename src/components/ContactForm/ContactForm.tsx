@@ -110,7 +110,7 @@ export default function ContactForm(props: ContactFormProps) {
         <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
         <textarea
           aria-invalid={errors.message ? "true" : "false"}
-          className={'formField' + ' ' + 'h-[300px]'}
+          className={'formField' + ' ' + 'max-h-[300px]'}
           {...register("message", registerOptions.message)} />
         {errors.message &&
           <small className={'errorText'}>
