@@ -132,7 +132,7 @@ svg {
     @apply bg-red-200 p-4 text-center text-red-600;
   }
 
-  .alertError {
+  .alertPending {
     @apply bg-yellow-200 p-4 text-center text-yellow-800;
   }
 
