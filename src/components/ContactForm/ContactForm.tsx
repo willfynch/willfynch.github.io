@@ -5,6 +5,7 @@ import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from './ContactForm.module.scss';
+import { useRouter } from 'next/navigation';
 
 export interface ContactFormValues {
   name: string;
@@ -37,6 +38,7 @@ export default function ContactForm(props: ContactFormProps) {
   }
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
   const [formStatus, setFormStatus] = useState(formStatuses.NOTHING)
+  const router = useRouter();
 
   async function onSubmit(data: ContactFormValues) {
     const payload = {
@@ -47,7 +49,10 @@ export default function ContactForm(props: ContactFormProps) {
     console.log(payload);
     setFormStatus(formStatuses.SENDING)
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
-      .then(() => setFormStatus(formStatuses.SENT))
+      .then(() => {
+        setFormStatus(formStatuses.SENT)
+        router.refresh()
+      })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
 
@@ -128,6 +133,7 @@ export default function ContactForm(props: ContactFormProps) {
 
       <div className='flex flex-col gap-4'>
         <input
+          value={'Envoyer'}
           disabled={!isCaptchaSuccessful}
           type="submit"
           className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
