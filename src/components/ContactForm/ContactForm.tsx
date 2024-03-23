@@ -114,7 +114,7 @@ export default function ContactForm(props: ContactFormProps) {
       <div className='flex flex-col'>
         <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
         <textarea
-          
+
           aria-invalid={errors.message ? "true" : "false"}
           className={'formField min-h-[200px]'}
           {...register("message", registerOptions.message)} />
@@ -132,12 +132,14 @@ export default function ContactForm(props: ContactFormProps) {
         sitekey={props.sitekey} />
 
       <div className='flex flex-col gap-4'>
-        <input
-          value={'Envoyer'}
-          disabled={!isCaptchaSuccessful}
-          type="submit"
-          className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
+        <div className='flex justify-center sm:justify-start'>
+          <input
+            value={'Envoyer'}
+            disabled={!isCaptchaSuccessful}
+            type="submit"
+            className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
 
+        </div>
         <div className='flex justify-center'>
           {formStatus === formStatuses.SENT &&
             <small className={'alertSuccess'}>Le formulaire a bien été envoyé !</small>
