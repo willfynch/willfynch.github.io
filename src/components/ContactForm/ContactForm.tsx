@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 export interface ContactFormValues {
   name: string;
@@ -39,13 +40,14 @@ export default function ContactForm(props: ContactFormProps) {
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
   const [formStatus, setFormStatus] = useState(formStatuses.NOTHING);
   const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
+  const router = useRouter()
 
   async function onSubmit(data: ContactFormValues) {
     setFormStatus(formStatuses.SENDING)
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => {
         setFormStatus(formStatuses.SENT)
-        location.reload()
+        router.refresh()
       })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
@@ -136,7 +138,6 @@ export default function ContactForm(props: ContactFormProps) {
             disabled={!isCaptchaSuccessful}
             type="submit"
             className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
-
         </div>
         <div className='flex justify-center'>
           {formStatus === formStatuses.SENT &&
@@ -154,8 +155,6 @@ export default function ContactForm(props: ContactFormProps) {
             </small>
 
           }
-
-          
         </div>
       </div>
     </form>
