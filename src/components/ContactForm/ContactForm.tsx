@@ -1,11 +1,11 @@
 'use client';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses';
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from "react-google-recaptcha";
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
-import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 export interface ContactFormValues {
   name: string;
@@ -37,21 +37,15 @@ export default function ContactForm(props: ContactFormProps) {
     NOT_SENT: 'not_sent'
   }
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
-  const [formStatus, setFormStatus] = useState(formStatuses.NOTHING)
-  const router = useRouter();
+  const [formStatus, setFormStatus] = useState(formStatuses.NOTHING);
+  const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
 
   async function onSubmit(data: ContactFormValues) {
-    const payload = {
-      name: data.name,
-      email: data.email,
-      message: data.message
-    };
-    console.log(payload);
     setFormStatus(formStatuses.SENDING)
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => {
         setFormStatus(formStatuses.SENT)
-        router.refresh()
+        location.reload()
       })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
@@ -72,6 +66,7 @@ export default function ContactForm(props: ContactFormProps) {
         throttle: 20000,
       },
     });
+    setRecaptchaNeeded(true);
   }, []);
 
   return (
@@ -126,10 +121,13 @@ export default function ContactForm(props: ContactFormProps) {
 
 
 
-      <ReCAPTCHA
+      {
+        recaptchaNeeded && 
+        <ReCAPTCHA
         className='my-4'
         onChange={onChange}
         sitekey={props.sitekey} />
+      }
 
       <div className='flex flex-col gap-4'>
         <div className='flex justify-center sm:justify-start'>
