@@ -148,8 +148,16 @@ export default function ContactForm(props: ContactFormProps) {
             <small className={'alertError'}>Une erreur est survenue. Recharge la page puis essaie à nouveau. Si cela bug encore, contacte-moi sur les réseaux sociaux.</small>
           }
           {formStatus === formStatuses.SENDING &&
-            <small className={'alertPending'}>Le formulaire voyage sur la toile... </small>
+            <small className={'alertPending flex justify-center'}>
+              Le formulaire voyage sur la toile  
+              <div className={styles.one}>.</div>
+              <div className={styles.two}>.</div>
+              <div className={styles.three}>.</div>
+            </small>
+
           }
+
+          
         </div>
       </div>
     </form>
