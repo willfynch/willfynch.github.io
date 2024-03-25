@@ -1,7 +1,6 @@
 import BlogContainer from "@/components/BlogContainer/BlogContainer";
 import { IBlogPost } from "@/models/blog-post.model";
 import getAllPosts from "@/utilities/getAllPosts"
-import { TW_COMPONENTS } from "@/utilities/tailwindComponentsClasses";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,7 +28,7 @@ export default async function Blog(){
 
 
     return(
-        <section className={TW_COMPONENTS['section']}>
+        <section>
             <BlogContainer posts={posts}/>
         </section>
     )

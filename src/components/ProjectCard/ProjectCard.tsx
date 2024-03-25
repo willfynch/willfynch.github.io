@@ -24,7 +24,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                     height={0}
                      alt={""} />
             </div>
-            <h2 className=" my-0 uppercase font-thin group-hover:text-my-brown">{props.title} · {props.type}</h2>
+            <h4 className=" my-0 uppercase font-thin group-hover:text-my-brown">{props.title} · {props.type}</h4>
         </Link>
     )
 }

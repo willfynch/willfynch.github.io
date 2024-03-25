@@ -115,6 +115,25 @@ svg {
 
 /* TAILWIND COMPONENTS*/
 
+@layer base {
+  h1 {
+    @apply text-h1
+  }
+  h2 {
+    @apply text-h2 m-0 py-4 
+  }
+  h3 {
+    @apply text-h3 m-0 py-2 
+  }
+  p {
+    @apply text-[1.2rem]
+  }
+
+  section {
+    @apply px-4 sm:px-24 2xl:px-96 mb-10 min-h-[500px]
+  }
+}
+
 @layer components {
   .errorText {
     @apply text-sm text-red-600; 
@@ -138,5 +157,17 @@ svg {
 
   .buttonDisabled {
     @apply w-fit shadow-md rounded-sm uppercase p-2 font-semibold text-my-black bg-slate-200;
+  }
+
+  .button {
+    @apply w-fit cursor-pointer shadow-md text-my-black rounded-sm uppercase p-2 font-semibold bg-my-black hover:bg-my-white text-my-white hover:text-my-black 
+  }
+
+  .buttonTransparent {
+    @apply uppercase w-fit font-[1.2rem] border-2 border-my-white p-3 text-my-white rounded-xl hover:bg-my-white hover:text-my-black
+  }
+
+  .social {
+    @apply cursor-pointer my-2 text-4xl opacity-60 hover:opacity-100;
   }
 }

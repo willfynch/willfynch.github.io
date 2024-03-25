@@ -1,7 +1,6 @@
 'use client';
 import { RegisterOptions, useForm } from 'react-hook-form';
 import React, {useEffect, useState } from 'react';
-import { TW_COMPONENTS } from '@/utilities/tailwindComponentsClasses';
 import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
@@ -73,7 +72,7 @@ export default function ContactForm(props: ContactFormProps) {
 
   return (
 
-    <form id='contactForm' className='my-20' onSubmit={handleSubmit(onSubmit)}>
+    <form id='contactForm' className='py-4' onSubmit={handleSubmit(onSubmit)}>
 
       <div className='flex flex-col md:flex-row gap-2 '>
 
@@ -137,7 +136,7 @@ export default function ContactForm(props: ContactFormProps) {
             value={'Envoyer'}
             disabled={!isCaptchaSuccessful}
             type="submit"
-            className={(isCaptchaSuccessful ? TW_COMPONENTS['buttonBrown'] : 'buttonDisabled') + ' ' + ' my-4 '} />
+            className={(isCaptchaSuccessful ? 'buttonBrown': 'buttonDisabled') + ' ' + ' my-4 '} />
         </div>
         <div className='flex justify-center'>
           {formStatus === formStatuses.SENT &&

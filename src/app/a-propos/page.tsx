@@ -12,15 +12,15 @@ enum ABOUT_TEXTS {
     FIRST = `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web 
     pour aventuriers modernes. Mais <strong>qu’est-ce qu’un aventurier moderne</strong>, 
     me diras-tu, toi qui me lis ?`,
-    SECOND = `<strong>Aventurière, Aventurier moderne, <br/><em>Nom pas assez commun.</em></strong>
+    SECOND = `<p><strong>Aventurière, Aventurier moderne, <br/><em>Nom pas assez commun.</em></strong>
     <br/><br/>Personne qui fait, nourrie de foi mais enveloppée de solitude, ce 
-    voyage initiatique qu’est l’entreprenariat.
+    voyage initiatique qu’est l’entreprenariat.</p>
     `,
     THIRD = `À chaque aventure, ses personnages. Moi, je suis celui qui vend un outil indispensable à ta quête : `,
     FOURTH = `Un site web sur-mesure, sans WordPress et adapté à tes besoins.`,
-    FIFTH = `<strong style='font-size:3rem;'>Halte-là, noble internaute !</strong>
+    FIFTH = `<p><strong style='font-size:3rem;'>Halte-là, noble internaute !</strong>
     <br/><br/>Ne demande pas à ChatGPT si tu as des questions. La Foire Aux Questions 
-    te donnera des réponses.
+    te donnera des réponses.</p>
     `,
 }
 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <section className="text-normal text-my-black ">
+        <main className="text-normal text-my-black">
 
             <div className='w-full flex flex-col items-center py-20 gap-8'>
 
@@ -55,7 +55,7 @@ export default function About() {
                 <p className='w-[300px] sm:w-[400px] text-center'>{parse(ABOUT_TEXTS.FIRST)}</p>
             </div>
 
-            <Banner opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.jpg' ></Banner>
+            <Banner height='400' opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.jpg' ></Banner>
 
             <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-40'>
                 <p>{ABOUT_TEXTS.THIRD}</p>
@@ -77,8 +77,8 @@ export default function About() {
             </div>
             
 
-            <Banner opacity='60' isCallToAction={true} callToAction={{text: 'F.A.Q', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.jpg'}></Banner>
+            <Banner height='400' opacity='60' isCallToAction={true} callToAction={{text: 'Foire Aux Questions', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.jpg'}></Banner>
 
-        </section>
+        </main>
     )
 }

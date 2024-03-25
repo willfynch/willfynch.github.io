@@ -46,7 +46,7 @@ export default function BlogContainer(props: BlogContainerProps) {
     }
 
     return (
-        <>
+        <Fragment>
             <BlogSearchBar placeholder="Chercher un article..." onChange={handleSearch} />
             <div className="flex flex-col gap-8">
                 {posts && posts.map((post: IBlogPost) =>
@@ -54,6 +54,6 @@ export default function BlogContainer(props: BlogContainerProps) {
                 )}
                 {posts.length===0 && <>Il n'y a aucun post qui correspond à ta recherche.</>}
             </div>
-        </>
+        </Fragment>
     )
 }

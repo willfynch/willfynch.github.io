@@ -48,9 +48,7 @@ export default function Banner(props: BannerProps) {
                 {parse(props.text)}
                 {props.isCallToAction &&
                     <div className=" mt-10 w-full flex justify-center">
-                        <Link target="_blank" href={props.callToAction?.path ?? ''}>
-                            <ButtonTransparent text={props.callToAction?.text ?? ''} id={"button-faq"} />
-                        </Link>
+                        <Link id={"button-faq"} className="buttonTransparent" href={props.callToAction?.path??""}>{props.callToAction?.text}</Link>
                     </div>
                 }
             </div>

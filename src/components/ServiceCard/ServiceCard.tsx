@@ -24,11 +24,11 @@ export default function ServiceCard(props: ServiceCardProps) {
 
     return (
        
-                <div className=" shadow-md hover:shadow-sm duration-300 shadow-my-brown border-[1px] border-my-brown rounded-lg w-full sm:w-[300px] px-4 py-8">
+                <div className="min-h-[480px] shadow-md hover:shadow-sm duration-300 shadow-my-brown border-[1px] border-my-brown rounded-lg w-full sm:w-[300px] px-4 py-8">
                     <div className="flex justify-center -mb-14">
                         <CoffeCup width={70} animated={false} fill="#593117" />
                     </div>
-                    <h3 className="uppercase font-black mb-6 text-center">{props.title}</h3>
+                    <h3 className="uppercase font-black text-center">{props.title}</h3>
 
                     {props.available &&
                         <table className="flex flex-col justify-center">
