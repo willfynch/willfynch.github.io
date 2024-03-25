@@ -5,7 +5,7 @@ import CoffeCup from '../CoffeeCup/CoffeeCup'
 import ButtonTransparent from '../buttons/ButtonTransparent'
 import Link from 'next/link'
 import { navItems } from '@/utilities/navItems'
-import {  useState } from 'react'
+import { useState } from 'react'
 
 export enum HERO_TEXTS {
     FR_TITLE = "Pas un site web.",
@@ -62,13 +62,13 @@ export default function Hero() {
                     </h2>
                 </div>
 
-                <h3 id='HERO_PHRASE' className={'px-10 sm:px-0 text-normal  w-full text-center'}>
+                <p id='HERO_PHRASE' className={'px-10 sm:px-0 text-normal  w-full text-center'}>
                     {HERO_TEXTS.FR_PHRASE}
-                </h3>
+                </p>
 
-                <div className='  w-full text-center z-50'>
-                    <Link href={'/a-propos'}>
-                        <ButtonTransparent width={150} text={HERO_TEXTS.FR_CTA} id={'heroButton'} />
+                <div className='w-full text-center z-50 mt-8'>
+                    <Link href={'/a-propos'} className='buttonTransparent'>
+                        {HERO_TEXTS.FR_CTA}
                     </Link>
                 </div>
                 <div id='WHITE_RECTANGLE' className='z-30 hidden sm:block border-my-white absolute w-[calc(100vw-40px)] h-[calc(100vh-40px)] border-[1px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'></div>

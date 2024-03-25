@@ -11,7 +11,7 @@ import ButtonColor from "../buttons/ButtonColor";
 export enum FOOTER_CONTENT {
     BOTTOM_FR = `Fait avec ❤️ à l'aide de <a rel="noopener" role="button" href="https://nextjs.org">NextJS</a>,
     hébergé sur <a rel="noopener" target="_blank" role="button" href="https://www.vercel.com">Vercel</a>,
-    Copyright ©  2024 - <a rel="noopener" target="_blank" role="button" href="https://ducafeetducode.com">Du café et du code</a> - 
+    Copyright ©  2024 - <a rel="noopener" target="_blank" role="button" href="https://ducafeetducode.com">Du café et du code ☕</a> - 
     <button className="cursor-pointer"><a href='/mentions-legales'>Mentions légales</a></button>`,
 }
 

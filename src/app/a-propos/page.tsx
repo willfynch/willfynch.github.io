@@ -17,9 +17,9 @@ enum ABOUT_TEXTS {
     voyage initiatique qu’est l’entreprenariat.</p>
     `,
     THIRD = `À chaque aventure, ses personnages. Moi, je suis celui qui vend un outil indispensable à ta quête : `,
-    FOURTH = `Un site web sur-mesure, sans WordPress et adapté à tes besoins.`,
-    FIFTH = `<p><strong style='font-size:3rem;'>Halte-là, noble internaute !</strong>
-    <br/><br/>Ne demande pas à ChatGPT si tu as des questions. La Foire Aux Questions 
+    FOURTH = `Un site web sur-mesure et adapté à tes besoins.`,
+    FIFTH = `<h2>Halte-là, noble internaute !</h2>
+    <br/><br/><p>Ne demande pas à ChatGPT si tu as des questions. La Foire Aux Questions 
     te donnera des réponses.</p>
     `,
 }
@@ -57,7 +57,7 @@ export default function About() {
 
             <Banner height='400' opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.jpg' ></Banner>
 
-            <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-40'>
+            <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-20'>
                 <p>{ABOUT_TEXTS.THIRD}</p>
                 <p className='font-extrabold'>{ABOUT_TEXTS.FOURTH}</p>
             </div>
