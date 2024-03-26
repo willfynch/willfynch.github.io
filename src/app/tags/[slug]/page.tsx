@@ -27,7 +27,7 @@ export async function generateMetadata(
     },
     metadataBase: new URL('https://ducafeetducode.com'),
     alternates: {
-      canonical: '/'
+      canonical: 'https://ducafeetducode.com/tags' + slug
     },
     twitter: {
       card: 'summary_large_image',

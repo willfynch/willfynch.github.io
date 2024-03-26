@@ -2,27 +2,11 @@ import Accordion from "@/components/Accordion/Accordion";
 import Banner from "@/components/Banner/Banner";
 import ButtonColor from "@/components/buttons/ButtonColor";
 import { IAccordion } from "@/models/accordion.model";
+import { calculateMetadata } from "@/utilities/calculateMetadata";
 import getAllAccordions from "@/utilities/getAllAccordions";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "Du café et du code | Foire Aux Questions ",
-    description: `Si tu viens d’arriver sur cette page, c’est que ton sac est plein de questions. Si tu ne trouves pas de réponse, envoie-moi un message. Je tâcherai de te répondre au plus vite.`,
-    keywords: ['Café', 'Développeur', 'Créateur de sites','Foire aux questions', 'Combien coûte un site web', 'Comment créer un site web', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
-    metadataBase: new URL('https://ducafeetducode.com'),
-    alternates: {
-      canonical: '/'
-    },
-    openGraph: {
-      images: ['/images/opengraph.png']
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: ['/images/opengraph.png'],
-      description: `Si tu viens d’arriver sur cette page, c’est que ton sac est plein de questions. Si tu ne trouves pas de réponse, envoie-moi un message. Je tâcherai de te répondre au plus vite.`,
-      title : 'Du café et du code | Foire Aux Questions'
-    }
-};
+export const metadata: Metadata = calculateMetadata("Foire Aux Questions", '/foire-aux-questions')
 
 export default async function Faq() {
 

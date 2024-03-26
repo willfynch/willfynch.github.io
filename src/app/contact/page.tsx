@@ -4,27 +4,9 @@ import { Metadata } from 'next'
 import ContactForm, { ContactFormProps } from '@/components/ContactForm/ContactForm'
 import { Fragment } from 'react'
 import Socials from '@/components/Socials/Socials'
+import { calculateMetadata } from '@/utilities/calculateMetadata'
 
-
-export const metadata: Metadata = {
-  title: "Du café et du code | Contact",
-  description: `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web pour aventuriers modernes. Mais qu’est-ce qu’un aventurier moderne, me diras-tu, toi qui me lis ?`,
-  keywords: ['Café', 'Développeur', 'Créateur de sites', 'Foire aux questions', 'Combien coûte un site web', 'Comment créer un site web', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
-  metadataBase: new URL('https://ducafeetducode.com'),
-  alternates: {
-    canonical: '/'
-  },
-  openGraph: {
-    images: ['/images/opengraph.png']
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: ['/images/opengraph.png'],
-    description: `Je m’appelle Will, j’aime le café, la poésie et je fabrique des sites web pour aventuriers modernes. Mais qu’est-ce qu’un aventurier moderne, me diras-tu, toi qui me lis ?`,
-    title: 'Du café et du code | Contact`'
-  },
-  icons: [{ rel: 'icon', url: './favicon.ico' }, { rel: 'apple-touch-icon', url: './apple-touch-icon.png' }]
-};
+export const metadata: Metadata = calculateMetadata("Contact", '/contact')
 
 export default function Contact() {
 
