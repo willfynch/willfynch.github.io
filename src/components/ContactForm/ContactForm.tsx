@@ -92,7 +92,7 @@ export default function ContactForm(props: ContactFormProps) {
 
         <div className='flex flex-col w-full'>
           <label className={styles.required + " text-my-black "} htmlFor="email">Email</label>
-          <input type="email"
+          <input id='email' type="email"
             aria-invalid={errors.email ? "true" : "false"}
             className={'formField'}
             placeholder="Email"
@@ -108,9 +108,9 @@ export default function ContactForm(props: ContactFormProps) {
       </div>
 
       <div className='flex flex-col'>
-        <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
+        <label  className={styles.required + " text-my-black "} htmlFor="message">Message</label>
         <textarea
-
+          id='message'
           aria-invalid={errors.message ? "true" : "false"}
           className={'formField min-h-[200px]'}
           {...register("message", registerOptions.message)} />
