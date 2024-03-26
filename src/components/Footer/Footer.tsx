@@ -30,7 +30,7 @@ export default function Footer() {
                 </div>
                 <div className="w-full sm:w-1/3 flex flex-col justify-center items-center">
                     <p className="text-normal font-semibold">Navigation</p>
-                    <nav className="text-xs flex flex-col justify-center items-center">
+                    <nav className="flex flex-col justify-center items-center">
                         {navItems.map(item => {
                             return (
                                 <button key={item.id} className=" hover:opacity-50  cursor-pointer ">
