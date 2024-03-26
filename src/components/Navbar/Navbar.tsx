@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <div className={"h-[50px] shadow-md bg-my-white z-50 top-0 sticky"}>
             <div className="hidden sm:inline h-full">
-                <nav className="text-base h-full flex flex-row justify-center">
+                <nav role="navigation" className="text-base h-full flex flex-row justify-center">
                     <Link aria-label='Accueil' onClick={() => handleNavigate(`/`)} href={'/'} className={styles.listItem + ' ' + 'flex justify-center  items-center hover:text-my-brown text-my-black'}>
                         <IoHome />
                     </Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
                     <span className={(mobileMenuVisible ? styles.toggled + ' ' + ' -rotate-45 -translate-y-2' : '') + ' ' + styles.hamBar + ' ' + '  w-7 h-0.5 bg-slate-800 my-1 block duration-300'} id="third"></span>
                 </button>
             </div>
-            <nav
+            <nav role="navigation"
                 aria-hidden={!mobileMenuVisible}
                 className={(mobileMenuVisible ? ' opacity-100 bg-my-white z-40 top-[50px] h-screen ' : '  h-0 opacity-0 ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
 

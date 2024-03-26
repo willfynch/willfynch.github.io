@@ -38,7 +38,7 @@ export default function About() {
                 <p className='w-[300px] sm:w-[400px] text-center'>{parse(ABOUT_TEXTS.FIRST)}</p>
             </div>
 
-            <Banner height='400' opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.webp' ></Banner>
+            <Banner height='400' opacity={'70'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.webp' ></Banner>
 
             <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-20'>
                 <p>{ABOUT_TEXTS.THIRD}</p>
@@ -60,7 +60,7 @@ export default function About() {
             </div>
             
 
-            <Banner height='400' opacity='60' isCallToAction={true} callToAction={{text: 'Foire Aux Questions', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.webp'}></Banner>
+            <Banner height='400' opacity='70' isCallToAction={true} callToAction={{text: 'Foire Aux Questions', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.webp'}></Banner>
 
         </main>
     )

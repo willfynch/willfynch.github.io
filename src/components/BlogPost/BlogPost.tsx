@@ -33,9 +33,9 @@ export default function BlogPost(props: BlogPostProps) {
                     <Markdown className='blogArticleMarkdown'>{props.intro ?? ""}</Markdown>
                     <Markdown className='blogArticleMarkdown'>{props.content}</Markdown>
                 </div>
-                <aside className=" order-1 md:sticky top-[70px]  bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-3/12">
+                <nav role="navigation" className=" order-1 md:sticky top-[70px]  bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-3/12">
                     <BlogTableOfContents nodes={props.nodes}/>
-                </aside>
+                </nav>
 
             </div>
         </div>
