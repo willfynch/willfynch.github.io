@@ -50,12 +50,12 @@ export default function About() {
 
             <div className='w-full flex flex-col items-center py-20 gap-8'>
 
-                <Image className='' width={200} height={200} src={'/images/profile_pic.png'} alt={''}></Image>
+                <Image className='' width={200} height={200} src={'/images/profile_pic.webp'} alt={''}></Image>
 
                 <p className='w-[300px] sm:w-[400px] text-center'>{parse(ABOUT_TEXTS.FIRST)}</p>
             </div>
 
-            <Banner height='400' opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.jpg' ></Banner>
+            <Banner height='400' opacity={'60'} isCallToAction={false} text={ABOUT_TEXTS.SECOND} image='/images/coffee-bianca-gasparoto.webp' ></Banner>
 
             <div className='px-8 text-center flex justify-center flex-col items-center gap-8 py-20'>
                 <p>{ABOUT_TEXTS.THIRD}</p>
@@ -77,7 +77,7 @@ export default function About() {
             </div>
             
 
-            <Banner height='400' opacity='60' isCallToAction={true} callToAction={{text: 'Foire Aux Questions', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.jpg'}></Banner>
+            <Banner height='400' opacity='60' isCallToAction={true} callToAction={{text: 'Foire Aux Questions', path: '/foire-aux-questions'}} text={ABOUT_TEXTS.FIFTH} image={'/images/user-matheus-bertelli.webp'}></Banner>
 
         </main>
     )

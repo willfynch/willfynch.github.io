@@ -41,7 +41,7 @@ export default function Contact() {
 
   return (
     <main>
-      <Banner mobileHeight='400' height='200' text={BANNER_TEXT} image={'/images/contact.jpg'} isCallToAction={false} opacity={'70'} />
+      <Banner mobileHeight='400' height='200' text={BANNER_TEXT} image={'/images/contact.webp'} isCallToAction={false} opacity={'70'} />
       <section>
         <h2 className='text-center'>Pour m'envoyer un email</h2>
             <ContactForm

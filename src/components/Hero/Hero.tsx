@@ -31,7 +31,7 @@ export default function Hero() {
 
     return (
         <div id='home' className={styles.heroSection + ' ' + 'relative text-my-white w-full h-full overflow-hidden'}>
-            <Image className={'z-10 left-0 h-screen w-screen object-cover '} width={200} height={200} src={'/images/LAPTOPCOFFEE.jpg'} alt={''}></Image>
+            <Image className={'z-10 left-0 h-screen w-screen object-cover '} width={200} height={200} src={'/images/LAPTOPCOFFEE.webp'} alt={''}></Image>
             {/* <video id='VIDEO' className={styles.video + ' ' + 'h-screen w-screen object-cover  z-10 absolute left-0 top-0 float overflow-hidden '} disablePictureInPicture autoPlay loop muted src="/videos/coffee.mp4" /> */}
             <div id='NAV_MOBILE' className='z-50 sm:hidden absolute top-10 left-1/2 -translate-x-1/2'>
                 <button aria-label='Menu' aria-expanded={mobileMenuVisible} onClick={handleSetMenuVisible} className='justify-center flex flex-col '>
