@@ -61,7 +61,7 @@ export default function Navbar() {
             </div>
             <nav
                 aria-hidden={!mobileMenuVisible}
-                className={(mobileMenuVisible ? ' opacity-100 bg-my-white z-40 top-[50px] h-screen ' : '  h-0 opacity-0 -top-[500px] ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
+                className={(mobileMenuVisible ? ' opacity-100 bg-my-white z-40 top-[50px] h-screen ' : '  h-0 opacity-0 ') + ' ' + ' duration-300 absolute flex flex-col px-10 items-center sm:hidden w-full'}>
 
                 {mobileMenuVisible && navItems.map(navItem => {
                     return (

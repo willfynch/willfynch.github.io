@@ -136,7 +136,7 @@ export default function ContactForm(props: ContactFormProps) {
             value={'Envoyer'}
             disabled={!isCaptchaSuccessful}
             type="submit"
-            className={(isCaptchaSuccessful ? 'buttonBrown': 'buttonDisabled') + ' ' + ' my-4 '} />
+            className={(isCaptchaSuccessful ? 'button': 'buttonDisabled') + ' ' + ' my-4 '} />
         </div>
         <div className='flex justify-center'>
           {formStatus === formStatuses.SENT &&
