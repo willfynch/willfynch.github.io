@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className={"h-[50px] shadow-md bg-my-white z-50 top-0 sticky"}>
             <div className="hidden sm:inline h-full">
                 <nav className="text-base h-full flex flex-row justify-center">
-                    <Link onClick={() => handleNavigate(`/`)} href={'/'} className={styles.listItem + ' ' + 'flex justify-center  items-center hover:text-my-brown text-my-black'}>
+                    <Link aria-label='Accueil' onClick={() => handleNavigate(`/`)} href={'/'} className={styles.listItem + ' ' + 'flex justify-center  items-center hover:text-my-brown text-my-black'}>
                         <IoHome />
                     </Link>
                     {navItems.map(navItem => {
@@ -75,7 +75,7 @@ export default function Navbar() {
                 })}
                 {
                     mobileMenuVisible &&
-                    <Link onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
+                    <Link aria-label='Accueil' onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
                         <IoHome />
                     </Link>
                 }
