@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="w-full flex-col sm:flex-row flex gap-6">
                 <div className="w-full sm:w-1/3 flex justify-center items-center">
                     <div className="duration-200 opacity-100 hover:opacity-40 cursor-pointer ">
-                        <Link href={'/'}><CoffeCup animated={false} fill="#593117" /></Link>
+                        <Link aria-label="Accueil" href={'/'}><CoffeCup animated={false} fill="#593117" /></Link>
                     </div>
 
                 </div>
