@@ -11,7 +11,7 @@ export default function CoffeCup(props: CoffeeCupProps) {
 
 
     return (
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={props.width ?? 100} height={props.height ?? 100} viewBox="0 0 1080.000000 1080.000000" preserveAspectRatio="xMidYMid meet">
+        <svg role='none' version="1.0" xmlns="http://www.w3.org/2000/svg" width={props.width ?? 100} height={props.height ?? 100} viewBox="0 0 1080.000000 1080.000000" preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" fill={props.fill ?? '#fdf7ec'} stroke="none">
                 {/** MIDDLE FUMEE */}

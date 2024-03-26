@@ -33,7 +33,7 @@ export default function About() {
 
             <div className='w-full flex flex-col items-center py-20 gap-8'>
 
-                <Image className='' width={200} height={200} src={'/images/profile_pic.webp'} alt={''}></Image>
+                <Image className='' width={200} height={200} src={'/images/profile_pic.webp'} alt={'Photo de profil'}></Image>
 
                 <p className='w-[300px] sm:w-[400px] text-center'>{parse(ABOUT_TEXTS.FIRST)}</p>
             </div>

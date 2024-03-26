@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export interface BannerProps {
     text: string;
     image: string;
+    alt?: string;
     isCallToAction: boolean;
     opacity: string;
     callToAction?: {
@@ -42,7 +43,7 @@ export default function Banner(props: BannerProps) {
 
     return (
         <div className={` ${props.mobileHeight ? MOBILE_HEIGHT[props.mobileHeight] : ' h-[600px] '} ${props.height ? HEIGHT[props.height] : 'h-[400px]'} w-screen overflow-y-hidden relative flex justify-center items-center`}>
-            <Image className="absolute object-cover" fill src={props.image} alt={""}></Image>
+            <Image className="absolute object-cover" fill src={props.image} alt={props.alt ?? "Image de fond"}></Image>
             <div className={`bg-black ${OPACITY[props.opacity]} w-full h-full absolute`}></div>
             <div className={"absolute  text-my-white  text-center w-[300px] sm:w-full"}>
                 {parse(props.text)}
