@@ -1,7 +1,7 @@
 export default function NotFoundImage(){
     return(
         <div>
-            <svg  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 1055.52347 852.05558" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <svg role="presentation"  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 1055.52347 852.05558" xmlnsXlink="http://www.w3.org/1999/xlink">
   <title>Deux personnes attendent au pied d'un arbre.</title>
   <ellipse cx="502.36284" cy="821.88969" rx="250.30368" ry="8.93942" fill="#3f3d56" />
   <circle cx="385.68162" cy="332.88807" r="89.56313" fill="#ff6584" />

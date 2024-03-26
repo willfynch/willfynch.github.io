@@ -75,7 +75,7 @@ export default function Navbar() {
                 })}
                 {
                     mobileMenuVisible &&
-                    <Link aria-label='Accueil' onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
+                    <Link role='button' aria-label='Accueil' onClick={() => handleNavigate(`/`)} href={'/'} className={' ' + ' font-medium text-my-black flex justify-center '}>
                         <IoHome />
                     </Link>
                 }

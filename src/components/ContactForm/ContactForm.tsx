@@ -1,6 +1,6 @@
 'use client';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
@@ -108,7 +108,7 @@ export default function ContactForm(props: ContactFormProps) {
       </div>
 
       <div className='flex flex-col'>
-        <label  className={styles.required + " text-my-black "} htmlFor="message">Message</label>
+        <label className={styles.required + " text-my-black "} htmlFor="message">Message</label>
         <textarea
           id='message'
           aria-invalid={errors.message ? "true" : "false"}
@@ -123,20 +123,21 @@ export default function ContactForm(props: ContactFormProps) {
 
 
       {
-        recaptchaNeeded && 
+        recaptchaNeeded &&
         <ReCAPTCHA
-        className='my-4'
-        onChange={onChange}
-        sitekey={props.sitekey} />
+          className='my-4'
+          onChange={onChange}
+          sitekey={props.sitekey} />
       }
 
       <div className='flex flex-col gap-4'>
         <div className='flex justify-center sm:justify-start'>
           <input
+            role='button'
             value={'Envoyer'}
             disabled={!isCaptchaSuccessful}
             type="submit"
-            className={(isCaptchaSuccessful ? 'button': 'buttonDisabled') + ' ' + ' my-4 '} />
+            className={(isCaptchaSuccessful ? 'button' : 'buttonDisabled') + ' ' + ' my-4 '} />
         </div>
         <div className='flex justify-center'>
           {formStatus === formStatuses.SENT &&
@@ -147,7 +148,7 @@ export default function ContactForm(props: ContactFormProps) {
           }
           {formStatus === formStatuses.SENDING &&
             <small className={'alertPending flex justify-center'}>
-              Le formulaire voyage sur la toile  
+              Le formulaire voyage sur la toile
               <div className={styles.one}>.</div>
               <div className={styles.two}>.</div>
               <div className={styles.three}>.</div>
