@@ -117,16 +117,16 @@ svg {
 
 @layer base {
   h1 {
-    @apply text-h1
+    @apply md:text-[3rem] text-[2rem];
   }
   h2 {
-    @apply text-h2 m-0 py-4 
+    @apply md:text-[2.5rem] text-[1.8rem] m-0 py-4; 
   }
   h3 {
-    @apply text-h3 m-0 py-2 
+    @apply  md:text-[1.6rem] text-[1.4rem] m-0 py-2; 
   }
   p {
-    @apply text-[1.2rem]
+    @apply text-[1.2rem];
   }
 
   section {
