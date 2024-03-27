@@ -36,7 +36,6 @@ export default function Contact() {
             />
           </div>
 
-
           <div className='flex flex-col items-center justify-center w-full lg:w-5/12'>
             <div className='flex flex-col justify-center items-center'>
               <div className=' py-4'>
@@ -52,10 +51,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-
-
-
       </section>
     </main>
   )
