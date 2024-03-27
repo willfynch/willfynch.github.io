@@ -140,7 +140,7 @@ export default function ContactForm(props: ContactFormProps) {
         recaptchaNeeded &&
         <div className='flex justify-center'>
           {/*@ts-ignore*/}
-          <ReCAPTCHA ref={(r) => setCaptchaRef(r) }
+          <ReCAPTCHA ref={setCaptchaRef}
             className='my-4'
             onChange={onChange}
             sitekey={props.sitekey} />
