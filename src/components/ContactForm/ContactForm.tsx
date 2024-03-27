@@ -49,7 +49,7 @@ export default function ContactForm(props: ContactFormProps) {
         setTimeout(()=>{
           reset()
           setFormStatus(formStatuses.NOTHING)
-        }, 500)
+        }, 1000)
         
       })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
