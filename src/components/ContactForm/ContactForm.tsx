@@ -21,7 +21,7 @@ export interface ContactFormProps {
 
 export default function ContactForm(props: ContactFormProps) {
 
-  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>(
+  const { register, reset, handleSubmit, formState: { errors } } = useForm<ContactFormValues>(
     { mode: "all" }
   );
   const EMAIL_REGEX: RegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
@@ -46,7 +46,11 @@ export default function ContactForm(props: ContactFormProps) {
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => {
         setFormStatus(formStatuses.SENT)
-        router.refresh()
+        setTimeout(()=>{
+          reset()
+          setFormStatus(formStatuses.NOTHING)
+        }, 500)
+        
       })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
