@@ -46,8 +46,8 @@ export default function ContactForm(props: ContactFormProps) {
       .then(() => {
         setFormStatus(formStatuses.SENT)
         setTimeout(()=>{
-          resetCaptcha()
           setFormStatus(formStatuses.NOTHING)
+          resetCaptcha()
         }, 1000)
         
       })
