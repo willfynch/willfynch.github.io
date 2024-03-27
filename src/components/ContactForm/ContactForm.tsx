@@ -5,7 +5,6 @@ import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
 
 export interface ContactFormValues {
   name: string;
@@ -39,7 +38,7 @@ export default function ContactForm(props: ContactFormProps) {
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
   const [formStatus, setFormStatus] = useState(formStatuses.NOTHING);
   const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
-  const router = useRouter()
+  const captcharef = React.createRef<any>();
 
   async function onSubmit(data: ContactFormValues) {
     setFormStatus(formStatuses.SENDING)
@@ -48,6 +47,7 @@ export default function ContactForm(props: ContactFormProps) {
         setFormStatus(formStatuses.SENT)
         setTimeout(()=>{
           reset()
+          captcharef.current.reset()
           setFormStatus(formStatuses.NOTHING)
         }, 1000)
         
@@ -129,7 +129,8 @@ export default function ContactForm(props: ContactFormProps) {
       {
         recaptchaNeeded &&
         <div className='flex justify-center'>
-          <ReCAPTCHA
+          {/*@ts-ignore*/}
+          <ReCAPTCHA ref={captcharef}
             className='my-4'
             onChange={onChange}
             sitekey={props.sitekey} />
