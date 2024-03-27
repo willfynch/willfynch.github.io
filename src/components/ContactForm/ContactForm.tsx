@@ -1,6 +1,6 @@
 'use client';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
@@ -57,7 +57,7 @@ export default function ContactForm(props: ContactFormProps) {
 
   const setCaptchaRef = (ref:any) => {
     if (ref) {
-      return captcharef = ref;
+      return captcharef = useRef();
     }
  };
 
