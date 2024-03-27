@@ -112,7 +112,7 @@ export default function ContactForm(props: ContactFormProps) {
         <textarea
           id='message'
           aria-invalid={errors.message ? "true" : "false"}
-          className={'formField min-h-[200px]'}
+          className={'formField min-h-[100px]'}
           {...register("message", registerOptions.message)} />
         {errors.message &&
           <small className={'errorText'}>
@@ -124,14 +124,16 @@ export default function ContactForm(props: ContactFormProps) {
 
       {
         recaptchaNeeded &&
-        <ReCAPTCHA
-          className='my-4'
-          onChange={onChange}
-          sitekey={props.sitekey} />
+        <div className='flex justify-center'>
+          <ReCAPTCHA
+            className='my-4'
+            onChange={onChange}
+            sitekey={props.sitekey} />
+        </div>
       }
 
       <div className='flex flex-col gap-4'>
-        <div className='flex justify-center sm:justify-start'>
+        <div className='flex justify-center'>
           <input
             role='button'
             value={'Envoyer'}

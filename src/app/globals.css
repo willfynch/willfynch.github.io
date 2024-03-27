@@ -71,9 +71,9 @@ h4 {
   position: relative;
   font-weight: 600;
   transition: all linear .2s;
-  color: #593117;
+  color: #382208;
   z-index: 1;
-  border-bottom-color: #593117;
+  border-bottom-color: #382208;
   border-bottom-width: 2px;
 }
 
@@ -130,8 +130,9 @@ svg {
   }
 
   section {
-    @apply px-4 sm:px-24 2xl:px-96 mb-10 min-h-[500px]
+    @apply px-4 sm:px-20 md:px-24 2xl:px-96 mb-10 min-h-[500px]
   }
+
 }
 
 @layer components {
@@ -140,7 +141,7 @@ svg {
   }
 
   .formField {
-    @apply px-2 h-10 border-my-brown border-[1.5px] focus:outline-none focus:border-my-black focus:border-[2px]
+    @apply px-2 h-12 md:h-10 border-my-brown border-[1.5px] focus:outline-none focus:border-my-black focus:border-[2px]
   }
 
   .alertSuccess {
@@ -168,6 +169,17 @@ svg {
   }
 
   .social {
-    @apply cursor-pointer my-2 text-4xl opacity-60 hover:opacity-100;
+    @apply cursor-pointer my-2 text-3xl opacity-60 hover:opacity-100;
+  }
+
+  .social-sm {
+    @apply cursor-pointer my-2 text-2xl opacity-60 hover:opacity-100;
+  }
+
+  .socialsList {
+    @apply mt-2 gap-2 flex flex-row justify-center text-my-black;
+  }
+  .socialsList-sm {
+    @apply mt-2 gap-2 flex flex-row justify-center text-my-black;
   }
 }
