@@ -38,7 +38,7 @@ export default function ContactForm(props: ContactFormProps) {
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
   const [formStatus, setFormStatus] = useState(formStatuses.NOTHING);
   const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
-  let captcharef = React.createRef<any>();
+  let recaptchaInputRef = useRef();
 
   async function onSubmit(data: ContactFormValues) {
     setFormStatus(formStatuses.SENDING)
@@ -55,15 +55,9 @@ export default function ContactForm(props: ContactFormProps) {
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
 
-  const setCaptchaRef = (ref:any) => {
-    if (ref) {
-      return captcharef = useRef();
-    }
- };
-
  const resetCaptcha = () => {
    //@ts-ignore
-   captcharef.current.reset();
+   recaptchaInputRef.current.reset();
  }
 
 
@@ -141,7 +135,7 @@ export default function ContactForm(props: ContactFormProps) {
         recaptchaNeeded &&
         <div className='flex justify-center'>
           {/*@ts-ignore*/}
-          <ReCAPTCHA ref={(r) => setCaptchaRef(r) }
+          <ReCAPTCHA ref={recaptchaInputRef}
             className='my-4'
             onChange={onChange}
             sitekey={props.sitekey} />
