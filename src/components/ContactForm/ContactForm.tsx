@@ -46,6 +46,7 @@ export default function ContactForm(props: ContactFormProps) {
       .then(() => {
         setFormStatus(formStatuses.SENT)
         setTimeout(()=>{
+          reset()
           setFormStatus(formStatuses.NOTHING)
           resetCaptcha()
         }, 1000)
@@ -62,7 +63,7 @@ export default function ContactForm(props: ContactFormProps) {
 
  const resetCaptcha = () => {
    //@ts-ignore
-   captcharef.reset();
+   captcharef.current.reset();
  }
 
 
@@ -140,7 +141,7 @@ export default function ContactForm(props: ContactFormProps) {
         recaptchaNeeded &&
         <div className='flex justify-center'>
           {/*@ts-ignore*/}
-          <ReCAPTCHA ref={setCaptchaRef}
+          <ReCAPTCHA ref={(r) => setCaptchaRef(r) }
             className='my-4'
             onChange={onChange}
             sitekey={props.sitekey} />
