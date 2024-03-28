@@ -115,7 +115,7 @@ export default function ContactForm(props: ContactFormProps) {
         <textarea
           id='message'
           aria-invalid={errors.message ? "true" : "false"}
-          className={'formField min-h-[100px]'}
+          className={'formField min-h-[150px]'}
           {...register("message", registerOptions.message)} />
         {errors.message &&
           <small className={'errorText'}>

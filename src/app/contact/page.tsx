@@ -26,8 +26,8 @@ export default function Contact() {
     <main>
       <Banner alt={"Un téléphone portable, image mettant en avant la notion de contact."} mobileHeight='400' height='200' text={BANNER_TEXT} image={'/images/contact.webp'} isCallToAction={false} opacity={'70'} />
       <section>
-        <div className='w-full flex flex-col md:flex-row gap-8 my-8'>
-          <div className='w-full lg:w-6/12 bg-my-white shadow-md p-4'>
+        <div className='w-full flex flex-col md:flex-row md:justify-center md:items-center gap-8 my-8'>
+          <div className='w-full lg:w-6/12 bg-my-white shadow-md rounded-sm p-4'>
             <ContactForm
               sitekey={contactFormProps.sitekey}
               templateId={contactFormProps.templateId}
