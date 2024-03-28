@@ -57,7 +57,7 @@ export default function ContactForm(props: ContactFormProps) {
 
  const resetCaptcha = () => {
    //@ts-ignore
-   recaptchaInputRef.current.reset();
+   window.grecaptcha.reset();
  }
 
 
