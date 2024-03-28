@@ -1,6 +1,6 @@
 'use client';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import styles from './ContactForm.module.scss';
@@ -38,28 +38,22 @@ export default function ContactForm(props: ContactFormProps) {
   const [isCaptchaSuccessful, setIsCaptchaSuccess] = useState(false);
   const [formStatus, setFormStatus] = useState(formStatuses.NOTHING);
   const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
-  let recaptchaInputRef = createRef();
 
   async function onSubmit(data: ContactFormValues) {
     setFormStatus(formStatuses.SENDING)
     emailjs.sendForm(props.serviceId, props.templateId, '#contactForm')
       .then(() => {
         setFormStatus(formStatuses.SENT)
-        setTimeout(()=>{
+        setTimeout(() => {
           reset()
           setFormStatus(formStatuses.NOTHING)
-          resetCaptcha()
+          //@ts-ignore
+          window.grecaptcha.reset();
         }, 1000)
-        
+
       })
       .catch((e) => setFormStatus(formStatuses.NOT_SENT));
   };
-
- const resetCaptcha = () => {
-   //@ts-ignore
-   window.grecaptcha.reset();
- }
-
 
   function onChange(value: any) {
     setIsCaptchaSuccess(true);
@@ -134,8 +128,7 @@ export default function ContactForm(props: ContactFormProps) {
       {
         recaptchaNeeded &&
         <div className='flex justify-center'>
-          {/*@ts-ignore*/}
-          <ReCAPTCHA ref={recaptchaInputRef}
+          <ReCAPTCHA 
             className='my-4'
             onChange={onChange}
             sitekey={props.sitekey} />
