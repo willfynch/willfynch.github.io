@@ -69,6 +69,7 @@ export default defineConfig({
         name: "accordions",
         label: "Accordions",
         path: 'public/data/accordions',
+        format: 'md',
         fields: [
           {
             type: "string",

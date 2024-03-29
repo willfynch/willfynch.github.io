@@ -3,8 +3,8 @@ import Banner from "@/components/Banner/Banner";
 import ButtonColor from "@/components/buttons/ButtonColor";
 import { IAccordion } from "@/models/accordion.model";
 import { calculateMetadata } from "@/utilities/calculateMetadata";
-import getAllAccordions from "@/utilities/getAllAccordions";
 import { Metadata } from "next";
+import client from "../../../tina/__generated__/client";
 
 export const metadata: Metadata = calculateMetadata("Foire Aux Questions", '/foire-aux-questions')
 
@@ -14,7 +14,10 @@ export default async function Faq() {
     plein de questions. <strong>Si tu ne trouves pas de réponse, envoie-moi un message. </strong></br></br> 
     Je tâcherai de te répondre au plus vite.</p>`
 
-    const ACCORDIONS: IAccordion[] = await getAllAccordions();
+    const accordionsResponse = await client.queries.accordionsConnection()
+    const ACCORDIONS: IAccordion[] = accordionsResponse.data.accordionsConnection.edges!.map((accordion)=>{
+        return {title: accordion?.node?.title ?? "", body: accordion?.node?.body}
+    })
 
     return (
         <main>
