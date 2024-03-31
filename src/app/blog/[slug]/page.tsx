@@ -56,7 +56,6 @@ export async function generateMetadata(
 
 export default async function Post({ params }: { params: { slug: string } }) {
     const { slug } = params;
-    const post: IBlogPost = await getPost(slug)
 
     const allPostsResponse = await client.queries.postsConnection();
     const blogPost:any = allPostsResponse.data.postsConnection.edges?.filter(post => slugify(post?.node?.title) === slug)
@@ -82,14 +81,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
     return (
         <Fragment>
-            <SectionHeader title={post.title ? post.title : 'Ceci n\'est pas un article'} image={post.image ? post.image : undefined} />
+            <SectionHeader title={blogPost.title ? blogPost.title : 'Ceci n\'est pas un article'} image={blogPost.image ? blogPost.image : undefined} />
             <Navbar />
-            {post.title &&
+            {blogPost.title &&
                 <section className={"pt-10 px-4 sm:px-20 2xl:px-80 mb-10 min-h-[500px]"}>
-                    <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🡰 RETOUR"} id={"BTN"} />
+                    <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🠄 RETOUR"} id={"BTN"} />
                     <BlogPost 
                       intro={blogPost.intro} 
-                      nodes={post.nodes ?? []} 
+                      nodes={[]} 
                       title={blogPost.title} 
                       date={blogPost.date} 
                       socials={SOCIALS} 
@@ -101,7 +100,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     <OtherPosts />
                 </section>
             }
-            {!post.title &&
+            {!blogPost.title &&
                 <section className="w-full flex flex-col justify-center items-center my-14">
                     <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🡰 RETOUR AU BLOG"} id={"BTN"} />
                     <h2 className=" text-center text-h4 sm:text-h3 mb-4">
