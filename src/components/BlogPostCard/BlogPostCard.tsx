@@ -4,6 +4,7 @@ import Image from "next/image";
 import { formatDate } from "@/utilities/formatDate";
 import Tag from "../Tag/Tag";
 import { useEffect } from "react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export interface BlogPostCardProps {
     title?: string;
@@ -28,11 +29,11 @@ export default function BlogPostCard(props: BlogPostCardProps) {
                     {props.tags?.map((tag,index) => (<Tag key={index} name={tag} />))}
                 </div>
             </div>
-            <div className="sm:w-1/2 p-8 sm:p-0 bg-my-white flex flex-col justify-center items-center">
+            <div className="sm:w-1/2 p-8 sm:p-0 bg-my-white flex flex-col justify-center ">
                 <Link className=" font-black hover:text-my-brown" href={`/blog/${props.slug}`}>{props.title}</Link>
-                <p className="mt-4 text-sm text-mobileBase">{props.date} · {props.readingTime} min de lecture</p>
-                <p className="text-sm mt-8 sm:px-8 flex flex-col">
-                    {props.intro?.slice(0, 150)}...
+                <p className="mt-4">{props.date} · {props.readingTime} min de lecture</p>
+                <p className="text-sm mt-8 sm:px-8 flex flex-col ">
+                    {props.intro?.toString().slice(0, 150)}...
                     <Link className="mt-2 link flex gap-0 items-center w-fit" href={`blog/${props.slug}`}>
                         <span>Lire la suite </span>
                         <span className="arrow">➔</span>

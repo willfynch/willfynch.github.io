@@ -16,6 +16,7 @@ function renderNodes(nodes: any) {
 
     function handleClick(e:any){
         const id = e.target.href.split('#')[1]
+        console.log('ID : ', document.getElementById(id) , id)
         e.preventDefault();
         document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
 

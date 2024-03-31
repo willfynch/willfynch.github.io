@@ -32,7 +32,9 @@ export async function getPost(slug:any): Promise<IBlogPost> {
   }).find(post => post.slug === slug)
   ?? {author:'', authorPic:'', readingTime:0, tags:[], title:'', image:'', date:'', slug:'', intro:''};
 
+  console.log('content before node ', post.content)
   post.nodes = await getHeadings(post?.content)
+  console.log(post.nodes)
   return post
 };
 

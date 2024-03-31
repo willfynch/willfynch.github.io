@@ -12,6 +12,12 @@ import { FaThreads } from "react-icons/fa6";
 import NotFoundImage from "@/components/NotFoundImage/NotFoundImage";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
+import client from "../../../../tina/__generated__/client";
+import { slugify } from "@/utilities/slugify";
+import { formatDate } from "@/utilities/formatDate";
+import { calculateReadingTime } from "@/utilities/calculateReadingTime";
+import { FaLinkedin } from "react-icons/fa";
+
 
 type Props = {
     params: { slug: string }
@@ -48,20 +54,30 @@ export async function generateMetadata(
     }
   }
 
-export async function generateStaticParams() {
-    const posts = await getAllPosts();
-    const paths = posts.map((post: any) => ({ slug: post.slug }))
-    return paths
-}
-
 export default async function Post({ params }: { params: { slug: string } }) {
     const { slug } = params;
     const post: IBlogPost = await getPost(slug)
 
-    const SOCIALS = [
-        { icon: <FaInstagram />, link: 'https://www.instagram.com/willdevweb' },
-        { icon: <FaThreads />, link: 'https://www.threads.net/@willdevweb' },
+    const allPostsResponse = await client.queries.postsConnection();
+    const blogPost:any = allPostsResponse.data.postsConnection.edges?.filter(post => slugify(post?.node?.title) === slug)
+      .map(post => {
+        return {
+          author: post?.node?.author,
+          authorPic: post?.node?.authorPic,
+          tags: post?.node?.tags,
+          title: post?.node?.title,
+          intro: post?.node?.intro,
+          readingTime: calculateReadingTime(post?.node?.body.toString(), 0.2),
+          date: formatDate(post?.node?.date),
+          content: post?.node?.body,
+          image: post?.node?.image
+        }
+      })[0]    
 
+    const SOCIALS = [
+        { icon: <FaInstagram />, link: process.env.INSTAGRAM ?? '' },
+        { icon: <FaThreads />, link: process.env.THREADS ?? '' },
+        {icon: <FaLinkedin/>, link: process.env.LINKEDIN ?? ''}
     ]
 
     return (
@@ -71,7 +87,17 @@ export default async function Post({ params }: { params: { slug: string } }) {
             {post.title &&
                 <section className={"pt-10 px-4 sm:px-20 2xl:px-80 mb-10 min-h-[500px]"}>
                     <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🡰 RETOUR"} id={"BTN"} />
-                    <BlogPost intro={post.intro} nodes={post.nodes ?? []} title={post.title} date={post.date} socials={SOCIALS} author={post.author} authorPic={post.authorPic} readingTime={post.readingTime} tags={post.tags} content={post.content ?? ''} />
+                    <BlogPost 
+                      intro={blogPost.intro} 
+                      nodes={post.nodes ?? []} 
+                      title={blogPost.title} 
+                      date={blogPost.date} 
+                      socials={SOCIALS} 
+                      author={blogPost.author} 
+                      authorPic={blogPost.authorPic} 
+                      readingTime={blogPost.readingTime} 
+                      tags={blogPost.tags} 
+                      content={blogPost.content} />
                     <OtherPosts />
                 </section>
             }

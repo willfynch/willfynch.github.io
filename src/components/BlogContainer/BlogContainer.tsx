@@ -1,10 +1,14 @@
 'use client'
 
 import { IBlogPost } from "@/models/blog-post.model"
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import BlogSearchBar from "../SearchBar/SearchBar"
 import BlogPost from "../BlogPostCard/BlogPostCard"
 import BlogPostCard from "../BlogPostCard/BlogPostCard"
+import client from "../../../tina/__generated__/client"
+import { slugify } from "@/utilities/slugify"
+import { calculateReadingTime } from "@/utilities/calculateReadingTime"
+import { formatDate } from "@/utilities/formatDate"
 
 export interface BlogContainerProps {
     posts: IBlogPost[]
@@ -48,7 +52,7 @@ export default function BlogContainer(props: BlogContainerProps) {
     return (
         <Fragment>
             <BlogSearchBar placeholder="Chercher un article..." onChange={handleSearch} />
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 mb-10">
                 {posts && posts.map((post: IBlogPost) =>
                     <BlogPostCard intro={post.intro} nodes={post.nodes} readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={post.slug} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
                 )}

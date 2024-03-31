@@ -16,8 +16,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <Fragment>
             {pathName && pathName.split('/').length < 3 && <SectionHeader title='Blog' />}
             {pathName && pathName.split('/').length < 3 && <Navbar/>}
-            
-            {children}<Footer></Footer>
+            {children}
+            <Footer/>
         </Fragment>
     )
 
