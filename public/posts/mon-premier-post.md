@@ -2,7 +2,7 @@
 title: Mon premier post
 intro: |
   Ceci est une intro.
-image: /images/coffee-bianca-gasparoto.webp
+image: /images/user-matheus-bertelli.webp
 authorPic: /images/profile_pic.webp
 author: Will
 tags:
