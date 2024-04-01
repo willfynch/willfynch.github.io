@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // output: 'export',
-  // images: {
-  //   unoptimized: true,
-  // },
+  images: {
+    domains: ['assets.tina.io'],
+  },
   webpack: 
     (config) => {
       config.module.rules.push({
