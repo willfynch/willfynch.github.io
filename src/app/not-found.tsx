@@ -1,9 +1,9 @@
-import Footer from "@/components/Footer/Footer"
-import Navbar from "@/components/Navbar/Navbar"
-import SectionHeader from "@/components/SectionHeader/SectionHeader"
+import Footer from "@/components/layout/Footer/Footer"
+import Navbar from "@/components/layout/Navbar/Navbar"
+import SectionHeader from "@/components/layout/SectionHeader/SectionHeader"
 import { Fragment } from "react"
 import Image from "next/image"
-import NotFoundImage from "@/components/NotFoundImage/NotFoundImage"
+import NotFoundImage from "@/components/utilities/NotFoundImage/NotFoundImage"
 import Link from "next/link"
 
 export default function NotFound() {

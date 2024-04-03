@@ -1,9 +1,9 @@
 
-import Banner from '@/components/Banner/Banner'
+import Banner from '@/components/utilities/Banner/Banner'
 import { Metadata } from 'next'
-import ContactForm, { ContactFormProps } from '@/components/ContactForm/ContactForm'
+import ContactForm, { ContactFormProps } from '@/components/utilities/ContactForm/ContactForm'
 import { Fragment } from 'react'
-import Socials from '@/components/Socials/Socials'
+import Socials from '@/components/utilities/Socials/Socials'
 import { calculateMetadata } from '@/utilities/calculateMetadata'
 import Link from 'next/link'
 

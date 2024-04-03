@@ -1,5 +1,5 @@
-import Accordion from "@/components/Accordion/Accordion";
-import Banner from "@/components/Banner/Banner";
+import Accordion from "@/components/utilities/Accordion/Accordion";
+import Banner from "@/components/utilities/Banner/Banner";
 import ButtonColor from "@/components/buttons/ButtonColor";
 import { IAccordion } from "@/models/accordion.model";
 import { calculateMetadata } from "@/utilities/calculateMetadata";

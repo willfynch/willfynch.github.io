@@ -1,6 +1,6 @@
 
-import Banner from '@/components/Banner/Banner'
-import ServiceCard from '@/components/ServiceCard/ServiceCard'
+import Banner from '@/components/utilities/Banner/Banner'
+import ServiceCard from '@/components/utilities/ServiceCard/ServiceCard'
 import { servicesItem } from '@/utilities/servicesItems'
 import { GlowCapture } from '@codaworks/react-glow'
 import parse from 'html-react-parser'

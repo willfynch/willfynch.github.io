@@ -1,15 +1,13 @@
-import getPost from "@/utilities/getPost";
-import getAllPosts from "@/utilities/getAllPosts";
 import ButtonColor from "@/components/buttons/ButtonColor";
-import BlogPost from "@/components/BlogPost/BlogPost";
+import BlogPost from "@/components/blog/BlogPost/BlogPost";
 import { IBlogPost } from "@/models/blog-post.model";
-import OtherPosts from "@/components/OtherPosts/OtherPosts";
+import OtherPosts from "@/components/blog/OtherPosts/OtherPosts";
 import { Fragment } from "react";
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
-import Navbar from "@/components/Navbar/Navbar";
+import SectionHeader from "@/components/layout/SectionHeader/SectionHeader";
+import Navbar from "@/components/layout/Navbar/Navbar";
 import { FaInstagram } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-import NotFoundImage from "@/components/NotFoundImage/NotFoundImage";
+import NotFoundImage from "@/components/utilities/NotFoundImage/NotFoundImage";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import client from "../../../../tina/__generated__/client";
@@ -17,12 +15,16 @@ import { slugify } from "@/utilities/slugify";
 import { formatDate } from "@/utilities/formatDate";
 import { calculateReadingTime } from "@/utilities/calculateReadingTime";
 import { FaLinkedin } from "react-icons/fa";
+import { getNodes } from "@/utilities/getNodes";
+import { calculateMetadata } from "@/utilities/calculateMetadata";
 
 
 type Props = {
     params: { slug: string }
     searchParams: { [key: string]: string | string[] | undefined }
   }
+
+
 
 export async function generateMetadata(
     { params, searchParams }: Props,
@@ -32,26 +34,14 @@ export async function generateMetadata(
     const slug = params.slug
    
     // fetch data
-    const post: IBlogPost = await getPost(slug)
+    const postsResponse = await client.queries.postsConnection();
+    const post = postsResponse.data.postsConnection.edges?.map((post) => {
+      return { slug: post?.node?._sys.filename, title: post?.node?.title }
+    }).filter(post => post.slug === slug)[0]
 
-    return {
-      title: post.title,
-      description: post.intro,
-      keywords: [post.title, ...post.tags, 'Sophrologie', 'Café', 'Développeur', 'Créateur de sites', 'Développeur Normandie', 'Développeur Web', 'Développeur Rouen', 'Développeur', 'Site internet', 'Site vitrine', 'Site', 'Site e-commerce', 'E-commerce', 'TPE', 'Entrepreneurs', 'Sites jamstack', 'Sites sans serveur', 'Pas wordpress', 'Wordpress', 'Site sans wordpress', 'Site pas cher', 'Site économique'],
-      openGraph: {
-        images: post.image,
-      },
-      metadataBase: new URL('https://ducafeetducode.com'),
-      alternates: {
-        canonical: '/'
-      },
-      twitter: {
-        card: 'summary_large_image',
-        images: [post.image],
-        description: post.intro,
-        title : post.title
-      }
-    }
+
+    return calculateMetadata(post?.title ?? "no_title", `/blog/${slug}`)
+
   }
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -66,10 +56,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
           tags: post?.node?.tags,
           title: post?.node?.title,
           intro: post?.node?.intro,
-          readingTime: calculateReadingTime(post?.node?.body.toString(), 0.2),
+          readingTime: calculateReadingTime(post?.node?.title!, 0.2),
           date: formatDate(post?.node?.date),
           content: post?.node?.body,
-          image: post?.node?.image
+          image: post?.node?.image,
+          nodes: getNodes(post?.node?.body)
         }
       })[0]    
 
@@ -81,14 +72,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
     return (
         <Fragment>
-            <SectionHeader title={blogPost.title ? blogPost.title : 'Ceci n\'est pas un article'} image={blogPost.image ? blogPost.image : undefined} />
+            <SectionHeader title={blogPost? blogPost?.title : 'Ceci n\'est pas un article'} image={blogPost ? blogPost?.image : undefined} />
             <Navbar />
-            {blogPost.title &&
+            {blogPost &&
                 <section className={"pt-10 px-4 sm:px-20 2xl:px-80 mb-10 min-h-[500px]"}>
                     <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🠄 RETOUR"} id={"BTN"} />
                     <BlogPost 
                       intro={blogPost.intro} 
-                      nodes={[]} 
+                      nodes={blogPost.nodes} 
                       title={blogPost.title} 
                       date={blogPost.date} 
                       socials={SOCIALS} 
@@ -100,16 +91,16 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     <OtherPosts />
                 </section>
             }
-            {!blogPost.title &&
+            {!blogPost &&
                 <section className="w-full flex flex-col justify-center items-center my-14">
                     <ButtonColor link={{ isLink: true, path: '/blog' }} width={100} text={"🡰 RETOUR AU BLOG"} id={"BTN"} />
-                    <h2 className=" text-center text-h4 sm:text-h3 mb-4">
+                    <h4 className=" text-center mb-4">
                         <span className="">Il n'y a rien ici, noble internaute.</span>
                         <br />
                         <span className="mr-2">Mais tu peux
                             toujours</span>
                         <Link className="link" href={"/foire-aux-questions"}>consulter la F.A.Q.</Link>
-                    </h2>
+                    </h4>
                     <NotFoundImage />
                 </section>
             }

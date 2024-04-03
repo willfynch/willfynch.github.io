@@ -1,6 +1,4 @@
 export interface IMarkdownNode {
-    value: string;
+    content: string;
     depth: number;
-    data: {hProperties: {id:string}};
-    children: IMarkdownNode;
 }

@@ -1,13 +1,13 @@
 
 import ButtonColor from "@/components/buttons/ButtonColor";
 import { Fragment } from "react";
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
-import Navbar from "@/components/Navbar/Navbar";
+import SectionHeader from "@/components/layout/SectionHeader/SectionHeader";
+import Navbar from "@/components/layout/Navbar/Navbar";
 import getAllProjects from "@/utilities/getAllProjects";
 import { IProject } from "@/models/project.model";
 import getProject from "@/utilities/getProject";
-import ProjectPost from "@/components/ProjectPost/ProjectPost";
-import NotFoundImage from "@/components/NotFoundImage/NotFoundImage";
+import ProjectPost from "@/components/portfolio/ProjectPost/ProjectPost";
+import NotFoundImage from "@/components/utilities/NotFoundImage/NotFoundImage";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 

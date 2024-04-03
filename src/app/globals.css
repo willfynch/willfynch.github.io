@@ -107,9 +107,9 @@ h4 {
 
 
 
-.link, article > a:hover .arrow {
+/* .link, article > a:hover .arrow {
   padding-left: 5px;
-}
+} */
 
 svg {
   max-width: 100%;
@@ -134,13 +134,13 @@ svg {
   section {
     @apply px-4 sm:px-20 md:px-24 2xl:px-96  min-h-[500px]
   }
+  
+  small {
+    @apply text-[1rem];
+  }
 
   blockquote {
     @apply bg-my-white relative py-6 pl-12 pr-6 italic rounded-sm my-6;
-  }
-
-  iframe {
-    @apply w-full h-full;
   }
 
   blockquote::before {

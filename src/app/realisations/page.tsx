@@ -1,4 +1,4 @@
-import PortfolioContainer from "@/components/PortfolioContainer/PortfolioContainer";
+import PortfolioContainer from "@/components/portfolio/PortfolioContainer/PortfolioContainer";
 import { IProject } from "@/models/project.model";
 import { calculateMetadata } from "@/utilities/calculateMetadata";
 import getAllProjects from "@/utilities/getAllProjects";
