@@ -14,7 +14,7 @@ export interface BlogPostTopInfosProps {
 
 export default function BlogPostTopInfos(props: BlogPostTopInfosProps) {
     return (
-        <div className="my-10">
+        <div className="my-10 px-4 md:px-0">
             <div className="flex items-center gap-2">
                 <Image width={80} height={80} src={props.authorPic} alt={"Photo de profil de l'auteur"} />
                 <div className="flex flex-col">

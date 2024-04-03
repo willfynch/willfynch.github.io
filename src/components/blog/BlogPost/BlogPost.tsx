@@ -61,7 +61,7 @@ export default function BlogPost(props: BlogPostProps) {
             <BlogPostTopInfos socials={props.socials} authorPic={props.authorPic} author={props.author} readingTime={props.readingTime} date={props.date!} tags={props.tags ?? []} />
 
             <div className="w-full flex flex-col gap-2 md:flex-row justify-between">
-                <article className="px-4 order-2 md:order-1 w-full md:w-8/12 text-my-black text-justify">
+                <article className="px-4 md:px-0 order-2 md:order-1 w-full md:w-8/12 text-my-black text-justify">
                     <p className="md:mt-10">{props.intro}</p>
                     {/**@ts-ignore*/}
                     <TinaMarkdown content={props.content} components={components.code_block} />

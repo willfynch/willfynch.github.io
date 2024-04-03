@@ -75,7 +75,7 @@ export default function Hero() {
                 <nav role="navigation" className=' absolute z-50 hidden sm:flex flex-col left-[40px] bottom-[40px]'>
                     {navItems.map(item => {
                         return (
-                            <Link className='text-mobileBase' key={item.id} href={`/${item.path}`}>{item.name}</Link>
+                            <Link className='hover:text-my-brown text-2xl' key={item.id} href={`/${item.path}`}>{item.name}</Link>
                         )
                     })}
                 </nav>

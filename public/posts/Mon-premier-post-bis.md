@@ -1,8 +1,7 @@
 ---
-title: Mon premier post
-intro: >-
-  Id bisulcam memento splendidaque inmotas resupinus partu, siccis cretosaque
-  respexit in animae tect
+title: Mon premier post bis
+intro: |
+  Ceci est une intro.
 image: /images/user-matheus-bertelli.webp
 authorPic: /images/profile_pic.webp
 author: Will

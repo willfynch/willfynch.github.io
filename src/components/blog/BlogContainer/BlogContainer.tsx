@@ -46,7 +46,7 @@ export default function BlogContainer(props: BlogContainerProps) {
     return (
         <Fragment>
             <BlogSearchBar placeholder="Chercher un article..." onChange={handleSearch} />
-            <div className="flex flex-col gap-8 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
                 {posts && posts.map((post: IBlogPost, index:number) =>
                     <BlogPostCard intro={post.intro} nodes={post.nodes} readingTime={post.readingTime} author={post.author} authorPic={post.authorPic} key={index} date={post.date} slug={post.slug} title={post.title} image={post.image} tags={post.tags} />
                 )}
