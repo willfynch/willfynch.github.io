@@ -14,7 +14,7 @@ export const CLASSES: any = {
 }
 
 
-function renderNodes(nodes: any) {
+export default function BlogTableOfContents(props: TOCProps) {
 
     function handleClick(e: any) {
         const id = e.target.href.split('#')[1]
@@ -22,10 +22,11 @@ function renderNodes(nodes: any) {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
     }
-
     return (
-        <ul>
-            {nodes.map((node: IMarkdownNode, index:number) => (
+        <Fragment>
+            <h3 className="text-center m-0 mb-4 text-my-black font-bold">Sommaire</h3>
+            <ul>
+            {props.nodes.map((node: IMarkdownNode, index:number) => (
                 <li className={CLASSES[node.depth] + ' my-2'} key={index}>
                     <a className="hover:font-bold" href={`#${slugify(node.content)}`} onClick={(e: any) => handleClick(e)}>
                         {node.content}
@@ -34,13 +35,6 @@ function renderNodes(nodes: any) {
                 </li>
             ))}
         </ul>
-    )
-}
-export default function BlogTableOfContents(props: TOCProps) {
-    return (
-        <Fragment>
-            <h3 className="text-center m-0 mb-4 text-my-black font-bold">Sommaire</h3>
-            {renderNodes(props.nodes)}
         </Fragment>
     )
 
