@@ -45,6 +45,13 @@ export default function BlogContainer(props: BlogContainerProps) {
 
     return (
         <Fragment>
+            <h2 className="text-center text-my-black">Bienvenue sur mon blog !</h2>
+            <p className="text-center my-10 text-my-black">
+                Ici, je partage des articles sur le développement de <strong>sites web et d'applications</strong>, 
+                mais aussi des contenus orientés <strong>business</strong>, <strong>entrepreneuriat</strong> ou encore <strong>productivité</strong>. 
+                Tu y trouveras tour à tour des articles sur l'<strong>accessibilité web</strong>, sur des <strong>outils</strong> que j'ai pu tester ou des <strong>conseils</strong> pour t'orienter 
+                si tu souhaites créer ou faire créer ton propre site web sur mesure.
+            </p>
             <BlogSearchBar placeholder="Chercher un article..." onChange={handleSearch} />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
                 {posts && posts.map((post: IBlogPost, index:number) =>

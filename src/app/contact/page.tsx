@@ -24,8 +24,11 @@ export default function Contact() {
 
   return (
     <main>
-      <Banner alt={"Un téléphone portable, image mettant en avant la notion de contact."} mobileHeight='400' height='200' text={BANNER_TEXT} image={'/images/contact.webp'} isCallToAction={false} opacity={'70'} />
       <section>
+        <p className='text-center my-10 text-my-black'>Tu peux me contacter sur les réseaux pour aller plus vite. Ou ici. 
+          <br/>Je suis plus réactif sur les réseaux sociaux mais je ne manquerai pas de te répondre.
+        </p>
+        
         <div className='w-full flex flex-col md:flex-row md:justify-center md:items-center gap-8 my-8'>
           <div className='w-full lg:w-6/12 bg-my-white shadow-md rounded-sm p-4'>
             <ContactForm
@@ -36,7 +39,7 @@ export default function Contact() {
             />
           </div>
 
-          <div className='flex flex-col items-center justify-center w-full lg:w-5/12'>
+          <div className='flex flex-col items-center justify-center w-full lg:w-5/12 text-my-black'>
             <div className='flex flex-col justify-center items-center'>
               <div className=' py-4'>
                 <h3 className=' m-0'>Comment puis-je t'aider ?</h3>

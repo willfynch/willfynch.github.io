@@ -24,24 +24,18 @@ type Props = {
     searchParams: { [key: string]: string | string[] | undefined }
   }
 
-
-
 export async function generateMetadata(
     { params, searchParams }: Props,
     parent: ResolvingMetadata
   ): Promise<Metadata> {
     // read route params
     const slug = params.slug
-   
     // fetch data
     const postsResponse = await client.queries.postsConnection();
     const post = postsResponse.data.postsConnection.edges?.map((post) => {
       return { slug: post?.node?._sys.filename, title: post?.node?.title }
     }).filter(post => post.slug === slug)[0]
-
-
     return calculateMetadata(post?.title ?? "no_title", `/blog/${slug}`)
-
   }
 
 export default async function Post({ params }: { params: { slug: string } }) {

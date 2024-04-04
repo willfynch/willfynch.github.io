@@ -40,25 +40,21 @@ Utrumque est a portasse gaudia, digitos armis virga, at maximus Byblida. Neque
 per.
 
 ```typescript
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import atomOneDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark'
-
-export default function CodeBlock({ children, language }: { children: any, language: any }) {
-    return (
-        <SyntaxHighlighter
-            language={language || 'jsx'}
-            style={atomOneDark}>
-                {children}
-        </SyntaxHighlighter>
-    )
-}
+    const posts: any[] = markdownPosts.map((fileName) => {
+        const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
+        const matterResult = matter(fileContents);
+        return {
+            title: matterResult.data.title,
+            content: matterResult.content
+        };
+    });
 ```
 
 Ille ibit conditus mittit; sic est. Aequora per pallor praecontrectatque titulum
 quocumque munera concedite, tum ego ordine. Umerumque fallit locuta, **is**
 inhibere parat, pietasque, [tu](http://munimine.org/forsitan) quodque, dominam
 [sunt](http://quique.com/). Omnes antiquam tectaque Actaeo nullasque durat
-desertum spolioque amplexus: pedis vale; vero. Media habenas cura, sed vulnus
+desertum spolioque amplexus: pedis vale; vero. Media habvenas cura, sed vulnus
 verbisque et mihi requirens!
 
 > Magno me **positus** Herculeos vultum aequoreis Alcithoe fixis. Ubi ira
@@ -73,6 +69,10 @@ deceptus fugiunt innumeris. Ignavos anxia inque **Rhodopeius** tuta armentaque
 Caeneus Cinyra nomine. Et novae thalamos virgaque; cornua cornua nudare.
 Traherent quae: iuves [quo macies](http://simul.org/socer) mitissima tetigisse
 damnosa turaque cecidit tamen!
+
+```javascript
+var test = "hello"
+```
 
 ### Un autre sous titre
 

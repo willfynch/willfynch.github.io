@@ -6,7 +6,7 @@ import { Fragment } from "react";
 export default function Template({ children }: { children: React.ReactNode }) {
     return (
         <Fragment>
-            <SectionHeader title='Contact' />
+            <SectionHeader title='Contact' image="/images/contact.webp"/>
             <Navbar/>
             {children}<Footer></Footer>
         </Fragment>

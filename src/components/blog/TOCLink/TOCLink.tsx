@@ -26,7 +26,7 @@ export default function TOCLink(props: TOCLinkProps){
 
     return(
         <li className={CLASSES[props.node.depth] + ' my-2'} key={props.index}>
-        <a className={"hover:font-bold" + ' ' + (highlighted?'font-bold':'')} href={`#${slugify(props.node.content)}`} onClick={(e: any) => handleClick(e)}>
+        <a key={props.index} className={"hover:font-bold" + ' ' + (highlighted?'font-bold':'')} href={`#${slugify(props.node.content)}`} onClick={(e: any) => handleClick(e)}>
             {props.node.content}
         </a>
 

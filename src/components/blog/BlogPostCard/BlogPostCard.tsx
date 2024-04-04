@@ -38,7 +38,8 @@ export default function BlogPostCard(props: BlogPostCardProps) {
                         <Link className="link" href={`blog/${props.slug}`}>
                             Lire la suite
                         </Link>
-                        <small className="duration-200 arrow group-hover/link:text-my-brown ml-[4px] group-hover/link:ml-2">➔</small>
+                        <small className="duration-200 arrow group-hover/link:text-my-brown ml-[4NO
+                            px] group-hover/link:ml-2">➔</small>
                     </small>
 
                 </p>

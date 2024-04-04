@@ -94,6 +94,7 @@ export default defineConfig({
         name: "posts",
         label: "Posts",
         path: "public/posts",
+        format: 'mdx',
         fields: [
           {
             type: "string",

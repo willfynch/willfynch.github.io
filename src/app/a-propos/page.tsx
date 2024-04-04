@@ -45,13 +45,13 @@ export default function About() {
                 <p className='font-extrabold'>{ABOUT_TEXTS.FOURTH}</p>
             </div>
         
-            <div className='px-10 md:px-20 flex-col md:flex-row flex gap-4 items-center justify-center mb-20'>
+            <div className='px-10 md:px-20 flex-col md:flex-row flex gap-8 items-center justify-center mb-20'>
             
                 {
                     servicesItem.map((service , index) => 
                         (
                             
-                        <ServiceCard key={index} available={service.available} title={service.title} options={service.options} buttonText={service.available ? `Ça m'intéresse` : 'À venir'} />
+                        <ServiceCard calendly={process.env.CALENDLY} key={index} available={service.available} title={service.title} options={service.options} buttonText={service.available ? `Ça m'intéresse` : 'À venir'} />
                         
                         )
                     )

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import BlogPostTopInfos from "../BlogPostTopInfos/BlogPostTopInfos";
 import BlogTableOfContents from "../BlogTableOfContents/BlogTableOfContents";
 import { IMarkdownNode } from "@/models/markdown-node.model";
-import Markdown from "markdown-to-jsx";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { slugify } from "@/utilities/slugify";
 import CodeBlock from "../../utilities/CodeBlock/CodeBlock";
@@ -18,7 +17,7 @@ export interface BlogPostProps {
     author: string;
     authorPic: string;
     readingTime: number;
-    content: string;
+    content: any;
     socials: { icon: React.ReactNode; link: string }[];
     nodes: IMarkdownNode[];
 }
@@ -26,7 +25,7 @@ export interface BlogPostProps {
 export default function BlogPost(props: BlogPostProps) {
 
     useEffect(() => {
-
+        console.log('props', props)
         // ADD IDS TO TITLES
         const h2 = document.getElementsByTagName('h2');
         const h3 = document.getElementsByTagName('h3');
@@ -51,7 +50,7 @@ export default function BlogPost(props: BlogPostProps) {
 
     const components = {
         code_block: (props:any) => {
-          return <CodeBlock children={props.children} language={props.lang}/>
+          return <CodeBlock children={props.value} language={props.lang}/>
         }
       }
 
@@ -64,7 +63,7 @@ export default function BlogPost(props: BlogPostProps) {
                 <article className="px-4 md:px-0 order-2 md:order-1 w-full md:w-8/12 text-my-black text-justify">
                     <p className="md:mt-10">{props.intro}</p>
                     {/**@ts-ignore*/}
-                    <TinaMarkdown content={props.content} components={components.code_block} />
+                    <TinaMarkdown content={props.content} components={components} />
                 </article>
                 <nav role="navigation" className="md:mb-0 mb-10 order-1 md:sticky top-[70px]  bg-my-white shadow-md p-4 h-full right-0 md:order-2 w-full md:w-3/12">
                     <BlogTableOfContents nodes={props.nodes} />

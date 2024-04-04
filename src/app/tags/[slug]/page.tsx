@@ -47,7 +47,7 @@ export async function generateMetadata(
 export async function generateStaticParams() {
   const folder = join(process.cwd(), "public/posts");
   const files = fs.readdirSync(folder);
-  const markdownPosts = files.filter((file) => file.endsWith(".md"));
+  const markdownPosts = files.filter((file) => file.endsWith(".mdx"));
   const posts: any[] = markdownPosts.map((fileName) => {
       const fileContents = fs.readFileSync(`public/posts/${fileName}`, "utf8");
       const matterResult = matter(fileContents);

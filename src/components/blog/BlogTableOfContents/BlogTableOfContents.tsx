@@ -20,7 +20,7 @@ export default function BlogTableOfContents(props: TOCProps) {
             <h3 className="text-center m-0 mb-4 text-my-black font-bold">Sommaire</h3>
             <ul>
             {props.nodes.map((node: IMarkdownNode, index:number) => (
-                <TOCLink node={node} index={index}/>
+                <TOCLink key={index} node={node} index={index}/>
             ))}
         </ul>
         </Fragment>

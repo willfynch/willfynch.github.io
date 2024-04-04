@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useHighlighted(id:string) {
-
-    console.log('in hilghlisted')
     const observer = useRef();
     const [activeId, setActiveId] = useState("");
    
